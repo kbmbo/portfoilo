@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
-import logo from './img/svg/logo.svg';
+import './css/font-awesome.css';
+import './css/magnific-popup.css';
+// import './css/fancybox/jquery.fancybox.css';
+import './css/animate.css';
+import './css/style.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

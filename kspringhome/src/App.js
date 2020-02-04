@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import Test from './Test';
-import Storage from './Storage';
+import React from 'react';
+import Header from './Header';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <>
-        <Test />
-        <Storage />
+        <Header />
       </>
     );
-  }
 }
 
 export default App;
