@@ -1,0 +1,124 @@
+$black : #000;
+$white : #fff;
+$m-color :#2f2419;
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+    outline: 0;
+    line-height:1.4em;
+	vertical-align: baseline;
+    text-decoration:none;
+    font-weight: 500;
+}
+body{font-family: 'Didact Gothic', 'Nanum Gothic', 'Nanum Brush Script', cursive, sans-serif;text-align: center;}
+
+html { -ms-overflow-style: none; font-size: 63%;color:$black;}
+::-webkit-scrollbar { display: none; }
+element::-webkit-scrollbar { display: none; }
+
+h1,h2{letter-spacing: -1px;}
+h1{font-size:4.4rem;}
+h4{font-size:1.8rem;}
+h5{font-size:1.4rem;}
+img{width:100%;}
+a, a:hover, a:focus {outline:0;display: inline-block;color:$black;}
+li{float: left; list-style: none;}
+
+.btn, .btn:focus{
+    font-size: 1.4rem;
+    background: transparent;
+    border:2px solid $black;
+    padding: 20px 45px;
+    transition: all 0.3s;
+}
+.btn:hover,
+.btn:active,
+.btn:active:hover{
+    background: rgba(47,36,25,0.8);
+    color:$white;
+    
+}
+
+@mixin bgImg($size, $pos) {
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position:$pos
+}
+@mixin m-auto($w) {
+    width: $w;
+    margin: 0 auto;
+
+}
+///////////Main////////////////////////////
+header{
+    height: 800px;
+	position: relative;
+	background-image: url(../img/header.jpg);
+	@include bgImg(cover,top);
+    nav{
+        position: fixed;
+        top:0;
+        right:0;
+        left:0;
+        height: 80px;
+        z-index:1030;
+        .logo{
+            width: 130px;
+            transition: 200ms all ease-in-out;
+            float: left;
+        }
+        .menu{
+            float: right;
+            padding-right:30px;
+            font-size: 1.5rem;
+            button{
+                float:right;
+                display: none;
+                span{
+                    display:block;width:22px;height:2px;border-radius:1px;background-color: $black;margin-bottom:4px;
+                }
+            }
+            div{
+                ul{
+                    li{
+                        line-height: 80px;
+                        a{padding:10px 15px;}
+                    }
+                }
+                
+            }
+            
+        }
+    
+    }
+    .main-c-con{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(0,-50%);
+        -moz-transform: translate(0,-50%);
+        -ms-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+        .txt{
+            @include m-auto(40%);
+            text-transform:uppercase;
+            h1{line-height:5.2rem;}
+            h5{line-height:6rem;}
+        }
+    }
+}
+.main-b-con{
+    width: 100%;
+    background-color: $m-color;
+    .txt{
+        @include m-auto(100%);
+        padding: 55px 0;
+        text-transform:uppercase;
+        color:$white;
+        h4{line-height:3rem;}
+    }
+}
+///////////Main////////////////////////////

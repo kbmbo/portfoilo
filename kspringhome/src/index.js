@@ -4,7 +4,7 @@ import './css/font-awesome.css';
 import './css/magnific-popup.css';
 // import './css/fancybox/jquery.fancybox.css';
 import './css/animate.css';
-import './css/style.css';
+import './css/style.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
