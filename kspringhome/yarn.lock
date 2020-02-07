@@ -8823,6 +8823,11 @@ react-scripts@3.3.0:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-single-page-navigation@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-single-page-navigation/-/react-single-page-navigation-1.0.1.tgz#24b124c103ff98a78c8ff7069c4394b99c3ff193"
+  integrity sha512-umT06lwVXAEGoRpG4UqWs3ULIpq2lTrsHRlEudnlR7B6xvqehVg7lAFaz/2i61y6WQ0ZbBFQo9o11pvZS3XgVw==
+
 react@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
