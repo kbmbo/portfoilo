@@ -1,11 +1,13 @@
 import React from 'react';
 import ScrollNavigation from 'react-single-page-navigation';
+import Main from './ContentJs/Main';
+import Portfolio from './ContentJs/Portfolio';
 import logo from './img/svg/logo.svg';
 export const elements = {
   Menu1: {},
   Menu2: {}
 };
-function Header() {
+const Header = () => {
   return (
     <header>
       <div className="logo">
@@ -23,6 +25,7 @@ function Header() {
           <div id="navbar">
             <ScrollNavigation elements={elements}>
               {({refs, activeElement, goTo }) => (
+                <>
                 <ul>
                   <li onClick={() => goTo('Menu1')}>
                   Home {activeElement === 'Menu1'}
@@ -31,6 +34,9 @@ function Header() {
                   Portfolio{activeElement === 'Menu2'}
                   </li>
                 </ul>
+                <Main ref={refs.Menu1}></Main>
+        <Portfolio ref={refs.Menu2}></Portfolio>
+                </>
               )}
             </ScrollNavigation>
           </div>
