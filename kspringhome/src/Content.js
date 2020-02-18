@@ -1,12 +1,19 @@
 import React from 'react';
-import Main from './ContentJs/Main';
-import Portfolio from './ContentJs/Portfolio';
+import ReactPageScroller from "react-page-scroller";
+import Main from './Content/Main';
+import Portfolio from './Content/Portfolio';
 
-const Content = (refs) => {
+const Content = () => {
     return (
       <>
-        <Main ref={refs.Menu1}></Main>
-        <Portfolio ref={refs.Menu2}></Portfolio>
+      <ReactPageScroller
+          pageOnChange={this.handlePageChange}
+          customPageNumber={this.state.currentPage}
+        >
+          <Main />
+          <Portfolio />
+        </ReactPageScroller>
+        
       </>
     );
 }

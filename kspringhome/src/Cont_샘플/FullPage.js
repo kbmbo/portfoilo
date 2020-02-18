@@ -1,16 +1,14 @@
 import React from "react";
 import { Pager } from "react-bootstrap";
-import ReactPageScroller from "react-page-scroller";
-import Main from "./Content/Main";
-import Portfolio from "./Content/Portfolio";
 
-// import FirstComponent from "./Cont/FirstComponent";
-// import SecondComponent from "./Cont/SecondComponent";
-// import ThirdComponent from "./Cont/ThirdComponent";
-// import FourthComponent from "./Cont/FourthComponent";
-// import FifthComponent from "./Cont/FifthComponent";
+import ReactPageScroller from "../../src";
+import FirstComponent from "./FirstComponent";
+import SecondComponent from "./SecondComponent";
+import ThirdComponent from "./ThirdComponent";
+import FourthComponent from "./FourthComponent";
+import FifthComponent from "./FifthComponent";
 
-import "./Cont/index.css";
+import "./index.css";
 
 export default class FullPage extends React.Component {
   constructor(props) {
@@ -23,28 +21,38 @@ export default class FullPage extends React.Component {
   };
 
   getPagesNumbers = () => {
-    const menus = ["home", "Portfolio"];
-    const pagesNumbers = menus.map((menu, index) => (<Pager.Item key={index} eventKey={index} onSelect={this.handlePageChange}>{menu}</Pager.Item>));
+    const pageNumbers = [];
 
-    return [...pagesNumbers];
+    for (let i = 1; i <= 5; i++) {
+      pageNumbers.push(
+        <Pager.Item key={i} eventKey={i - 1} onSelect={this.handlePageChange}>
+          {i}
+        </Pager.Item>,
+      );
+    }
+
+    return [...pageNumbers];
   };
 
   render() {
     const pagesNumbers = this.getPagesNumbers();
 
     return (
-      <>
+      <React.Fragment>
         <ReactPageScroller
           pageOnChange={this.handlePageChange}
           customPageNumber={this.state.currentPage}
         >
-          <Main />
-          <Portfolio />
+          <FirstComponent />
+          <SecondComponent />
+          <ThirdComponent />
+          <FourthComponent />
+          <FifthComponent />
         </ReactPageScroller>
         <Pager className="pagination-additional-class" bsSize="large">
           {pagesNumbers}
         </Pager>
-        </>
+      </React.Fragment>
     );
   }
 }
