@@ -1,14 +1,13 @@
-import React from 'react';
-
-function Main() {
-  return (
+import React, {useState} from 'react';
+const Main = () => {
+   return (
     <section className="main">
       <div className="center">
         <div className="con">
           <div className="txt">
             <h1>The flower that blooms in adversity is the rarest and most beautiful of all</h1>
             <h5>- Mulan -</h5>                  
-            <a className="btn" data-scroll href="#portfolio">see portfolio</a>
+            <button className="btn" onClick={}>see portfolio</button>
           </div>
         </div>
       </div>
