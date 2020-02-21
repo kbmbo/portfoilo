@@ -23,6 +23,7 @@ export default class FullPage extends React.Component {
 
     return [...pagesNumbers];
   };
+  
   render() {
     const pagesNumbers = this.getPagesNumbers();
 
@@ -48,9 +49,9 @@ export default class FullPage extends React.Component {
           </nav>
         </header>
         <ReactPageScroller pageOnChange={this.handlePageChange} customPageNumber={this.state.currentPage}>
-          <Main />
+          <Main></Main>
           <Portfolio />
-          <div >3번째 페이지</div>
+          <div>3번째 페이지</div>
         </ReactPageScroller>
       </>
     );

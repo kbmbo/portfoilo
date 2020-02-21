@@ -1,7 +1,5 @@
 import React from 'react';
-
-const Main = (props) => {
-  console.log(props)
+const Main = () => {
    return (
     <section className="main">
       <div className="center">
@@ -9,7 +7,7 @@ const Main = (props) => {
           <div className="txt">
             <h1>The flower that blooms in adversity is the rarest and most beautiful of all</h1>
             <h5>- Mulan -</h5>                  
-            <button className="btn" onClick={''}>see portfolio</button>
+            {/* <button className="btn" onClick={this.props.pageOnChange}>see portfolio</button> */}
           </div>
         </div>
       </div>
