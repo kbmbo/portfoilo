@@ -16,7 +16,7 @@ export default class FullPage extends React.Component {
   };
 
   getPagesNumbers = () => {
-    const menus = ["home", "Portfolio"];
+    const menus = ["home", "Portfolio","3번버튼입니다"];
     const pagesNumbers = menus.map((menu, index) => (
       <Pager.Item key={index} eventKey={index} onSelect={this.handlePageChange}>{menu}</Pager.Item>
     ));
@@ -26,14 +26,14 @@ export default class FullPage extends React.Component {
   
   render() {
     const pagesNumbers = this.getPagesNumbers();
-
+    const top = () => {
+      this.setState({ currentPage: 0 });
+    };
     return (
       <>
         <header>
-          <div className="logo">
-            <a href="header">
+          <div className="logo" onClick={top}>
               <img src={logo} alt="logo" />
-            </a>
           </div>
           <nav id="header-nav">
             <div className="menu">
@@ -49,7 +49,7 @@ export default class FullPage extends React.Component {
           </nav>
         </header>
         <ReactPageScroller pageOnChange={this.handlePageChange} customPageNumber={this.state.currentPage}>
-          <Main></Main>
+          <Main btn={this.state.currentPage}></Main>
           <Portfolio />
           <div>3번째 페이지</div>
         </ReactPageScroller>

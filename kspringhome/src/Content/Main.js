@@ -1,13 +1,18 @@
-import React from 'react';
-const Main = () => {
-   return (
+import React, {useState} from 'react';
+const Main = (props) => {
+  console.log(props.btn);
+  const [currentPage, setCurrentPage] = useState();
+  const goto = ()=>{
+    props.btn(setCurrentPage({currentPage:1}));
+  };
+  return (  
     <section className="main">
       <div className="center">
         <div className="con">
           <div className="txt">
             <h1>The flower that blooms in adversity is the rarest and most beautiful of all</h1>
             <h5>- Mulan -</h5>                  
-            {/* <button className="btn" onClick={this.props.pageOnChange}>see portfolio</button> */}
+            <button className="btn" onClick={goto}>see portfolio</button>
           </div>
         </div>
       </div>
