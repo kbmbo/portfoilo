@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.4em;
+  vertical-align: baseline;
+  text-decoration: none;
+  font-weight: 500; }
+
+body {
+  font-family: 'Didact Gothic', 'Nanum Gothic', cursive, sans-serif;
+  text-align: center; }
+
+html {
+  -ms-overflow-style: none;
+  font-size: 63%;
+  color: #000;
+  background-color: #eff2f6; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+element::-webkit-scrollbar {
+  display: none; }
+
+h1, h2 {
+  letter-spacing: -1px; }
+
+h1 {
+  font-size: 4.4rem; }
+
+h4 {
+  font-size: 1.8rem; }
+
+h5 {
+  font-size: 1.4rem; }
+
+img {
+  width: 100%; }
+
+a, a:hover, a:focus {
+  outline: 0;
+  display: inline-block;
+  color: #000; }
+
+li {
+  float: left;
+  list-style: none; }
+
+button {
+  cursor: pointer; }
+
+.btn, .btn:focus {
+  font-size: 1.4rem;
+  background: transparent;
+  border: 2px solid #000;
+  padding: 20px 45px;
+  transition: all 0.3s; }
+
+.btn:hover,
+.btn:active,
+.btn:active:hover {
+  background: rgba(47, 36, 25, 0.8);
+  color: #fff; }
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 55px;
+  background-color: #fff;
+  z-index: 1000; }
+  header .cat-menu {
+    width: 20px;
+    height: 20px;
+    float: left;
+    padding: 5px;
+    margin: 13px 0 0 11px; }
+    header .cat-menu:before {
+      font-size: 20px; }
+    header .cat-menu p {
+      width: 100%;
+      height: 2px;
+      background-color: #b1b1b1;
+      border-radius: 2px; }
+      header .cat-menu p:nth-child(2) {
+        margin: 7px 0;
+        width: 15px; }
+  header .logo {
+    background: url("../img/svg/logo.svg") center no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 130px;
+    margin: 0 auto; }
+  header .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 13px 11px 0 0;
+    margin-top: 13px; }
+    @media (max-width: 320px) {
+      header .icon {
+        margin-right: 5px; } }
+    header .icon div {
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      float: left; }
+      header .icon div:before {
+        font-size: 20px; }
+      header .icon div:first-child {
+        margin-right: 11px; }
+        @media (max-width: 320px) {
+          header .icon div:first-child {
+            margin-right: 3px; } }

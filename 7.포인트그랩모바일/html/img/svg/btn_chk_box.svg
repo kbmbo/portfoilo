@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g id="prefix__btn_chk_box" transform="translate(.258 .046)">
+        <g id="prefix__타원_245" data-name="타원 245" transform="translate(-.258 -.046)" style="stroke:#c9c9c9;fill:#fff">
+            <circle cx="10" cy="10" r="10" style="stroke:none"/>
+            <circle cx="10" cy="10" r="9.5" style="fill:none"/>
+        </g>
+        <path id="prefix__패스_1246" d="M2188 1001.318l3 2.4 4.111-4.859" data-name="패스 1246" transform="translate(-2181.806 -991.489)" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px;fill:none;stroke:#c9c9c9"/>
+    </g>
+</svg>

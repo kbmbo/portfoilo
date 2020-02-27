@@ -12,7 +12,7 @@ const Main = (props) => {
           <div className="txt">
             <h1>The flower that blooms in adversity is the rarest and most beautiful of all</h1>
             <h5>- Mulan -</h5>                  
-            <button className="btn" onClick={goto}>see portfolio</button>
+            <button className="btn" btn={goto} onClick={goto}>see portfolio</button>
           </div>
         </div>
       </div>
