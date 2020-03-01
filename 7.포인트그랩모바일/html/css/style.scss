@@ -9,7 +9,7 @@ $m-color :#5f66f1;
     text-decoration:none;
     font-weight: 500;
 }
-body{font-family: 'Didact Gothic', 'Nanum Gothic', cursive, sans-serif;text-align: center;}
+body{font-family: 'Didact Gothic', 'Nanum Gothic', cursive, sans-serif;text-align: center;letter-spacing: -1px;}
 
 html { -ms-overflow-style: none; font-size: 63%;color:#000; background-color: #eff2f6;}
 ::-webkit-scrollbar { display: none; }
@@ -54,6 +54,13 @@ li{float: left; list-style: none;}
         font-size:$w;
     }
 }
+@mixin icon-box2($w, $h, $fs) {
+    width: $w;
+    height: $h;
+    &:before{
+        font-size:$fs;
+    }
+}
 ///////////////////Header////////////////////////////
 header{
     position: fixed;
@@ -69,8 +76,8 @@ header{
         padding: 5px;
         margin: {
             top:13px;
-            left:11px}
-        }
+            left:11px;
+            }
         p{
             width: 100%;
             height: 2px;
@@ -83,10 +90,13 @@ header{
         }
     }
     .logo{
-        background: url('../img/svg/logo.svg') center no-repeat;
-        background-size: contain;
+        background-image: url('../img/svg/logo.svg');
+        @include bgImg(contain, center);
         height: 100%;
-        @include m-auto(130px)
+        @include m-auto(130px);
+        @media (max-width: 320px) {
+            &{width: 100px;}
+        }
     }
     .icon{
         position: absolute;
@@ -94,8 +104,8 @@ header{
         right: 0;
         margin: {
             top:13px;
-            right:11px}
-        }
+            right:11px;
+            }
         @media (max-width: 320px) {
             &{margin-right: 5px;}
         }
@@ -111,8 +121,37 @@ header{
             }
         }
     }
+    
 }
+    
+
 ///////////////////Header////////////////////////////
 ////////////////////Main////////////////////////////
 
 ////////////////////Main////////////////////////////
+
+////////////////////bottom-menu//////////////////////
+.bottom-menu{
+    position: fixed;
+    bottom:0;
+    right:0;
+    left:0;
+    height:60px;
+    background-color: #fff;
+    display:flex;
+    justify-content:space-around;
+    width: 100%;
+    dl{
+        dt{
+            @include icon-box2(100%, auto, 2.8rem);
+        }
+        dd{
+            font-size: 1.2rem;
+            padding-top: 4px;
+        }
+        &:focus,&:hover{
+            color: $m-color;
+        } 
+    }
+}
+////////////////////bottom-menu//////////////////////
