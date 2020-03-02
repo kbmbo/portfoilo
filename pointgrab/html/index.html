@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="point grab" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="ENLIPLE" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>point grab</title>
+        
+        <link rel="shortcut icon" href="img/icon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="114x114" href="img/icon/iphone.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="img/icon/ipad.png" />
+        <link rel="stylesheet" href="/css/icon.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/js/includeHTML.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+    </head>
+
+    <body>
+        <header include-html="/pages/header.html"></header>
+        
+        <div class="content">
+            <div include-html="/pages/main.html" class="main active" id="tab-1"></div>
+            <div include-html="/pages/shop.html" class="shop" id="tab-2"></div>
+            <div include-html="/pages/coupon.html" class="coupon" id="tab-3"></div>
+            <div include-html="/pages/locker.html" class="locker" id="tab-4"></div>
+            <footer include-html="/pages/footer.html"></footer>
+        </div>
+        <nav class="bottom-menu">
+            <dl data-tab="tab-1" class="active">
+                <dt class="icon-icon_shopping"></dt><dd>맞춤쇼핑</dd>
+            </dl>
+            <dl data-tab="tab-2">
+                <dt class="icon-icon_cash"></dt><dd>적립몰</dd>
+            </dl>
+            <dl data-tab="tab-3">
+                <dt class="icon-icon_coupon"></dt><dd>포인트쿠폰</dd>
+            </dl>
+            <dl data-tab="tab-4">
+                <dt class="icon-icon_box"></dt><dd>보관함</dd>
+            </dl>
+        </nav>
+    </body>
+    <script>
+        includeHTML();
+    </script>
+</html>

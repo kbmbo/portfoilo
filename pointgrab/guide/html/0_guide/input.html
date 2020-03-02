@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+	<meta name="description" content="인플루언서 마케팅 플랫폼 이글루">
+	<meta name="keywords" content="인플루언서, 이글루, 인라이플">
+	<meta name="author" content="인라이플">
+	<title>igloo 이글루</title>
+	<link type="text/css" href="../../css/ion.rangeSlider.css" rel="stylesheet">
+	<link type="text/css" href="../../css/jquery-ui.min.css" rel="stylesheet">
+	<link type="text/css" href="../../css/base.css" rel="stylesheet">
+	<link type="text/css" href="../../css/style.css" rel="stylesheet">
+	<script src="../../js/jquery-1.12.3.min.js"></script>
+	<script src="../../js/ion.rangeSlider.js"></script>
+	<script src="../../js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body style="background:#fff">
+
+
+<div id="guide">
+	<ul class="nav">
+		<li><a href="color.html">Color</a></li>
+		<li><a href="input.html">Form</a></li>
+		<li><a href="popup.html">Popup</a></li>
+	</ul>
+	<div class="cont">
+		<h1>Input</h1>
+		<div class="boxWrap">
+			<h2>text (default)</h2>
+			<div class="code-box">
+			<!-- CODE -->
+			<input type="text">
+			<!-- //CODE -->
+			</div>
+			<xmp>
+<input type="text">
+<input type="password">
+<input type="num">
+<input type="tel">
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>text (with text)</h2>
+			<div class="code-box">
+			<!-- CODE -->
+			<div class="input-text price">
+				<input type="text" class="txtinput">
+				<span class="txt">￦</span>
+			</div>
+			<!-- //CODE -->
+			</div>
+			<xmp>
+<div class="input-text price">
+	<input type="text" class="txtinput">
+	<span class="txt">￦</span>
+</div>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>textarea</h2>
+			<div class="code-box">
+				<textarea>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 길이 보전하세</textarea>
+			</div>
+			<xmp>
+<textarea>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 길이 보전하세</textarea>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>range slider (double)</h2>
+			<div class="code-box">
+				<div class="range-slider-type01">
+				        <input type="text" class="range-age" value="" name="range-slider">
+				</div>
+				<script>
+					$(function(){
+						$(".range-age").ionRangeSlider({
+							hide_min_max: true,
+							keyboard: true,
+							min: 5,
+							max: 60,
+							from: 15,
+							to: 35,
+							type: 'double',
+							step: 5,
+							grid: false
+						});
+					});
+				</script>
+			</div>
+			<xmp>
+<div class="range-slider-type01">
+        <input type="text" class="range-age" value="" name="range-slider">
+</div>
+<script>
+	$(function(){
+		$(".range-age").ionRangeSlider({
+			hide_min_max: true,
+			keyboard: true,
+			min: 5,
+			max: 60,
+			from: 15,
+			to: 35,
+			type: 'double',
+			step: 5,
+			grid: false
+		});
+	});
+</script>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>range slider (single)</h2>
+			<div class="code-box">
+				<div class="range-slider-type01">
+				        <input type="text" class="range-influ2" value="" name="range-slider">
+				</div>
+				<script>
+					$(function(){
+						$(".range-influ2").ionRangeSlider({
+							hide_min_max: true,
+							keyboard: true,
+							min: 5,
+							max: 60,
+							from: 15,
+							to: 35,
+							type: 'single',
+							step: 5,
+							grid: false
+						});
+					});
+				</script>
+			</div>
+			<xmp>
+
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>Check Option</h2>
+			<div class="code-box">
+				<div class="check-type01 type-row">
+					<ul>
+						<li>
+							<input type="checkbox" id="c1">
+							<label for="c1">Option 01</label>
+						</li>
+						<li>
+							<input type="checkbox" id="c2">
+							<label for="c2">Option 02</label>
+						</li>
+						<li>
+							<input type="checkbox" id="c3">
+							<label for="c3">Option 03</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<xmp>
+<div class="check-type01 type-row">
+	<ul>
+		<li>
+			<input type="checkbox" id="c1">
+			<label for="c1">Option 01</label>
+		</li>
+		<li>
+			<input type="checkbox" id="c2">
+			<label for="c2">Option 02</label>
+		</li>
+		<li>
+			<input type="checkbox" id="c3">
+			<label for="c3">Option 03</label>
+		</li>
+	</ul>
+</div>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>Radio Option</h2>
+			<div class="code-box">
+				<div class="radio-type01 type-row">
+					<ul>
+						<li>
+							<input type="radio" id="r1" name="r1" checked>
+							<label for="r1">Option 01</label>
+						</li>
+						<li>
+							<input type="radio" id="r2"  name="r1">
+							<label for="r2">Option 02</label>
+						</li>
+						<li>
+							<input type="radio" id="r3"  name="r1">
+							<label for="r3">Option 03</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<xmp>
+<div class="radio-type01 type-row">
+	<ul>
+		<li>
+			<input type="radio" id="r1" name="r1" checked>
+			<label for="r1">Option 01</label>
+		</li>
+		<li>
+			<input type="radio" id="r2"  name="r1">
+			<label for="r2">Option 02</label>
+		</li>
+		<li>
+			<input type="radio" id="r3"  name="r1">
+			<label for="r3">Option 03</label>
+		</li>
+	</ul>
+</div>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>Drop Down</h2>
+			<div class="code-box">
+				<div class="selectbox_type01" style="width:230px;">
+					<label>전체</label>
+					<select title="상태">
+						<option selected="selected">전체</option>
+						<option>Option 01</option>
+						<option>Option 02</option>
+						<option>Option 03</option>
+						<option>Option 04</option>
+					</select>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			<xmp>
+<div class="selectbox_type01" style="width:230px;">
+	<label>전체</label>
+	<select title="상태">
+		<option selected="selected">전체</option>
+		<option>Option 01</option>
+		<option>Option 02</option>
+		<option>Option 03</option>
+		<option>Option 04</option>
+	</select>
+	<span class="arrow"></span>
+</div>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>Control Number</h2>
+			<div class="code-box">
+				<div class="ctrlNum">
+					<div class="value-button" id="decrease" onclick="decreaseValue()"><i></i></div>
+	 				<input type="text" id="number" value="0">
+	 				<div class="value-button" id="increase" onclick="increaseValue()"><i></i></div>
+ 				</div>
+			</div>
+			<xmp>
+<div class="ctrlNum">
+	<div class="value-button" id="decrease" onclick="decreaseValue()"><i></i></div>
+	<input type="text" id="number" value="0">
+	<div class="value-button" id="increase" onclick="increaseValue()"><i></i></div>
+</div>
+			</xmp>
+		</div>
+		<div class="boxWrap">
+			<h2>Date pick</h2>
+			<div class="code-box">
+				<div class="datepick">
+					<div class="box">
+						<input type="text" class="form-datepick">
+					</div>
+					<span class="txt">~</span>
+					<div class="box">
+						<input type="text" class="form-datepick">
+					</div>
+				</div>
+			</div>
+			<xmp>
+<div class="datepick">
+	<div class="box">
+		<input type="text" class="form-datepick">
+	</div>
+	<span class="txt">~</span>
+	<div class="box">
+		<input type="text" class="form-datepick">
+	</div>
+</div>
+			</xmp>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="../../js/script.js"></script>
+
+
+</body>
+</html>

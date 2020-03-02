@@ -1,0 +1,187 @@
+@charset 'utf-8';
+
+/***************************** Color set **************************************
+***************************************************************************/
+.txt-color-main {}
+.txt-color-sub {}
+
+
+
+
+/***************************** Typo     **************************************
+***************************************************************************/
+h1 {font-size: 40px;}
+h2 {font-size: 35px;}
+h3 {font-size: 30px;}
+h4 {font-size: 25px;}
+h5 {font-size: 20px;}
+h6 {font-size: 15px;}
+p {font-size: 14px;line-height: 150%;color:#333;}
+
+
+
+/***************************** BUTTON **************************************
+***************************************************************************/
+.btn {display: inline-block;vertical-align: middle;text-align: center;}
+
+/********** SIZE **************/
+.default {min-width: 145px;height:60px;line-height: 60px;font-size: 23px;padding: 0 23px;} /* main button */
+.xsmall {width: 40px;height:15px;line-height:15px;font-size: 11px;}
+.small {width: 50px;height:30px;line-height:30px;font-size: 12px;}
+.med {}
+.large {}
+.xlarge {}
+
+/********** COLOR ************/
+.btn-prev {background: #6f6f6f;color:#fff;font-family: 'NotoSansM';box-shadow: 2px 2px 10px 3px rgba(112,110,173,.1)}
+.btn-submit,
+.btn-next {background: #5f17f1;color:#fff;font-family: 'NotoSansM';box-shadow: 2px 2px 10px 3px rgba(112,110,173,.1)}
+
+.btn-step-default {display: inline-block;padding: 14px 27px 16px 27px;background: #5f17f1;color:#fff;font-size: 20px;box-shadow: 2px 3px 10px 1px rgba(0,0,0,.2);text-shadow: 2px 2px 2px rgba(0,0,0,.9);text-align: center;}
+.btn-step-default em {display: block;font-size: 13px;margin:5px 0 0 0;}
+.btn-step-default.disabled {background: #6e6e6e;cursor: default;}
+
+
+/********** TEXT WITH ICO **********/
+.btn span,
+.btn i {display: inline-block;vertical-align: top;}
+
+
+/********** ONLY ICO **********/
+
+
+
+
+/***************************** Check  **************************************
+***************************************************************************/
+/* 체크박스 */
+.check-type01 ul {font-size: 0;}
+.check-type01 ul li {display: inline-block;margin: 0 7px 7px 0;vertical-align: top;position: relative;min-width:80px;height:40px;}
+.check-type01 ul li span {display: inline-block;}
+.check-type01 ul li input[type="checkbox"] {display:none;}
+.check-type01 ul li input[type="checkbox"] + label {display:block;width:100%;height:100%;line-height:38px;color:#333;font-size:16px;text-align: center;
+	border:1px solid #5f17f1;border-radius:3px;text-align: center;color:#5f17f1;padding:0 10px;}
+.check-type01 ul li input[type="checkbox"]:checked + label {background:#5f17f1;border:1px solid #5f17f1;color:#fff;}
+.check-type01 ul li label {cursor: pointer;transition: all 0.1s ease-in-out}
+
+/* 체크박스2 */
+.check-type02 ul li span {display: inline-block;}
+.check-type02 ul li input[type="checkbox"] {display:none;}
+.check-type02 ul li input[type="checkbox"] + label {color:#5e5e5e;font-size:15px;text-align: center;}
+.check-type02 ul li input[type="checkbox"] + label span {display: inline-block;width:15px;height:15px;vertical-align:top;margin: -2px 5px 0 0;background:#fff;border:1px solid #bfbfbf;cursor:pointer;float: none;}
+.check-type02 ul li input[type="checkbox"]:checked + label span {background:#aa80ff;}
+.check-type02 ul li label {cursor: pointer;}
+
+/* 라디오 */
+.radio-type01 ul {font-size: 0;}
+.radio-type01 ul li {display: inline-block;margin: 0 7px 7px 0;vertical-align: top;position: relative;min-width:80px;height:40px;}
+.radio-type01 ul li span {display: inline-block;}
+.radio-type01 ul li input[type="radio"] {display:none;}
+.radio-type01 ul li input[type="radio"] + label {display:block;width:100%;height:100%;line-height:38px;color:#333;font-size:16px;text-align: center;
+	border:1px solid #5f17f1;border-radius:3px;text-align: center;color:#5f17f1;padding:0 10px;}
+.radio-type01 ul li input[type="radio"]:checked + label {background:#5f17f1;border:1px solid #5f17f1;color:#fff;}
+.radio-type01 ul li label {cursor: pointer;transition: all 0.1s ease-in-out}
+
+
+/***************************** Range Slider  **********************************
+***************************************************************************/
+.range-slider-age {position: relative;width: 100%;height: 55px;}
+
+
+
+/***************************** INPUT  **************************************
+***************************************************************************/
+input[type='text'],
+input[type='password'],
+input[type='num'],
+input[type='tel'] {display:inline-block;vertical-align:middle;border:none;border-bottom:1px solid #000;width:100%;height:30px;padding: 0 10px;font-size:14px;
+	transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;}
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='num']:focus,
+input[type='tel']:focus {border:none;border-bottom:1px solid #000;outline: none;}
+.input-text {width: 100%;height:30px;position: relative;transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;}
+.input-text input {padding: 0 90px 0 10px;height:28px;position: absolute;top: 0;left: 0;}
+.input-text .txt {font-size: 16px;color:#000;position: absolute;top: 6px;right: 10px;}
+.input-text.price input {text-align: right;padding-right: 30px;}
+/* .textarea-text {height:26px;line-height:25px;position: absolute;top: 0;right: 0;color:#b4b4d9;font-size: 16px;background: #fff;padding: 0 0 0 10px;} */
+textarea {width:100%;padding: 15px;font-size: 16px;color:#3e3e3e;line-height: 22px;letter-spacing: -.5px;
+	background:#edecee;border:none;outline:none;transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;}
+textarea:focus {background: #dfdfdf;}
+
+
+/***************************** File   **************************************
+***************************************************************************/
+.fileArea {height: 135px;}
+.fileArea > strong {display: block;margin:0 0 15px 0;text-align: center;font-size: 20px;color:#3e3e3e;font-family: "NotoSansB";letter-spacing: -1px;}
+.fileArea .input-file .btn-file-wrap {cursor: pointer;display: inline-block;position: relative;
+width: 60px;height: 24px;overflow: hidden;vertical-align: top;margin:2px 0 0 0;}
+.fileArea .input-file .btn-file-wrap .btn-file {
+display: block;width: 100%;height: 100%;line-height: 24px;background: #c6c6c6;
+color: #fff;font-size: 15px;transition: all 0.2s ease-in-out;border-radius: 5px;text-align: center;}
+.fileArea .input-file .btn-file-wrap .btn-file:hover {background: #598923;}
+.fileArea .input-file .btn-file-wrap input[type=file] {cursor: pointer;position: absolute;top: 0;left: -100px;opacity: 0;}
+.fileArea .input-file {width: 100%;height:30px;border:1px solid #bfbfbf;}
+.fileArea .input-file input[type=text] {display: inline-block;vertical-align: top;width: 240px;border:none;height: 28px;}
+.fileArea .valid {width: 100%;margin:15px 0 0 0;text-align: center;font-size: 15px;color:#5e5e5e;letter-spacing: -1px;}
+
+
+/***************************** Date Pick  **********************************
+***************************************************************************/
+.datepick {margin:20px 0 0 0;clear: both;}
+.datepick > span,
+.datepick input {display: inline-block;vertical-align: middle;}
+.datepick > span {color:#5e5e5e;font-size: 15px;margin: 0 15px 0 0;}
+.datepick input {width: 180px;height: 30px;border:1px solid #bfbfbf;background: url(../images/ico-cal.gif) right 10px center no-repeat;}
+.datepick input:focus,
+.datepick input:hover {border:1px solid #bfbfbf;}
+.datepick .box {display: inline-block;vertical-align: middle;}
+.datepick .txt {margin: 0 3px;}
+.datepick .box .form-datepick-day {width: 85px;}
+
+/***************************** Drop Down  **********************************
+***************************************************************************/
+/* 셀렉트 박스 */
+.selectbox_type01 {display: inline-block;position:relative;width: auto;height:30px;background:#fff;vertical-align: middle;}
+.selectbox_type01 label {
+	width: 100%;height: 30px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;position:absolute;
+	color:#333;font-size: 14px;top :0;left:0;line-height:30px;padding: 0 10px;border:1px solid #000;
+	background: url(../images/bg_select_arrow_normal.png) right 7px top 10px no-repeat;
+}
+.selectbox_type01 select {width:100%;height:30px;min-height:30px;line-height:30px;padding:0 5px;opacity:0;font-size: 13px;color: #333;}
+.selectbox_type01 .arrow {display: block;width: 1px;height: 30px;position: absolute;top: 0;right:30px;background:#000;}
+
+
+/***************************** Number Control **********************************
+***************************************************************************/
+.ctrlNum {display: inline-block;vertical-align: middle;font-size: 0;}
+.ctrlNum .value-button,
+.ctrlNum #number {display: inline-block;vertical-align: top;}
+.ctrlNum .value-button {width: 30px;height: 30px;border:1px solid #000;cursor: pointer;transition: all 0.2s ease-in-out;text-align: center;}
+.ctrlNum .value-button:active {background: #f1edfa;}
+.ctrlNum #number {width:50px;height:30px;border:none;border-top: 1px solid #000;border-bottom: 1px solid #000;text-align: center;outline: none;
+font-size: 16px;color:#000;text-align: center;transition: all 0.2s ease-in-out;}
+.ctrlNum .value-button i {display: block;margin: 8px auto 0 auto;width: 13px;height: 13px;background: url(../images/ico-ctrlNum.png) top left no-repeat;}
+.ctrlNum #decrease i {background-position: 0 -13px;}
+.ctrlNum #increase i {background-position: 0 0;}
+
+
+/***************************** Layer Popup **********************************
+***************************************************************************/
+.dim {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.5);z-index: 100;}
+.layer-popup {display:none;position: fixed;top: 50%;left: 50%;z-index: 101;background: #fff;}
+.layer-popup .area-title {width: 100%;height: 38px;background: #9966ff;position: relative;padding: 8px 0 0 10px;}
+.layer-popup .area-title .title {color:#fff;font-size: 20px;letter-spacing: -2px;}
+.layer-popup .area-title .btn-close {display: block;position: absolute;top: 0;right: 0;width: 38px;height: 38px;
+background: url(../images/btn-pop-close.png) center center no-repeat;text-indent: -99999px;font-size: 9;}
+.layer-popup .area-btn {text-align: center;font-size: 0;}
+.layer-popup .area-btn > a {display: inline-block;vertical-align: top;width: 100px;height: 40px;line-height:40px;margin: 0 5px;text-align: center;
+font-size: 20px;color:#fff;border-radius: 5px;}
+.layer-popup .area-btn .btn-cancel {background: #b8b8b8}
+.layer-popup .area-btn .btn-submit {background: #9966ff}
+
+/* confirm */
+.layer-alert-confirm {width: 500px;height: 200px;margin: -100px 0 0 -250px;}
+
+
+
