@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <g id="prefix__img_point" transform="translate(-68.582 -219.582)">
-        <circle id="prefix__타원_8" cx="12" cy="12" r="12" data-name="타원 8" transform="translate(68.582 219.582)" style="opacity:.29;fill:#5f66f1"/>
-        <circle id="prefix__타원_7" cx="9" cy="9" r="9" data-name="타원 7" transform="translate(71.582 222.582)" style="fill:#5f66f1"/>
-        <text id="prefix__P" transform="translate(80.582 235.582)" style="fill:#fff;font-size:10px;font-family:NotoSansCJKkr-Regular,Noto Sans CJK KR">
-            <tspan x="-3.16" y="0">P</tspan>
-        </text>
-    </g>
-</svg>

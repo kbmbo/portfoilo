@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-    <g id="prefix__btn_chk_box_on" transform="translate(-.381 -.169)">
-        <g id="prefix__패스_1248" data-name="패스 1248" style="fill:#5f66f1">
-            <path d="M10 18.5c-4.687 0-8.5-3.813-8.5-8.5 0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5z" style="stroke:none" transform="translate(.381 .169)"/>
-            <path d="M10 3c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0-3c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0z" style="fill:#5d64ec;stroke:none" transform="translate(.381 .169)"/>
-        </g>
-        <path id="prefix__패스_1247" d="M2188 1001.372l3.066 2.457 4.2-4.966" data-name="패스 1247" transform="translate(-2181.598 -991.33)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
-    </g>
-</svg>
