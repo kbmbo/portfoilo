@@ -38,15 +38,13 @@
   vertical-align: baseline;
   background: transparent;
 }
-html {font-family: 'notokr', 'Nanum Gothic', 'sans-serif';}
-body {background: #f5f5f5;font-size: 14px;}
-h1, h2, h3, h4, h5, h6 {font-size: 18px;}
+html {font-family: 'notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;}
+body {background-color: #fff;font-size: 14px;color: #222;}
 q:before, q:after {
   display: none;
   content: '';}
 li {list-style: none;}
-button {cursor: pointer; }
+button {cursor: pointer;background-color: transparent;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
-a {text-decoration: none;color: #000;}
+a {text-decoration: none;}
 
-/*# sourceMappingURL=reset.css.map */

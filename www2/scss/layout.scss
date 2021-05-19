@@ -14,7 +14,21 @@ $mainColor:#2F2419;
 	width: $w;
 	height: $h;    
 }
-/////////// 커스텀 스크롤 :s ///////////
+@mixin position($p: null,$t: null,$b: null,$l: null,$r: null) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+@mixin bgImg($size) {
+    background: {
+        repeat: no-repeat;
+        size: $size;
+        position:center;
+    }
+}
+/////////// 커스텀 스크롤:s ///////////
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(95, 78, 78, 0.1);
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
@@ -31,4 +45,26 @@ $mainColor:#2F2419;
 	border-radius: 10px;
 	background-color: rgba(85, 85, 85, 0.15);
 }
-/////////// 커스텀 스크롤 :e ///////////
+/////////// 커스텀 스크롤:e ///////////
+/////////// header:s ///////////
+header{
+	@include WH(100%,100px);
+	padding: 0 2%;
+	@include position($p:fixed,$t:0);
+	z-index: 999;
+	h1{
+		@include WH(100px,100%);
+		@include bgImg(contain);
+		background-image: url('../img/svg/logo.svg');
+	}
+}
+/////////// header:e ///////////
+/////////// container:s ///////////
+.container > section{
+	width: 100%;
+	&.fullPage{
+		background-color: #000;
+	}
+
+}
+/////////// container:e ///////////
