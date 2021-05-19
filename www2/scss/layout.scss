@@ -48,23 +48,59 @@ $mainColor:#2F2419;
 /////////// 커스텀 스크롤:e ///////////
 /////////// header:s ///////////
 header{
-	@include WH(100%,100px);
+	$navH:120px;
+	@include WH(100%,$navH);
 	padding: 0 2%;
 	@include position($p:fixed,$t:0);
 	z-index: 999;
-	h1{
-		@include WH(100px,100%);
+	h1.logo{
+		@include WH($navH,100%);
 		@include bgImg(contain);
 		background-image: url('../img/svg/logo.svg');
+		text-indent: -99999999px;
+		float: left;
+	}
+	.menu{
+		height: 100%;
+		float: right;
+		.menu-list{
+			height: 100%;
+			ul{
+				height: 100%;
+				display: flex;
+				align-items: center;
+				font-size: 1.5rem;
+				li{
+					float: left;
+					margin-left: 15px;
+					padding:10px;
+					cursor: pointer;
+				}
+			}
+		}
+		button.m-nav{display: none;}
 	}
 }
 /////////// header:e ///////////
-/////////// container:s ///////////
+/////////// section:s ///////////
 .container > section{
 	width: 100%;
 	&.fullPage{
-		background-color: #000;
+		width: 100%;
+		@include bgImg(cover);
+		background-image: url('../img/bg/header.jpg');
 	}
 
 }
-/////////// container:e ///////////
+/////////// section:e ///////////
+/////////// footer:s ///////////
+.container > footer{
+	width: 100%;
+	@include lineH(50px);
+	text-align: center;
+	color: rgba(255,255,255,.5);
+	background-color: $mainColor;
+	font-weight: 300;
+}
+/////////// footer:e ///////////
+

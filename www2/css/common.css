@@ -16,22 +16,54 @@
 
 header {
   width: 100%;
-  height: 100px;
+  height: 120px;
   padding: 0 2%;
   position: fixed;
   top: 0;
   z-index: 999; }
-  header h1 {
-    width: 100px;
+  header h1.logo {
+    width: 120px;
     height: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../img/svg/logo.svg"); }
+    background-image: url("../img/svg/logo.svg");
+    text-indent: -99999999px;
+    float: left; }
+  header .menu {
+    height: 100%;
+    float: right; }
+    header .menu .menu-list {
+      height: 100%; }
+      header .menu .menu-list ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem; }
+        header .menu .menu-list ul li {
+          float: left;
+          margin-left: 15px;
+          padding: 10px;
+          cursor: pointer; }
+    header .menu button.m-nav {
+      display: none; }
 
 .container > section {
   width: 100%; }
   .container > section.fullPage {
-    background-color: #000; }
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../img/bg/header.jpg"); }
+
+.container > footer {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #2F2419;
+  font-weight: 300; }
 
 /*# sourceMappingURL=common.css.map */
