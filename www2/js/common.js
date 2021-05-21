@@ -1,6 +1,6 @@
 var windowH = window.innerHeight;
 function fullPage(windowH){
-    document.getElementById("fullPage").style.height = windowH+'px';
+    document.getElementById("fullPage").style.height = windowH +'px';
 }
 $(document).ready(function(){
     fullPage(windowH);
