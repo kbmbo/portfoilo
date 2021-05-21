@@ -85,8 +85,7 @@ header{
 /////////// section:s ///////////
 .container > section{
 	width: 100%;
-	&.fullPage{
-		width: 100%;
+	&#fullPage{
 		@include bgImg(cover);
 		background-image: url('../img/bg/header.jpg');
 	}
