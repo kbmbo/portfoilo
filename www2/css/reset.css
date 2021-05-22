@@ -38,7 +38,7 @@
   vertical-align: baseline;
   background: transparent;
 }
-html {font-family: 'notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;scroll-behavior: smooth;}
+html {font-family: 'notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;scroll-behavior: smooth;touch-action:pan-y;}
 body {background-color: #fff;font-size: 14px; font-weight: 400; color: #222;}
 q:before, q:after {
   display: none;

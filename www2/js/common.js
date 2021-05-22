@@ -1,5 +1,6 @@
-var windowH = window.innerHeight;
+var windowH 
 function fullPage(windowH){
+    windowH = window.innerHeight;
     document.getElementById("fullPage").style.height = windowH +'px';
 }
 $(document).ready(function(){
@@ -8,21 +9,12 @@ $(document).ready(function(){
 $(window).resize(function(){
     fullPage(windowH);
 });
-
-function pageUp(){
-    window.scrollBy(0, windowH); 
-}
-
-function pageDown(){
-    window.scrollBy(0, -windowH); 
-}
-
 window.addEventListener('wheel',function(e){
-    console.log(e.deltaY)
+    windowH = window.innerHeight;
     if(e.deltaY > 0){
-        pageUp()
+        window.scrollBy(0, windowH); 
     }else{
-        pageDown()
+        window.scrollBy(0, -windowH); 
     }
 
 })
