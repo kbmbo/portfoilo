@@ -1,36 +1,42 @@
-var windowH 
-function fullPage(windowH){
+var windowH
+function fullPageH(){
     windowH = window.innerHeight;
     document.getElementById("fullPage").style.height = windowH +'px';
 }
-$(document).ready(function(){
-    fullPage(windowH);
-});
-$(window).resize(function(){
-    fullPage(windowH);
-});
-window.addEventListener('wheel',function(e){
+function fullPageS(e){
     windowH = window.innerHeight;
     if(e.deltaY > 0){
-        window.scrollBy(0, windowH); 
+        window.scrollBy(0, windowH);
+        
     }else{
-        window.scrollBy(0, -windowH); 
+        window.scrollBy(0, -windowH);
     }
+}
+document.addEventListener("DOMContentLoaded", function(){
+    fullPageH();
+    //console.log(document.documentElement.scrollTop)
+});
+window.addEventListener('resize', function(){
+    fullPageH();
+});
+window.addEventListener('wheel',function(e){
+    fullPageS(e);
+});
 
-})
-
-// $(window).bind('wheel DOMMouseScroll', function(event){
-//     var scTop = window.scrollTo();
-//     if (event.originalEvent.wheelDelta >= 0) {
-//         // scroll up
-//         console.log("스크롤 위로");
-        
-//     }
-//     else {
-        
-//         // scroll down
-//         if(scTop > 0){
-           
-//         }
-//     }
+// window.addEventListener('touchstart', function (e){
+//     //e.preventDefault();
 // });
+
+
+window.addEventListener('touchend', function (){
+    var targetBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
+    windowH = window.innerHeight;
+    console.log(window.pageYOffset+'/'+targetBottom+'/'+windowH);
+    // if(window.pageYOffset > 0){
+    //     window.scrollTo(0, windowH);
+        
+    // }
+    if(targetBottom > 0){
+        window.scrollTo(0, -windowH);
+    }
+});

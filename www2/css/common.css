@@ -48,15 +48,17 @@ header {
     header .menu button.m-nav {
       display: none; }
 
-.container > section {
-  width: 100%; }
-  .container > section#fullPage {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../img/bg/header.jpg"); }
+.container {
+  position: relative; }
+  .container > section {
+    width: 100%; }
+    .container > section#fullPage {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/bg/header.jpg"); }
 
-.container > footer {
+footer {
   width: 100%;
   height: 50px;
   line-height: 50px;

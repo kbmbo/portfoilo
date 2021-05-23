@@ -83,17 +83,20 @@ header{
 }
 /////////// header:e ///////////
 /////////// section:s ///////////
-.container > section{
-	width: 100%;
-	&#fullPage{
-		@include bgImg(cover);
-		background-image: url('../img/bg/header.jpg');
+.container{
+	position: relative;
+	> section{
+		width: 100%;
+		&#fullPage{
+			@include bgImg(cover);
+			background-image: url('../img/bg/header.jpg');
+		}
+	
 	}
-
-}
+} 
 /////////// section:e ///////////
 /////////// footer:s ///////////
-.container > footer{
+footer{
 	width: 100%;
 	@include lineH(50px);
 	text-align: center;
