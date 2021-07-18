@@ -27,6 +27,14 @@
   url('../font/notokr-bold.woff') format('woff');
   font-weight: 600;
 }
+@font-face {
+  font-family: 'DidactGothic';
+  src: url('../font/DidactGothic-Regular.eot');
+  src: url('../font/DidactGothic-Regular.woff2') format('woff2'),
+  url('../font/DidactGothic-Regular.woff') format('woff');
+  unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
+  font-weight: 400;
+}
 /* CSS 초기화 */
 * {
   box-sizing: border-box;
@@ -37,14 +45,11 @@
   outline: 0;
   vertical-align: baseline;
   background: transparent;
+  font-weight: normal;
 }
-html {font-family: 'notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;scroll-behavior: smooth;}
-body {background-color: #fff;font-size: 14px; font-weight: 400; color: #222;}
-q:before, q:after {
-  display: none;
-  content: '';}
+html {font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;scroll-behavior: smooth;}
+body {background-color: #fff;font-size: 1.4rem;font-weight: 400;color: #222;}
 li {list-style: none;}
-button {cursor: pointer;background-color: transparent;}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+button {background-color: transparent; cursor: pointer;font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;}
+aside, details, figcaption, figure, footer, header, hgroup, menu, nav{display: block;}
 a {text-decoration: none;}
-

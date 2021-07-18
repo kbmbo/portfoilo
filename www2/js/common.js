@@ -7,9 +7,12 @@ function fullPageS(e){
     windowH = window.innerHeight;
     if(e.deltaY > 0){
         window.scrollBy(0, windowH);
+        document.querySelector('header').classList.add('subNav');
         
     }else{
         window.scrollBy(0, -windowH);
+        document.querySelector('header').classList.remove('subNav');
+        
     }
 }
 document.addEventListener("DOMContentLoaded", function(){
@@ -24,7 +27,7 @@ window.addEventListener('wheel',function(e){
 });
 
 // window.addEventListener('touchstart', function (e){
-//     //e.preventDefault();
+//     fullPageS(e);
 // });
 
 

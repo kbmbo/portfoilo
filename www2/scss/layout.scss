@@ -84,14 +84,44 @@ header{
 /////////// header:e ///////////
 /////////// section:s ///////////
 .container{
-	position: relative;
-	> section{
+	text-align: center;
+	> article{
 		width: 100%;
+		position: relative;
+		@include both;
 		&#fullPage{
 			@include bgImg(cover);
 			background-image: url('../img/bg/header.jpg');
+			display: flex;
+			align-items: center;
+			div{
+				width: 100%;
+				&.con{
+					width: 38vw;
+					margin: -5vh auto 0;
+					p{margin: 0.5vh 0 3.5vh;}
+					h2{font-size: 4.4rem;}
+					button{
+						border:3px solid $mainColor;
+						padding:2.2vh 2.2vw;
+						font-size: 1.8rem;
+						transition: all 0.3s;
+						&:hover{
+							background-color: rgba(47,36,25,0.8);
+							color: #fff;
+						}
+					}
+				}
+				&.bottomTxt{
+					@include position($p:absolute,$b:0);
+					background-color:$mainColor;
+					padding: 4vh 0;
+					color: #fff;
+					font-size: 1.8rem;
+					line-height: 1.8em;
+				}
+			}
 		}
-	
 	}
 } 
 /////////// section:e ///////////

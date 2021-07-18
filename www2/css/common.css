@@ -1,3 +1,68 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-light.eot");
+  src: url("../font/notokr-light.woff2") format("woff2"), url("../font/notokr-light.woff") format("woff");
+  font-weight: 300; }
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-regular.eot");
+  src: url("../font/notokr-regular.woff2") format("woff2"), url("../font/notokr-regular.woff") format("woff");
+  font-weight: 400; }
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-medium.eot");
+  src: url("../font/notokr-medium.woff2") format("woff2"), url("../font/notokr-medium.woff") format("woff");
+  font-weight: 500; }
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-bold.eot");
+  src: url("../font/notokr-bold.woff2") format("woff2"), url("../font/notokr-bold.woff") format("woff");
+  font-weight: 600; }
+@font-face {
+  font-family: 'DidactGothic';
+  src: url("../font/DidactGothic-Regular.eot");
+  src: url("../font/DidactGothic-Regular.woff2") format("woff2"), url("../font/DidactGothic-Regular.woff") format("woff");
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+  font-weight: 400; }
+/* CSS 초기화 */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal; }
+
+html {
+  font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';
+  font-size: 63%;
+  scroll-behavior: smooth; }
+
+body {
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #222; }
+
+li {
+  list-style: none; }
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';
+  font-size: 63%; }
+
+aside, details, figcaption, figure, footer, header, hgroup, menu, nav {
+  display: block; }
+
+a {
+  text-decoration: none; }
+
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(95, 78, 78, 0.1);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
@@ -49,14 +114,45 @@ header {
       display: none; }
 
 .container {
-  position: relative; }
-  .container > section {
-    width: 100%; }
-    .container > section#fullPage {
+  text-align: center; }
+  .container > article {
+    width: 100%;
+    position: relative;
+    content: "";
+    display: block;
+    clear: both; }
+    .container > article#fullPage {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-image: url("../img/bg/header.jpg"); }
+      background-image: url("../img/bg/header.jpg");
+      display: flex;
+      align-items: center; }
+      .container > article#fullPage div {
+        width: 100%; }
+        .container > article#fullPage div.con {
+          width: 38vw;
+          margin: -5vh auto 0; }
+          .container > article#fullPage div.con p {
+            margin: 0.5vh 0 3.5vh; }
+          .container > article#fullPage div.con h2 {
+            font-size: 4.4rem; }
+          .container > article#fullPage div.con button {
+            border: 3px solid #2F2419;
+            padding: 2.2vh 2.2vw;
+            font-size: 1.8rem;
+            transition: all 0.3s; }
+            .container > article#fullPage div.con button:hover {
+              background-color: rgba(47, 36, 25, 0.8);
+              color: #fff; }
+        .container > article#fullPage div.bottomTxt {
+          position: absolute;
+          bottom: 0;
+          background-color: #2F2419;
+          padding: 4vh 0;
+          color: #fff;
+          font-size: 1.8rem;
+          line-height: 1.8em; }
 
 footer {
   width: 100%;
