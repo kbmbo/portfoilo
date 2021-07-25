@@ -43,3 +43,13 @@ window.addEventListener('touchend', function (){
         window.scrollTo(0, -windowH);
     }
 });
+window.addEventListener('touchstart', function (event,a){
+    let a = event.touches[0].pageX;
+    event.preventDefault();
+});
+window.addEventListener('touchmove', function (event){
+    event.preventDefault();
+});
+window.addEventListener('touchend', function (event,a){
+    console.log(event.changedTouches[0].pageX);
+});
