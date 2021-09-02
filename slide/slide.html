@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>javascript 공부중</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <style>
+            body{margin: 0; padding: 0;}
+            .veiw{overflow: hidden; width: 80%; height: 50vh; position: relative;}
+            .slide{height: 100%; margin: 0; padding:0; transition: transform 1s;}
+            .slide li{height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; list-style: none; float: left;}
+        </style>
+    </head>
+    <body>
+        <div class="veiw">
+            <ul class="slide">
+            </ul>
+        </div>
+        <div class="pager">
+            <button onclick="pager('prev')">prev</button>
+            <button onclick="pager('next')">next</button>
+        </div>
+        <ul class="Paging"></ul>
+        <script>
+            const slide=document.querySelector('.slide');
+            const veiw = document.querySelector('.veiw');
+            let veiwW= getComputedStyle(veiw).width;
+            let imgUrl=[{num:1,url:'./img/1.jpg'},{num:2,url:'./img/2.jpg'},{num:3,url:'./img/3.png'}];
+            let total= imgUrl.length;
+            let i=0;
+            slide.style.width=`${(total*100)}%`;
+            
+            for(let i of imgUrl){
+                slide.innerHTML+=`<li style=width:${veiwW};background-image:url(${i.url});></li>`;
+                document.querySelector('.Paging').innerHTML+=`<li data-num='${i.num}'>${i.num}</li>`;
+            }
+            
+            const pager = (type) => {
+                
+                if(type == 'next' && i > -((total-1)*100/total)){
+                    i = i - (100/total);
+                    
+                } else if(type == 'prev' && i < 0){
+                    i = i + (100/total);                        
+                }
+                slide.style.transform =`translateX(${i}%)`
+            }
+            document.querySelector('.Paging').addEventListener('click', e => {
+                let Pagingnum = e.target.dataset.num-1;
+                slide.style.transform =`translateX(-${Pagingnum*100/total}%)`;
+                //console.log(e.target)
+            });
+            let stX=null;
+            const initTouch = e => {
+                stX=event.touches[0].pageX;
+                //e.preventDefault();
+            }
+            window.addEventListener('touchstart', initTouch);
+            window.addEventListener('touchend',  e => {
+                let endX=e.changedTouches[0].pageX;
+
+                if((stX-endX) > 0  && i > -((total-1)*100/total)){
+                    i = i - (100/total);
+                    
+                }else if((stX-endX) < 0 && i < 0){
+                    i = i + (100/total);                        
+                }
+                slide.style.transform =`translateX(${i}%)`
+            });
+            let firstChild = slide.firstElementChild;
+            let lastChild = slide.lastElementChild;
+            window.addEventListener('resize', () => {
+                veiwW = getComputedStyle(veiw).width;
+                for(let r=0; r < total; r++){                
+                    document.querySelectorAll('.slide li')[r].style.width=veiwW;
+                }
+            });
+        </script>
+    </body>
+</html>
+
+<!-- index구하는 :s
+[].forEach.call(document.querySelectorAll('.Paging li'), function(el) {
+    let Pagingnum = getElementIndex(document.querySelectorAll('.Paging li'), el);
+    
+    el.addEventListener('click', function(){
+        slide.style.transform ='translateX(-'+Pagingnum*100/total+'%)'
+        console.log(Pagingnum)
+    });
+});
+function getElementIndex(element,range){
+    if (!!range) return [].indexOf.call(element, range);
+    return [].indexOf.call(element.parentNode.children, element);
+}
+index구하는 :e -->

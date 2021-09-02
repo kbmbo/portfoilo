@@ -57,7 +57,7 @@ header{
 		height: $SubNavH;
 		background-color: #fff;
 		border-bottom:1px solid $mainColor;
-		h1.logo{width: $SubNavH;}
+		h1.logo{width: calc(#{$SubNavH} - 10px);}
 	}
 }
 /////////// header:e ///////////
