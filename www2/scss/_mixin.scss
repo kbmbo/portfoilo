@@ -1,4 +1,5 @@
-$mainColor:#000;
+$mainColor:#222;
+$gray:#777;
 @mixin both{
 	content: "";
 	display: block;
@@ -28,9 +29,11 @@ $mainColor:#000;
 }
 $breakpoints :(
 	'tablet':(max-width: 1024px),
-	'small-mob':(max-width: 320px),
-	'mob':(max-width: 360px),
 	'max-mob':(max-width: 428px),
+	'mob':(max-width: 360px),
+	'small-mob':(max-width: 320px),
+	
+	
 );
 @mixin screen($name){
 	@if map-has-key($breakpoints, $name) {

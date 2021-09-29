@@ -20,7 +20,7 @@
 /////////// 커스텀 스크롤:e ///////////
 /////////// header:s ///////////
 header {
-	@include position($p:fixed,$t:0);
+	@include position($p:fixed,$t:0,$l:0);
 	@include WH(100%,$navH);
 	padding: 0 2vw;
 	z-index: 999;
@@ -56,7 +56,13 @@ header {
 	&.subNav {
 		height: $subNavH;
 		background-color: rgba(247,247,247,.85);
-		h1.logo { width: calc(#{$subNavH} - 10px); }
+		h1.logo { width: $subNavH; }
+	}
+	@include screen('tablet') {
+		$navH:10vh;
+		height: $navH;
+		padding: 0 1.5vw;
+		h1.logo { width: $navH; }	
 	}
 }
 /////////// header:e ///////////
@@ -91,9 +97,6 @@ header {
 						color: #fff;
 					}
 				}
-				@include screen('tablet') {
-					
-				}
 			}
 			.life-quotes {
 				@include position($p:absolute,$b:0);
@@ -126,7 +129,7 @@ header {
 					}
 					.desc {
 						line-height: 2.2rem;
-						color: #777;
+						color: $gray;
 						margin: 3vh 0 8vh;
 					}
 					&.left-title {
@@ -210,7 +213,7 @@ header {
 						figure {
 							width: calc((100% - (#{$gM}*2)) / 3);
 							padding-bottom: 25%;
-							background-color: #777;
+							background-color: $gray;
 							position: relative;
 							overflow: hidden;
 							float: left;
@@ -226,6 +229,9 @@ header {
 							}
 						}
 					}
+				}
+				@include screen('tablet') {
+					
 				}
 			}
 		}
