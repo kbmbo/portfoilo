@@ -64,6 +64,7 @@ header {
 		$navH:10vh;
 		height: $navH;
 		padding: 0 1.5vw;
+		transform: translate3d(0,0,0);
 		h1.logo { width: $navH; }	
 	}
 }

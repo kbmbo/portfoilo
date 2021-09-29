@@ -20,6 +20,8 @@ function fullPageS(e){
         
     } else if(e.deltaY < 0){
         removeNavT()
+    } else{
+        return false
     }
 }
 function navScroll(e){
@@ -88,24 +90,28 @@ window.addEventListener('resize', function() {
 });
 
 
-window.addEventListener('touchstart', function (e) {
-    e.preventDefault();
-});
-window.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-});
+// window.addEventListener('touchstart', function (e) {
+//     e.preventDefault();
+// });
+// window.addEventListener('touchmove', function (e) {
+//     e.preventDefault();
+// });
 window.addEventListener('touchend', function (e){
     windowH = window.innerHeight;
     header = document.getElementsByTagName('header')[0];
     mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
     let pY = e.changedTouches[0].pageY;
-
-    if(pY < targetBottom) {
+    if(pY < mainBottom) {
         window.scrollTo(0, windowH);
         header.classList.add('subNav');
-    } else if(pY > targetBottom && 0 < targetBottom) {
+        document.getElementById('portfolio').classList.add('navT');
+    } else if(pY > mainBottom && 0 < mainBottom) {
         window.scrollTo(0,0);
         header.classList.remove('subNav');
+    } else if(pY > mainBottom) {
+        removeNavT()
+    } else{
+        return false
     }
 });
 

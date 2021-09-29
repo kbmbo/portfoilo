@@ -153,6 +153,7 @@ header.subNav h1.logo {
   header {
     height: 10vh;
     padding: 0 1.5vw;
+    transform: translate3d(0, 0, 0);
   }
   header h1.logo {
     width: 10vh;
