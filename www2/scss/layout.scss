@@ -25,6 +25,8 @@ header {
 	padding: 0 2vw;
 	z-index: 999;
 	transition: all 0.3s;
+	overflow:hidden;
+	-webkit-overflow-scrolling:touch;
 	h1.logo {
 		@include WH($navH,100%);
 		@include bgImg(contain);
@@ -62,7 +64,6 @@ header {
 		$navH:10vh;
 		height: $navH;
 		padding: 0 1.5vw;
-		@include position($p:sticky,$t:0,$l:0);
 		h1.logo { width: $navH; }	
 	}
 }
