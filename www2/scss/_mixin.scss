@@ -1,4 +1,4 @@
-$mainColor:#2F2419;
+$mainColor:#000;
 @mixin both{
 	content: "";
 	display: block;
@@ -38,5 +38,7 @@ $breakpoints :(
 	} 
 	@else { @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. Please make sure it is defined in `$breakpoints` map."; }
 }
-$navH:120px;
-$SubNavH:75px;
+$navH:12.8vh;
+$subNavH:75px;
+$subP:15vw;
+$gM:5vmin;

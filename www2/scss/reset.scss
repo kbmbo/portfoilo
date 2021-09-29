@@ -47,9 +47,9 @@
   background: transparent;
   font-weight: normal;
 }
-html {font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;scroll-behavior: smooth;}
-body {background-color: #fff;font-size: 1.4rem;font-weight: 400;color: #222;}
+html {font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 10px;scroll-behavior: smooth;word-break:keep-all}
+body {background-color: #fff;font-size: 1.5rem;font-weight: 400;color: #222;}
 li {list-style: none;}
-button {background-color: transparent; cursor: pointer;font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 63%;}
+button {background-color: transparent; cursor: pointer;font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 10px; letter-spacing: 1px;}
 aside, details, figcaption, figure, footer, header, hgroup, menu, nav{display: block;}
 a {text-decoration: none;}

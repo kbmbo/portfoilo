@@ -1,30 +1,35 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'notokr';
+  font-family: "notokr";
   src: url("../font/notokr-light.eot");
   src: url("../font/notokr-light.woff2") format("woff2"), url("../font/notokr-light.woff") format("woff");
-  font-weight: 300; }
+  font-weight: 300;
+}
 @font-face {
-  font-family: 'notokr';
+  font-family: "notokr";
   src: url("../font/notokr-regular.eot");
   src: url("../font/notokr-regular.woff2") format("woff2"), url("../font/notokr-regular.woff") format("woff");
-  font-weight: 400; }
+  font-weight: 400;
+}
 @font-face {
-  font-family: 'notokr';
+  font-family: "notokr";
   src: url("../font/notokr-medium.eot");
   src: url("../font/notokr-medium.woff2") format("woff2"), url("../font/notokr-medium.woff") format("woff");
-  font-weight: 500; }
+  font-weight: 500;
+}
 @font-face {
-  font-family: 'notokr';
+  font-family: "notokr";
   src: url("../font/notokr-bold.eot");
   src: url("../font/notokr-bold.woff2") format("woff2"), url("../font/notokr-bold.woff") format("woff");
-  font-weight: 600; }
+  font-weight: 600;
+}
 @font-face {
-  font-family: 'DidactGothic';
+  font-family: "DidactGothic";
   src: url("../font/DidactGothic-Regular.eot");
   src: url("../font/DidactGothic-Regular.woff2") format("woff2"), url("../font/DidactGothic-Regular.woff") format("woff");
   unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
-  font-weight: 400; }
+  font-weight: 400;
+}
 /* CSS 초기화 */
 * {
   box-sizing: border-box;
@@ -35,138 +40,307 @@
   outline: 0;
   vertical-align: baseline;
   background: transparent;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 html {
-  font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';
-  font-size: 63%;
-  scroll-behavior: smooth; }
+  font-family: "DidactGothic", "notokr", Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", "sans-serif";
+  font-size: 10px;
+  scroll-behavior: smooth;
+  word-break: keep-all;
+}
 
 body {
   background-color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: #222; }
+  color: #222;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
 
 button {
   background-color: transparent;
   cursor: pointer;
-  font-family: 'DidactGothic','notokr',Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';
-  font-size: 63%; }
+  font-family: "DidactGothic", "notokr", Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", "sans-serif";
+  font-size: 10px;
+  letter-spacing: 1px;
+}
 
 aside, details, figcaption, figure, footer, header, hgroup, menu, nav {
-  display: block; }
+  display: block;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(95, 78, 78, 0.1);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
   background-color: #f5f5f5;
-  margin-left: 5px; }
+  margin-left: 5px;
+}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: rgba(85, 85, 85, 0.15); }
+  background-color: rgba(85, 85, 85, 0.15);
+}
 
 header {
-  width: 100%;
-  height: 120px;
-  padding: 0 2%;
   position: fixed;
   top: 0;
+  width: 100%;
+  height: 12.8vh;
+  padding: 0 2vw;
   z-index: 999;
-  transition: all 0.3s; }
-  header h1.logo {
-    width: 120px;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-image: url("../img/svg/logo.svg");
-    text-indent: -99999999px;
-    float: left;
-    transition: all 0.3s; }
-  header .menu {
-    height: 100%;
-    float: right; }
-    header .menu .menu-list {
-      height: 100%; }
-      header .menu .menu-list ul {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem; }
-        header .menu .menu-list ul li {
-          float: left;
-          margin-left: 15px;
-          padding: 10px;
-          cursor: pointer; }
-    header .menu button.m-nav {
-      display: none; }
-  header.subNav {
-    height: 75px;
-    background-color: #fff;
-    border-bottom: 1px solid #2F2419; }
-    header.subNav h1.logo {
-      width: calc(75px - 10px); }
+  transition: all 0.3s;
+}
+header h1.logo {
+  width: 12.8vh;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../img/svg/logo.svg");
+  text-indent: -99999999px;
+  float: left;
+  transition: all 0.3s;
+}
+header .menu {
+  height: 100%;
+  float: right;
+}
+header .menu .menu-list {
+  height: 100%;
+}
+header .menu .menu-list ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+header .menu .menu-list ul li {
+  float: left;
+  margin-left: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+header .menu button.m-nav {
+  display: none;
+}
+header.subNav {
+  height: 75px;
+  background-color: rgba(247, 247, 247, 0.85);
+}
+header.subNav h1.logo {
+  width: calc(75px - 10px);
+}
 
 .container {
-  text-align: center; }
-  .container > article {
-    width: 100%;
-    position: relative;
-    content: "";
-    display: block;
-    clear: both; }
-    .container > article#fullPage {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-image: url("../img/bg/header.jpg");
-      display: flex;
-      align-items: center; }
-      .container > article#fullPage div {
-        width: 100%; }
-        .container > article#fullPage div.con {
-          width: 38vw;
-          margin: -5vh auto 0; }
-          .container > article#fullPage div.con p {
-            margin: 0.5vh 0 3.5vh; }
-          .container > article#fullPage div.con h2 {
-            font-size: 4.4rem; }
-          .container > article#fullPage div.con button {
-            border: 3px solid #2F2419;
-            padding: 0 2.2vw;
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            height: 7.8vh; }
-            .container > article#fullPage div.con button:hover {
-              background-color: rgba(47, 36, 25, 0.8);
-              color: #fff; }
-          @media only screen and (max-width: 1024px) {
-            .container > article#fullPage div.con {
-              width: 75vw; }
-              .container > article#fullPage div.con button {
-                height: 6vh; } }
-        .container > article#fullPage div.bottomTxt {
-          position: absolute;
-          bottom: 0;
-          background-color: #2F2419;
-          padding: 4vh 0;
-          color: #fff;
-          font-size: 1.8rem;
-          line-height: 1.8em; }
+  text-align: center;
+}
+.container > article {
+  width: 100%;
+  position: relative;
+}
+.container > article:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container > article#fullPage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/bg/flower4.jpg");
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.container > article#fullPage .con {
+  width: 77vmin;
+  margin: -5vh auto 0;
+}
+.container > article#fullPage .con p {
+  margin: 0.5vh 0 3.5vh;
+}
+.container > article#fullPage .con h2 {
+  font-size: 4.7vmin;
+}
+.container > article#fullPage .con button {
+  border: 2px solid #000;
+  padding: 0 2.2vw;
+  font-size: 1.8vmin;
+  transition: all 0.3s;
+  height: 8.2vmin;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.container > article#fullPage .con button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+.container > article#fullPage .life-quotes {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  width: 100%;
+  padding: 3.5vh 0;
+  color: #fff;
+  font-size: 1.8vmin;
+  line-height: 3.2vh;
+}
+.container > article#scrollPage section {
+  position: relative;
+}
+.container > article#scrollPage section.navT {
+  padding-top: 95px;
+}
+.container > article#scrollPage section:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container > article#scrollPage section .title h2 {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.container > article#scrollPage section .title h2:after {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  content: "";
+  display: block;
+  transition: all 0.5s;
+  margin-top: 5px;
+}
+.container > article#scrollPage section .title .desc {
+  line-height: 2.2rem;
+  color: #777;
+  margin: 3vh 0 8vh;
+}
+.container > article#scrollPage section .title.left-title {
+  width: 50%;
+  text-align: left;
+  padding-right: 4vw;
+  font-size: 1.6rem;
+}
+.container > article#scrollPage section .title.left-title p {
+  margin-bottom: 15px;
+  line-height: 2.4rem;
+}
+.container > article#scrollPage section.about {
+  display: flex;
+  justify-content: space-between;
+}
+.container > article#scrollPage section.about .profile-img {
+  width: 50%;
+  height: 55vmin;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/kspring.jpg");
+}
+.container > article#scrollPage section.profile ul {
+  display: flex;
+  justify-content: space-around;
+}
+.container > article#scrollPage section.profile ul li span {
+  font-size: 5rem;
+}
+.container > article#scrollPage section.portfolio, .container > article#scrollPage section.about, .container > article#scrollPage section.profile {
+  margin: 6vh 0;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.container > article#scrollPage section.life-quotes {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 25vmin;
+}
+.container > article#scrollPage section.life-quotes.Bill-Gates {
+  background-image: url("../img/bg/flower3.jpg");
+}
+.container > article#scrollPage section.life-quotes.Hal-Borland {
+  background-image: url("../img/bg/flower2.jpg");
+}
+.container > article#scrollPage section.life-quotes .mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.container > article#scrollPage section.life-quotes .mask .txt {
+  margin: 0 auto;
+}
+.container > article#scrollPage section.life-quotes .mask .txt span {
+  font-size: 5vmin;
+  line-height: 0;
+}
+.container > article#scrollPage section.life-quotes .mask .txt h3 {
+  font-size: 3vmin;
+  margin: 1.2vmin 0;
+}
+.container > article#scrollPage section .gallery-container .filter-btn {
+  display: flex;
+  justify-content: center;
+}
+.container > article#scrollPage section .gallery-container .filter-btn li {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  border: 1px solid #000;
+  margin: 0 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.container > article#scrollPage section .gallery-container .filter-btn li:hover, .container > article#scrollPage section .gallery-container .filter-btn li.active {
+  background-color: #000;
+  color: #fff;
+}
+.container > article#scrollPage section .gallery-container .filter-btn li:first-child {
+  margin-left: 0;
+}
+.container > article#scrollPage section .gallery-container .filter-btn li:last-child {
+  margin-right: 0;
+}
+.container > article#scrollPage section .gallery-container .gallery-list figure {
+  width: calc((100% - (5vmin*2)) / 3);
+  padding-bottom: 25%;
+  background-color: #777;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin: 5vmin 5vmin 0 0;
+  cursor: pointer;
+}
+.container > article#scrollPage section .gallery-container .gallery-list figure:nth-of-type(3n) {
+  margin-right: 0;
+}
+.container > article#scrollPage section .gallery-container .gallery-list figure figcaption {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.3s;
+  display: none;
+}
 
 footer {
   width: 100%;
@@ -174,7 +348,103 @@ footer {
   line-height: 50px;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
-  background-color: #2F2419;
-  font-weight: 300; }
+  background-color: #000;
+  font-weight: 300;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    -ms-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
 
 /*# sourceMappingURL=common.css.map */

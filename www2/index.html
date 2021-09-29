@@ -18,7 +18,7 @@
     </head>
     <body>
         <header>
-            <h1 class="logo">kspring portfolio</h1>
+            <h1 class="logo" data-scroll="fullPage">kspring portfolio</h1>
             <nav class="menu">
                 <button type="button" class="m-nav">
                     <span></span>
@@ -27,29 +27,150 @@
                 </button>
                 <div class="menu-list">
                      <ul>
-                        <li>Home</li>
-                        <li>Portfolio</li>
-                        <li>About me</li>
-                        <li>Mini profile</li>
+                        <li type="button" data-scroll="fullPage">Home</li>
+                        <li type="button" data-scroll="portfolio">Portfolio</li>
+                        <li type="button" data-scroll="about">About me</li>
+                        <li type="button" data-scroll="profile">Mini profile</li>
                     </ul>
                 </div>
             </nav>
         </header>
         <div class="container">
-            <article id="fullPage">
-                <div class="con">
-                    <h2>THE FLOWER THAT BLOOMS IN ADVERSITY IS THE RAREST AND MOST BEAUTIFUL OF ALL</h2>
+            <article role="main" id="fullPage">
+                <div class="con animated zoomIn">
+                    <h2>The flower that blooms in adversity is the rarest and most beautiful of all</h2>
                     <p>- MULAN -</p>
-                    <button>see portfolio</button>
+                    <button type="button" data-scroll="portfolio">see portfolio</button>
                 </div>
-                <div class="bottomTxt">
-                    <p>THE FLOWER THAT BLOOMS IN ADVERSITY IS THE RAREST AND MOST BEAUTIFUL OF ALL.</p>
+                <div class="life-quotes">
+                    <p>The flower that blooms in adversity is the rarest and most beautiful of all.</p>
                     <p>역경을 이겨내고 피어난 꽃이 모든 꽃 중에 가장 아름답다.</p>
                 </div>
             </article>
-            <article id="scrollPage" style="height: 10000px;">
-                <section></section>
-                <section></section>
+            <article id="scrollPage">
+                <section id="portfolio" class="portfolio" aria-label="포트폴리오 소개">
+                    <div class="title">
+                        <h2 class="animated fadeInDown">portfolio</h2>
+                        <div class="desc animated fadeInUp">
+                            <p>Javascript, React, Vue는 개인 포트폴리오용으로 제작되었습니다.</p>
+                            <p>Work는 퍼블리셔로 근무하며 jquery로 작업하였습니다.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-container">
+                        <ul role="tablist" class="filter-btn">
+                            <li role="tab" class="tapBtn active" data-filter="all">All</li>
+                            <li role="tab" class="tapBtn" data-filter="javascript">Javascript</li>
+                            <li role="tab" class="tapBtn" data-filter="react">React</li>
+                            <li role="tab" class="tapBtn" data-filter="vue">Vue</li>
+                            <li role="tab" class="tapBtn" data-filter="work">Work</li>
+                        </ul>
+                        <div class="gallery-list">
+                            <figure class="galleryCon all javascript">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>javascript</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all react">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>react</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all react">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>react</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all javascript">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>javascript</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all vue">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>vue</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all work">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>work</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                            <figure class="galleryCon all work">
+                                <div class="img" aria-label=""></div>
+                                <figcaption>
+                                    <h4>work</h4>
+                                    <p type="button" onclick="window.open('')">설명어쩌구저쩌구</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <section class="life-quotes Bill-Gates" aria-label="봄 관련 짧은 글귀">
+                    <div class="mask">
+                        <div class="txt">
+                            <span>&#10058;</span>
+                            <h3>Winter is on my head, but etrnal spring is in my heart.</h3>
+                            <p>Bill Gates</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="about" class="about" aria-label="자기소개">
+                    <div class="title left-title">
+                        <h2 class="animated fadeInDown">about me</h2>
+                        <div class="desc animated fadeInUp">
+                            <p>kspring 홈페이지는 제 이름의 별칭인 봄을 컨셉으로 제작한 반응형웹 입니다.</p>
+                            <p>학원 웹디자인과정 수료를 통해 웹디자이너로 취업하여 실무를 경력을 쌓아왔습니다. 업무중 하나였던 홈페이지 유지보수와 제작을 하며 웹디자인과 마크업을 같이 하는 포지션이 아닌, 퍼블리셔 직무에 관심을 가지게 되었습니다.</p>
+                            <p>독학을 통해 퍼블리셔 포지션으로 입사하였고, jquery를 이용한 광고배너 레이아웃 제작 및 광고 상품 개발 프로젝트에도 참여하였습니다.</p>
+                            <p>현재는 React, Vue를 이용한 프로젝트 참여를 목표로 공부중이며, 실무와 꾸준한 공부를 통해 프론트엔드 개발자로 성장할것입니다.</p>
+                        </div>
+                    </div>
+                    <div class="profile-img" aria-label="봄여행 사진"></div>
+                </section>
+                <section class="life-quotes Hal-Borland" aria-label="봄 관련 짧은 글귀">
+                    <div class="mask">
+                        <div class="txt">
+                            <span>&#10058;</span>
+                            <h3>No winter lasts forever, no spring skips it's turn.</h3>
+                            <p>Hal Borland</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="profile" class="profile" aria-label="프로필 및 연락처">
+                    <div class="title">
+                        <h2 class="animated fadeInDown">mini profile</h2>
+                        <div class="desc animated fadeInUp">
+                            <p>김보미 / 1987년생 / 총 경력 년</p>
+                            <p>html5, css3, scss, jquery, javascript ES6, react, vue</p>
+                            <p>궁금하신 사항은 문자로 연락 부탁드립니다.</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>&#9993;</span>
+                            <p>kbmbo@naver.com</p>
+                        </li>
+                        <li>
+                            <span>&#9742;</span>
+                            <p>+82-10-9749-0238</p>
+                        </li>
+                        <li>
+                            <span>&#9872;</span>
+                            <p>서울특별시 관악구 신림</p>
+                        </li>
+                    </ul>
+                </section>
             </article>
         </div>
         <footer>
