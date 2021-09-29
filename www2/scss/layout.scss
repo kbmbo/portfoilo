@@ -62,6 +62,7 @@ header {
 		$navH:10vh;
 		height: $navH;
 		padding: 0 1.5vw;
+		@include position($p:absolute,$t:0,$l:0);
 		h1.logo { width: $navH; }	
 	}
 }

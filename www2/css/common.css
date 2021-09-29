@@ -151,6 +151,9 @@ header.subNav h1.logo {
   header {
     height: 10vh;
     padding: 0 1.5vw;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   header h1.logo {
     width: 10vh;
