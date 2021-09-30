@@ -11,7 +11,7 @@ function fullPageS(e){
     mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
     e.preventDefault();
     if(e.deltaY > 0 && mainBottom == windowH){
-        window.scrollBy(0, windowH);
+        window.scrollTo(0, windowH);
         header.classList.add('subNav');
         document.getElementById('portfolio').classList.add('navT');
     } else if(e.deltaY < 0 && mainBottom > 15){
@@ -34,10 +34,10 @@ function navScroll(e){
             header.classList.add('subNav');
             removeNavT()
             scrollTo.classList.add('navT');
-            scrollTo.scrollIntoView({ behavior: "smooth" });
+            window.scrollTo(0, scrollY);
         } else {
             header.classList.remove('subNav');
-            scrollTo.scrollIntoView({ behavior: "smooth" });
+            window.scrollTo(0, 0);
         }
     } else{
         return false
