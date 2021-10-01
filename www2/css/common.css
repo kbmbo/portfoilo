@@ -57,8 +57,6 @@ body {
   color: #222;
   scroll-behavior: smooth;
   width: 100%;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 li {
@@ -110,6 +108,7 @@ header {
   padding: 0 2vw;
   z-index: 999;
   transition: all 0.3s;
+  -webkit-overflow-scrolling: touch;
 }
 header h1.logo {
   width: 12.8vh;
@@ -155,7 +154,6 @@ header.subNav h1.logo {
 @media only screen and (max-width: 1024px) {
   header {
     height: 10vh;
-    transform: translate3d(0, 0, 0);
   }
   header h1.logo {
     width: 10vh;

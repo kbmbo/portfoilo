@@ -25,6 +25,7 @@ header {
 	padding: 0 2vw;
 	z-index: 999;
 	transition: all 0.3s;
+	-webkit-overflow-scrolling:touch;
 	h1.logo {
 		@include WH($navH,100%);
 		@include bgImg(contain);
@@ -61,7 +62,6 @@ header {
 	@include screen('tablet') {
 		$navH:10vh;
 		height: $navH;
-		transform: translate3d(0,0,0);
 		h1.logo { width: $navH; }	
 	}
 	@include screen('max-mob') {
