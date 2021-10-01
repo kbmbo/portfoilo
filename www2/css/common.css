@@ -55,6 +55,10 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   color: #222;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 li {
@@ -106,8 +110,6 @@ header {
   padding: 0 2vw;
   z-index: 999;
   transition: all 0.3s;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 header h1.logo {
   width: 12.8vh;
@@ -121,6 +123,7 @@ header h1.logo {
   transition: all 0.3s;
 }
 header .menu {
+  width: calc(100% - 12.8vh);
   height: 100%;
   float: right;
 }
@@ -152,11 +155,53 @@ header.subNav h1.logo {
 @media only screen and (max-width: 1024px) {
   header {
     height: 10vh;
-    padding: 0 1.5vw;
     transform: translate3d(0, 0, 0);
   }
   header h1.logo {
     width: 10vh;
+  }
+}
+@media only screen and (max-width: 428px) {
+  header {
+    padding: 0 3vw;
+  }
+  header .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  header .menu button.m-nav {
+    width: 40px;
+    display: block;
+    float: right;
+  }
+  header .menu button.m-nav p {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #222;
+    margin-bottom: 10px;
+  }
+  header .menu button.m-nav p:last-child {
+    margin-bottom: 0;
+  }
+  header .menu .menu-list {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  header .menu .menu-list ul {
+    flex-direction: column;
+    font-size: 1.4rem;
+    background-color: rgba(247, 247, 247, 0.9);
+  }
+  header .menu .menu-list ul li {
+    padding: 14px 0;
+    margin-left: 0;
+    text-align: center;
   }
 }
 

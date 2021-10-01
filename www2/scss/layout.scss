@@ -25,8 +25,6 @@ header {
 	padding: 0 2vw;
 	z-index: 999;
 	transition: all 0.3s;
-	overflow:hidden;
-	-webkit-overflow-scrolling:touch;
 	h1.logo {
 		@include WH($navH,100%);
 		@include bgImg(contain);
@@ -36,7 +34,7 @@ header {
 		transition: all 0.3s;
 	}
 	.menu {
-		height: 100%;
+		@include WH(calc(100% - #{$navH}),100%);
 		float: right;
 		.menu-list {
 			height: 100%;
@@ -63,9 +61,46 @@ header {
 	@include screen('tablet') {
 		$navH:10vh;
 		height: $navH;
-		padding: 0 1.5vw;
 		transform: translate3d(0,0,0);
 		h1.logo { width: $navH; }	
+	}
+	@include screen('max-mob') {
+		$navH:10vh;
+		padding: 0 3vw;
+		.menu {
+			display: flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items: flex-end;
+			button.m-nav { 
+				width: 40px;
+				display: block;
+				float: right;
+				p {
+					@include WH(100%,4px);
+					border-radius: 2px;
+					background-color: $mainColor;
+					margin-bottom: 10px;
+					&:last-child { margin-bottom: 0; }
+				}
+			}
+			.menu-list {
+				@include position($p:absolute,$t:$navH,$l:0);
+				width: 100%;
+				height: auto;
+				ul {
+					flex-direction:column;
+					font-size: 1.4rem;
+					background-color: rgba(247,247,247,.9);
+					li {
+						padding: 14px 0;
+						margin-left: 0;
+						text-align: center;
+					}
+				}
+			}
+			
+		}
 	}
 }
 /////////// header:e ///////////
