@@ -27,6 +27,9 @@ $gray:#777;
         position:center;
     }
 }
+@mixin transition{
+	transition: all 0.3s;
+}
 $breakpoints :(
 	'tablet':(max-width: 1024px),
 	'max-mob':(max-width: 428px),
