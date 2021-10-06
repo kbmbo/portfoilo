@@ -27,7 +27,7 @@
   font-family: "DidactGothic";
   src: url("../font/DidactGothic-Regular.eot");
   src: url("../font/DidactGothic-Regular.woff2") format("woff2"), url("../font/DidactGothic-Regular.woff") format("woff");
-  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
   font-weight: 400;
 }
 /* CSS 초기화 */
@@ -44,6 +44,7 @@
 }
 
 html {
+  width: 100%;
   font-family: "DidactGothic", "notokr", Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", "sans-serif";
   font-size: 10px;
   scroll-behavior: smooth;
@@ -51,12 +52,12 @@ html {
 }
 
 body {
+  width: 100%;
   background-color: #fff;
   font-size: 1.5rem;
   font-weight: 400;
   color: #222;
   scroll-behavior: smooth;
-  width: 100%;
 }
 
 li {
@@ -68,7 +69,6 @@ button {
   cursor: pointer;
   font-family: "DidactGothic", "notokr", Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", "sans-serif";
   font-size: 10px;
-  letter-spacing: 1px;
   color: #222;
 }
 
@@ -78,6 +78,7 @@ aside, details, figcaption, figure, footer, header, hgroup, menu, nav {
 
 a {
   text-decoration: none;
+  color: #222;
 }
 
 ::-webkit-scrollbar-track {
@@ -97,6 +98,27 @@ a {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: rgba(85, 85, 85, 0.15);
+}
+
+@media only screen and (max-width: 428px) {
+  ::-webkit-scrollbar-track, ::-webkit-scrollbar, ::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
+}
+.dim {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s;
+  display: none;
+  z-index: 9;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.dim.dimOn {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
 header {
@@ -121,12 +143,11 @@ header h1.logo {
   background-image: url("../img/svg/logo.svg");
   text-indent: -99999999px;
   float: left;
-  padding: 0 2vw;
 }
 header .menu {
-  width: calc(100% - 12.8vh);
   height: 100%;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
 }
 header .menu .menu-list {
   height: 100%;
@@ -148,61 +169,10 @@ header .menu button.m-nav {
 }
 header.subNav {
   height: 75px;
-  background-color: rgba(247, 247, 247, 0.85);
+  background-color: rgba(247, 247, 247, 0.9);
 }
 header.subNav h1.logo {
   width: 75px;
-}
-@media only screen and (max-width: 428px) {
-  header {
-    height: 10vh;
-    padding: 0 3vw;
-  }
-  header h1.logo {
-    width: 10vh;
-  }
-  header .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  header .menu button.m-nav {
-    width: 40px;
-    display: block;
-    float: right;
-  }
-  header .menu button.m-nav p {
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: #222;
-    margin-bottom: 10px;
-  }
-  header .menu button.m-nav p:last-child {
-    margin-bottom: 0;
-  }
-  header .menu .menu-list {
-    position: fixed;
-    top: 10vh;
-    left: 0;
-    transition: all 0.3s;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    visibility: hidden;
-  }
-  header .menu .menu-list ul {
-    flex-direction: column;
-    font-size: 1.4rem;
-    background-color: rgba(247, 247, 247, 0.9);
-  }
-  header .menu .menu-list ul li {
-    padding: 14px 0;
-    margin-left: 0;
-    text-align: center;
-  }
 }
 
 .container {
@@ -223,12 +193,13 @@ header.subNav h1.logo {
   background-position: center;
   background-image: url("../img/bg/flower4.jpg");
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-transform: uppercase;
 }
 .container > article#fullPage .con {
   width: 77vmin;
-  margin: -5vh auto 0;
 }
 .container > article#fullPage .con p {
   margin: 0.5vh 0 3.5vh;
@@ -241,7 +212,6 @@ header.subNav h1.logo {
   border: 2px solid #222;
   padding: 0 2.2vw;
   font-size: 1.8vmin;
-  padding: 0 2vw;
   height: 8.2vmin;
   text-transform: uppercase;
   background-color: rgba(0, 0, 0, 0.2);
@@ -260,11 +230,25 @@ header.subNav h1.logo {
   font-size: 1.8vmin;
   line-height: 3.2vh;
 }
-.container > article#scrollPage section {
-  position: relative;
+@media only screen and (max-width: 428px) {
+  .container > article#fullPage .con h2 {
+    font-size: 4vh;
+  }
+  .container > article#fullPage .con button {
+    padding: 0 2.5vw;
+    font-size: 1.8vh;
+    height: 8.2vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #e6e6e6;
+  }
+  .container > article#fullPage .life-quotes {
+    padding: 3vh 0;
+    font-size: 3.8vmin;
+  }
 }
-.container > article#scrollPage section.navT {
-  padding-top: 95px;
+.container > article#scrollPage section {
+  transition: all 0.3s;
+  position: relative;
 }
 .container > article#scrollPage section:after {
   content: "";
@@ -300,17 +284,46 @@ header.subNav h1.logo {
   margin-bottom: 15px;
   line-height: 2.4rem;
 }
+.container > article#scrollPage section .title.left-title .desc {
+  margin: 3vh 0 0;
+}
+@media only screen and (max-width: 736px) {
+  .container > article#scrollPage section .title.left-title {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .container > article#scrollPage section .title .desc {
+    margin: 2.2vh 0 4.5vh;
+  }
+}
+@media only screen and (max-width: 428px) {
+  .container > article#scrollPage section .title h2 {
+    font-size: 7vW;
+  }
+}
 .container > article#scrollPage section.about {
   display: flex;
   justify-content: space-between;
 }
 .container > article#scrollPage section.about .profile-img {
-  width: 50%;
-  height: 55vmin;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-image: url("../img/kspring.jpg");
+  width: 50%;
+  padding-bottom: 45%;
+}
+@media only screen and (max-width: 736px) {
+  .container > article#scrollPage section.about {
+    flex-direction: column;
+  }
+  .container > article#scrollPage section.about .profile-img {
+    width: 100%;
+    padding-bottom: 85%;
+    margin-top: 15px;
+  }
 }
 .container > article#scrollPage section.profile ul {
   display: flex;
@@ -320,9 +333,12 @@ header.subNav h1.logo {
   font-size: 5rem;
 }
 .container > article#scrollPage section.portfolio, .container > article#scrollPage section.about, .container > article#scrollPage section.profile {
-  margin: 6vh 0;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding: 85px 13vw;
+}
+@media only screen and (max-width: 1024px) {
+  .container > article#scrollPage section.portfolio, .container > article#scrollPage section.about, .container > article#scrollPage section.profile {
+    padding: 85px 6vw;
+  }
 }
 .container > article#scrollPage section.life-quotes {
   background-repeat: no-repeat;
@@ -343,9 +359,10 @@ header.subNav h1.logo {
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .container > article#scrollPage section.life-quotes .mask .txt {
-  margin: 0 auto;
+  width: 95%;
 }
 .container > article#scrollPage section.life-quotes .mask .txt span {
   font-size: 5vmin;
@@ -355,6 +372,22 @@ header.subNav h1.logo {
   font-size: 3vmin;
   margin: 1.2vmin 0;
 }
+@media only screen and (max-width: 428px) {
+  .container > article#scrollPage section.life-quotes {
+    height: 45vmin;
+  }
+  .container > article#scrollPage section.life-quotes .mask .txt span {
+    font-size: 7vmin;
+  }
+  .container > article#scrollPage section.life-quotes .mask .txt h3 {
+    font-size: 5.5vmin;
+    line-height: 6.5vmin;
+    margin: 1.5vmin 0 2.8vmin;
+  }
+  .container > article#scrollPage section.life-quotes .mask .txt p {
+    font-size: 4.5vmin;
+  }
+}
 .container > article#scrollPage section .gallery-container .filter-btn {
   display: flex;
   justify-content: center;
@@ -363,7 +396,6 @@ header.subNav h1.logo {
   height: 50px;
   line-height: 50px;
   transition: all 0.3s;
-  padding: 0 16px;
   border: 1px solid #000;
   margin: 0 10px;
   overflow: hidden;
@@ -380,14 +412,25 @@ header.subNav h1.logo {
 .container > article#scrollPage section .gallery-container .filter-btn li:last-child {
   margin-right: 0;
 }
+@media only screen and (max-width: 428px) {
+  .container > article#scrollPage section .gallery-container .filter-btn {
+    justify-content: space-between;
+  }
+  .container > article#scrollPage section .gallery-container .filter-btn li {
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+    padding: 0 2.5vw;
+  }
+}
 .container > article#scrollPage section .gallery-container .gallery-list figure {
-  width: calc((100% - (5vmin*2)) / 3);
-  padding-bottom: 25%;
+  width: calc((100% - (3.5vmin*2)) / 3);
+  padding-bottom: 30%;
   background-color: #777;
   position: relative;
   overflow: hidden;
   float: left;
-  margin: 5vmin 5vmin 0 0;
+  margin: 3.5vmin 3.5vmin 0 0;
   cursor: pointer;
 }
 .container > article#scrollPage section .gallery-container .gallery-list figure:nth-of-type(3n) {
@@ -403,16 +446,109 @@ header.subNav h1.logo {
   padding: 0 2vw;
   display: none;
 }
+@media only screen and (max-width: 1024px) {
+  .container > article#scrollPage section .gallery-container .gallery-list figure {
+    width: calc((100% - (2.5vmin*2)) / 3);
+    margin: 2.5vmin 2.5vmin 0 0;
+  }
+}
+@media only screen and (max-width: 428px) {
+  .container > article#scrollPage section .gallery-container .gallery-list figure {
+    width: 100%;
+    padding-bottom: 65%;
+    margin: 20px 0 0;
+  }
+}
+
 footer {
-  width: 100%;
   height: 50px;
   line-height: 50px;
+  width: 100%;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   background-color: #222;
   font-weight: 300;
 }
 
+@media only screen and (max-width: 428px) {
+  header {
+    height: 10vh;
+    padding: 0 3vw;
+  }
+  header h1.logo {
+    width: 10vh;
+  }
+  header .menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  header .menu button.m-nav {
+    width: 35px;
+    height: 35px;
+    display: block;
+    position: relative;
+  }
+  header .menu button.m-nav p {
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s;
+    border-radius: 2px;
+    background-color: #222;
+    margin-bottom: 8px;
+  }
+  header .menu button.m-nav p:last-child {
+    margin-bottom: 0;
+  }
+  header .menu button.m-nav.on p {
+    position: absolute;
+  }
+  header .menu button.m-nav.on p:first-child {
+    transform: rotate(-45deg);
+  }
+  header .menu button.m-nav.on p:nth-child(2) {
+    display: none;
+  }
+  header .menu button.m-nav.on p:last-child {
+    transform: rotate(45deg);
+  }
+  header .menu .menu-list {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    transition: all 0.3s;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  header .menu .menu-list.down {
+    top: 65px;
+    height: 188px;
+    border-top: 1px solid #fff;
+  }
+  header .menu .menu-list ul {
+    flex-direction: column;
+    font-size: 1.4rem;
+    background-color: rgba(247, 247, 247, 0.9);
+  }
+  header .menu .menu-list ul li {
+    padding: 14px 0;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+  header.subNav {
+    height: 65px;
+  }
+  header.subNav h1.logo {
+    width: 65px;
+  }
+
+  .container > article#scrollPage section.portfolio, .container > article#scrollPage section.about, .container > article#scrollPage section.profile {
+    padding: 75px 5vw;
+  }
+}
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;

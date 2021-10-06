@@ -1,5 +1,4 @@
-$mainColor:#222;
-$gray:#777;
+
 @mixin both{
 	content: "";
 	display: block;
@@ -32,11 +31,10 @@ $gray:#777;
 }
 $breakpoints :(
 	'tablet':(max-width: 1024px),
+	'max-mob2':(max-width: 736px),
 	'max-mob':(max-width: 428px),
 	'mob':(max-width: 360px),
 	'small-mob':(max-width: 320px),
-	
-	
 );
 @mixin screen($name){
 	@if map-has-key($breakpoints, $name) {
@@ -44,7 +42,11 @@ $breakpoints :(
 	} 
 	@else { @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. Please make sure it is defined in `$breakpoints` map."; }
 }
+
+$mainColor:#222;
+$gray:#777;
+$subNavC:rgba(247,247,247,.9);
 $navH:12.8vh;
 $subNavH:75px;
-$subP:15vw;
-$gM:5vmin;
+$subP:13vw;
+$galleryM:3.5vmin;

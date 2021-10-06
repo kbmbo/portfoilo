@@ -1,60 +1,62 @@
-var windowH, header, mainBottom
-
+var windowH
+var menuList = document.querySelector('.menuList');
+var mobBtn = document.querySelector('.mNav');
+var header = document.getElementsByTagName('header')[0];
+var dim = document.querySelector('.dim');
 function fullPageH(){
     windowH = window.innerHeight;
     document.getElementById("fullPage").style.height = windowH +'px';
 }
 
 function fullPageS(e){
+    var mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
     windowH = window.innerHeight;
-    header = document.getElementsByTagName('header')[0];
-    mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
     if(e.deltaY > 0 && mainBottom == windowH){
         window.scrollTo(0, mainBottom);
         header.classList.add('subNav');
-        document.getElementById('portfolio').classList.add('navT');
-    } else if(e.deltaY < 0 && mainBottom > 15){
+    } else if(e.deltaY < 0 && mainBottom > 5){
         window.scrollTo(0,0);
         header.classList.remove('subNav');
-        
-    } else if(e.deltaY < 0){
-        removeNavT()
-    } else{
-        return
+    }
+    if(mobBtn.classList.contains('on')){
+        removeClass()
     }
 }
-function navScroll(e){
-    const scroll = e.target.dataset.scroll;
-    if(scroll != null){
-        let scrollTo = document.getElementById(scroll);
-        let scrollY = window.pageYOffset + scrollTo.getBoundingClientRect().top
-        header = document.getElementsByTagName('header')[0];
-        if(scrollY != 0){
-            header.classList.add('subNav');
-            removeNavT()
-            scrollTo.classList.add('navT');
-            scrollTo.scrollIntoView({ behavior: "smooth" });
-        } else {
-            header.classList.remove('subNav');
-            scrollTo.scrollIntoView({ behavior: "smooth" });
-        }
-    } else{
-        return
+
+function navlink(e){
+    let scroll = e.target.dataset.scroll;
+    let scrollY = window.pageYOffset + document.getElementById(scroll).getBoundingClientRect().top;
+    if(scrollY != 0){
+        header.classList.add('subNav');
+        window.scrollTo(0,scrollY);
+    } else {
+        window.scrollTo(0,0);
+        header.classList.remove('subNav');
+    }
+    removeClass()
+}
+
+function removeClass(){
+    mobBtn.classList.remove('on');
+    menuList.classList.remove('down');
+    dim.classList.remove('dimOn');
+}
+
+function mNav(){
+    if(!mobBtn.classList.contains('on')){
+        mobBtn.classList.add('on');
+        menuList.classList.add('down');
+        dim.classList.add('dimOn');
+        header.classList.add('subNav');
+    } else {
+        removeClass()
+        window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
     }
 }
-function removeNavT(){
-    const section = document.querySelectorAll("section");
-    for(let i =0; i < section.length; i++){
-        section[i].classList.remove('navT');
-    }
-}
+
 document.addEventListener("DOMContentLoaded", function() {
     fullPageH();
     const tabItem = document.querySelectorAll(".tapBtn");
-    console.log(screen.width)
-    if(screen.width <= 428) {
-        console.log(document.querySelector('.menu-list').getBoundingClientRect().height);
-    }
     // const tabContent = document.querySelectorAll(".galleryCon");
     // let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
     for(let i = 0; i < tabItem.length; i++){
@@ -75,51 +77,37 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
 });
-function changeOrientation(event) {
-    alert("Rotate");
-    event.preventDefault();
-}
+
 window.onload = function (){
-    window.scrollTo(0,0);
+    setTimeout(window.scrollTo(0,0),300)
 }
-window.onbeforeunload = function() {
-    window.scrollTo(0,0);
-};
-window.addEventListener('wheel',function(e) {
+// window.onbeforeunload = function() {
+    
+// };
+window.addEventListener('wheel', e => {
     fullPageS(e);
 });
-document.addEventListener("click", (e) => {
-    navScroll(e)
+document.addEventListener("click", e => {
+    null != e.target.dataset.scroll ? navlink(e) : null;
+    //mobBtn == e.target.parentElement ? mNav() : null;
+    dim == e.target ? removeClass() : null;
 });
-
+mobBtn.addEventListener("click", e => {
+    e.preventDefault();
+    mNav()
+});
 window.addEventListener('resize', function() {
     fullPageH();
 });
-
-
-// window.addEventListener('touchstart', function (e) {
-//     e.preventDefault();
+// window.addEventListener('touchstart', function () {
+//     window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
 // });
-// window.addEventListener('touchmove', function (e) {
-//     e.preventDefault();
-// });
+window.addEventListener('touchmove', function (e) {
+    dim == e.touches[0].target ? removeClass() : null;
+    window.pageYOffset > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+});
 // window.addEventListener('touchend', function (e){
-//     windowH = window.innerHeight;
-//     header = document.getElementsByTagName('header')[0];
-//     mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
-//     let pY = e.changedTouches[0].pageY;
-//     if(pY < mainBottom) {
-//         window.scrollTo(0, windowH);
-//         header.classList.add('subNav');
-//         document.getElementById('portfolio').classList.add('navT');
-//     } else if(pY > mainBottom && 0 < mainBottom) {
-//         window.scrollTo(0,0);
-//         header.classList.remove('subNav');
-//     } else if(pY > mainBottom) {
-//         removeNavT()
-//     } else{
-//         return false
-//     }
+//     e.preventDefault();
 // });
 
 // HTML CSS JSResult Skip Results Iframe
@@ -187,20 +175,11 @@ window.addEventListener('resize', function() {
 //     return slideUp(target, duration);
 //   }
 // }
-   
 // // ====  
-  
 // let speedAnimation = 400;
 // let targetId = document.getElementById("target");
 
 // let slideBtnClick = (cl, sl) => 
 // document.querySelector(cl).addEventListener('click', () => sl(targetId, speedAnimation));
-
-
-
 // slideBtnClick('.triggerToggle', slideToggle);
-
-
-
-
 // Resources1× 0.5× 0.25×Rerun

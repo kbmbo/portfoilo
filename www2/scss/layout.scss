@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "mixin";
 /////////// 커스텀 스크롤:s ///////////
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(95, 78, 78, 0.1);
@@ -17,7 +16,25 @@
 	border-radius: 10px;
 	background-color: rgba(85, 85, 85, 0.15);
 }
+@include screen('max-mob') {
+	::-webkit-scrollbar-track, ::-webkit-scrollbar, ::-webkit-scrollbar-thumb{
+		display: none !important; 
+	}
+}
 /////////// 커스텀 스크롤:e ///////////
+.dim {
+	@include WH(100%,100%);
+	@include position($p:fixed,$t:0);
+	@include transition;
+	display: none;
+	z-index: 9;
+	overflow:hidden;
+	-webkit-overflow-scrolling:touch;
+	&.dimOn {
+		background-color:rgba(0,0,0,.4);
+		display: block;
+	}
+}
 /////////// header:s ///////////
 header {
 	@include position($p:fixed,$t:0,$l:0);
@@ -34,11 +51,11 @@ header {
 		background-image: url('../img/svg/logo.svg');
 		text-indent: -99999999px;
 		float: left;
-	padding: 0 2vw;
 	}
 	.menu {
-		@include WH(calc(100% - #{$navH}),100%);
-		float: right;
+		height: 100%;
+		display: flex;
+		justify-content:flex-end;
 		.menu-list {
 			height: 100%;
 			ul {
@@ -58,54 +75,8 @@ header {
 	}
 	&.subNav {
 		height: $subNavH;
-		background-color: rgba(247,247,247,.85);
+		background-color: $subNavC;
 		h1.logo { width: $subNavH; }
-	}
-	@include screen('tablet') {
-	}
-	@include screen('max-mob') {
-		$navH:10vh;
-		height: $navH;
-		padding: 0 3vw;
-		h1.logo { width: $navH; }
-		.menu {
-			display: flex;
-			flex-direction:column;
-			justify-content:center;
-			align-items: flex-end;
-			button.m-nav { 
-				width: 40px;
-				display: block;
-				float: right;
-				p {
-					@include WH(100%,4px);
-					border-radius: 2px;
-					background-color: $mainColor;
-					margin-bottom: 10px;
-					&:last-child { margin-bottom: 0; }
-				}
-			}
-			.menu-list {
-				@include position($p:fixed,$t:$navH,$l:0);
-				@include transition;
-				width: 100%;
-				height: auto;
-				overflow:hidden;
-				-webkit-overflow-scrolling:touch;
-				visibility: hidden;
-				ul {
-					flex-direction:column;
-					font-size: 1.4rem;
-					background-color: rgba(247,247,247,.9);
-					li {
-						padding: 14px 0;
-						margin-left: 0;
-						text-align: center;
-					}
-				}
-			}
-			
-		}
 	}
 }
 /////////// header:e ///////////
@@ -120,11 +91,12 @@ header {
 			@include bgImg(cover);
 			background-image: url('../img/bg/flower4.jpg');
 			display: flex;
+			flex-direction: column;
+			justify-content: center;
 			align-items: center;
 			text-transform: uppercase;
 			.con {
 				width: 77vmin;
-				margin: -5vh auto 0;
 				p { margin: 0.5vh 0 3.5vh; }
 				h2 { font-size: 4.7vmin; }
 				button {
@@ -132,7 +104,6 @@ header {
 					border:2px solid $mainColor;
 					padding:0 2.2vw;
 					font-size: 1.8vmin;
-	padding: 0 2vw;
 					height: 8.2vmin;
 					text-transform: uppercase;
 					background-color: rgba(0,0,0,.2);
@@ -151,11 +122,28 @@ header {
 				font-size: 1.8vmin;
 				line-height: 3.2vh;
 			}
+			@include screen('max-mob') {
+				.con {
+					h2 { font-size: 4vh; }
+					button {
+						padding:0 2.5vw;
+						font-size: 1.8vh;
+						height: 8.2vh;
+						background-color: rgba(0,0,0,.3);
+						color: #e6e6e6;
+					}
+				}
+				.life-quotes {
+					padding: 3vh 0;
+					font-size: 3.8vmin;
+				}
+			}
 		}
+		
 		&#scrollPage {
 			section {
+				@include transition;
 				position: relative;
-				&.navT { padding-top: $subNavH+20; }
 				&:after{@include both;}
 				.title {
 					h2 { 
@@ -185,15 +173,38 @@ header {
 							margin-bottom: 15px;
 							line-height: 2.4rem;
 						}
+						.desc {
+							margin: 3vh 0 0;
+						}
+						@include screen('max-mob2') {
+							width: 100%;
+							padding-right: 0;
+						}
+					}
+					@include screen('tablet') {
+						.desc { margin: 2.2vh 0 4.5vh; }
+					}
+					@include screen('max-mob') {
+						h2 { font-size: 7vW; }
 					}
 				}
+				
 				&.about {
 					display: flex;
 					justify-content: space-between;
 					.profile-img { 
-						@include WH(50%,55vmin);
 						@include bgImg(cover);
-						background-image: url('../img/kspring.jpg')
+						background-image: url('../img/kspring.jpg');
+						width: 50%;
+						padding-bottom: 45%;
+					}
+					@include screen('max-mob2') {
+						flex-direction: column;
+						.profile-img { 
+							width: 100%;
+							padding-bottom: 85%;
+							margin-top: 15px;
+						}
 					}
 				}
 				&.profile ul {
@@ -204,9 +215,11 @@ header {
 					}
 				}
 				&.portfolio, &.about, &.profile {
-					margin: 6vh 0;
-					padding-left: $subP;
-					padding-right: $subP;
+					padding:$subNavH+10 $subP;
+					@include screen('tablet') {
+						$subP:6vw;
+						padding:$subNavH+10 $subP;
+					}
 				}
 				&.life-quotes {
 					@include bgImg(cover);
@@ -219,8 +232,9 @@ header {
 						color: #fff;
 						display: flex;
 						align-items: center;
+						justify-content: center;
 						.txt {
-							margin: 0 auto;
+							width: 95%;
 							span {
 								font-size: 5vmin;
 								line-height: 0;
@@ -228,6 +242,22 @@ header {
 							h3 {
 								font-size: 3vmin;
 								margin: 1.2vmin 0;
+							}
+						}
+					}
+					@include screen('max-mob') {
+						height: 45vmin;
+						.mask .txt {
+							span {
+								font-size: 7vmin;
+							}
+							h3 {
+								font-size: 5.5vmin;
+								line-height: 6.5vmin;
+								margin: 1.5vmin 0 2.8vmin;
+							}
+							p {
+								font-size: 4.5vmin;
 							}
 						}
 					}
@@ -240,7 +270,6 @@ header {
 						li {
 							@include lineH(50px);
 							@include transition;
-							padding: 0 16px;
 							border: 1px solid #000;
 							margin: 0 10px;
 							overflow: hidden;
@@ -253,16 +282,24 @@ header {
 							&:first-child { margin-left: 0; }
 							&:last-child { margin-right: 0; }
 						}
+						@include screen('max-mob') {
+							justify-content: space-between;
+							li {
+								@include lineH(45px);
+								margin: 0;
+								padding: 0 2.5vw;
+							}
+						}
 					}
 					.gallery-list {
 						figure {
-							width: calc((100% - (#{$gM}*2)) / 3);
-							padding-bottom: 25%;
+							width: calc((100% - (#{$galleryM}*2)) / 3);
+							padding-bottom: 30%;
 							background-color: $gray;
 							position: relative;
 							overflow: hidden;
 							float: left;
-							margin:$gM $gM 0 0;
+							margin:#{$galleryM} #{$galleryM} 0 0;
 							cursor: pointer;
 							&:nth-of-type(3n) { margin-right: 0; }
 							figcaption {
@@ -273,11 +310,18 @@ header {
 								padding: 0 2vw;
 								display: none;
 							}
+							@include screen('tablet') {
+								$galleryM:2.5vmin;
+								width: calc((100% - (#{$galleryM}*2)) / 3);
+								margin:#{$galleryM} #{$galleryM} 0 0;
+							}
+							@include screen('max-mob') {
+								width: 100%;
+								padding-bottom: 65%;
+								margin: 20px 0 0;
+							}
 						}
 					}
-				}
-				@include screen('tablet') {
-					
 				}
 			}
 		}
@@ -288,12 +332,79 @@ header {
 /////////// section:e ///////////
 /////////// footer:s ///////////
 footer {
-	width: 100%;
 	@include lineH(50px);
+	width: 100%;
 	text-align: center;
 	color: rgba(255,255,255,.5);
 	background-color: $mainColor;
 	font-weight: 300;
 }
 /////////// footer:e ///////////
-
+@include screen('max-mob') {
+	$navH:10vh;
+	$subNavH:65px;
+	$subP:5vw;
+	header {
+		height: $navH;
+		padding: 0 3vw;
+		h1.logo { width: $navH; }
+		.menu {
+			flex-direction:column;
+			justify-content:center;
+			align-items: flex-end;
+			button.m-nav { 
+				@include WH(35px,35px);
+				display: block;
+				position: relative;
+				p {
+					@include WH(100%,3px);
+					@include transition;
+					border-radius: 2px;
+					background-color: $mainColor;
+					margin-bottom: 8px;
+					&:last-child { margin-bottom: 0; }
+				}
+				&.on p {
+					position: absolute;
+					&:first-child {
+						transform: rotate(-45deg);
+					}
+					&:nth-child(2) {display: none;}
+					&:last-child {
+						transform: rotate(45deg);
+					}
+				}
+			}
+			.menu-list {
+				@include position($p:fixed,$t:$navH,$l:0);
+				@include transition;
+				width: 100%;
+				height: 0;
+				overflow:hidden;
+				-webkit-overflow-scrolling:touch;
+				&.down { top:$subNavH; height: 188px; border-top: 1px solid #fff;}
+				ul {
+					flex-direction:column;
+					font-size: 1.4rem;
+					background-color: $subNavC;
+					li {
+						padding: 14px 0;
+						margin-left: 0;
+						text-align: center;
+						width: 100%;
+					}
+				}
+			}
+			
+		}
+		&.subNav {
+			height: $subNavH;
+			h1.logo { width: $subNavH; }
+		}
+	}
+	.container > article#scrollPage section {
+		&.portfolio, &.about, &.profile {
+			padding:$subNavH+10 $subP;
+		}
+	}
+}
