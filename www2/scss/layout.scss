@@ -117,10 +117,12 @@ header {
 				@include position($p:absolute,$b:0);
 				background: linear-gradient(to bottom,transparent, rgba(0,0,0,.4), rgba(0,0,0,.6));
 				width: 100%;
-				padding: 3.5vh 0;
+				padding: 3.5vh 2% 1.5vh;
 				color: #fff;
 				font-size: 1.8vmin;
-				line-height: 3.2vh;
+				p:first-child{
+					margin-bottom: 6px;
+				}
 			}
 			@include screen('max-mob') {
 				.con {
@@ -134,7 +136,6 @@ header {
 					}
 				}
 				.life-quotes {
-					padding: 3vh 0;
 					font-size: 3.8vmin;
 				}
 			}
@@ -210,8 +211,34 @@ header {
 				&.profile ul {
 					display: flex;
 					justify-content: space-around;
-					li span {
-						font-size: 5rem;
+					li {
+						display: flex;
+						flex-direction:column;
+						align-items: center;
+						&:first-child span{
+							background-image: url('../img/svg/Orion_mail.svg');
+						}
+						&:nth-child(2) span{
+							background-image: url('../img/svg/Orion_iphone.svg');
+						}
+						&:last-child span{
+							background-image: url('../img/svg/Orion_navigation-map.svg');
+						}
+						span {
+							@include bgImg(contain);
+							@include WH(50px,50px);
+							display: block;
+							margin-bottom: 15px;
+						}
+					}
+					@include screen('max-mob2') {
+						flex-direction:column;
+						li {
+							margin-bottom: 30px;
+							span {
+								@include WH(65px,65px);
+							}	
+						}
 					}
 				}
 				&.portfolio, &.about, &.profile {
@@ -292,28 +319,36 @@ header {
 						}
 					}
 					.gallery-list {
+						display: flex;
+						flex-wrap:wrap;
+						justify-content: flex-start;
+						padding-top: 35px;
 						figure {
-							width: calc((100% - (#{$galleryM}*2)) / 3);
-							padding-bottom: 30%;
-							background-color: $gray;
+							@include transition;
+							width: calc((100% / 3) - (#{$galleryM} * 2));
+							padding-bottom: 23%;
 							position: relative;
 							overflow: hidden;
 							float: left;
-							margin:#{$galleryM} #{$galleryM} 0 0;
+							margin: $galleryM;
 							cursor: pointer;
-							&:nth-of-type(3n) { margin-right: 0; }
+							&.none {display: none;}
+							.img {
+								@include position($p:absolute,$t:0);
+								@include WH(100%,100%);
+								@include bgImg(cover);
+							}
 							figcaption {
 								@include position($p:absolute,$t:0);
 								@include WH(100%,100%);
-								@include transition;
 								background-color:$mainColor;
 								padding: 0 2vw;
 								display: none;
 							}
 							@include screen('tablet') {
 								$galleryM:2.5vmin;
-								width: calc((100% - (#{$galleryM}*2)) / 3);
-								margin:#{$galleryM} #{$galleryM} 0 0;
+								width: calc((100% / 3) - (#{$galleryM} * 2));
+								margin: $galleryM;
 							}
 							@include screen('max-mob') {
 								width: 100%;
