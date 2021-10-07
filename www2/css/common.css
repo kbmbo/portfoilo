@@ -434,6 +434,7 @@ header.subNav h1.logo {
   overflow: hidden;
   cursor: pointer;
   padding: 0 2vw;
+  text-transform: capitalize;
 }
 .container > article#scrollPage section .gallery-container .filter-btn li:hover, .container > article#scrollPage section .gallery-container .filter-btn li.active {
   background-color: #222;

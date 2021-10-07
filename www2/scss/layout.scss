@@ -302,6 +302,7 @@ header {
 							overflow: hidden;
 							cursor: pointer;
 							padding: 0 2vw;
+							text-transform: capitalize;
 							&:hover,&.active {
 								background-color:$mainColor;
 								color: #fff;
