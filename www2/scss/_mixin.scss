@@ -31,6 +31,7 @@
 }
 $breakpoints :(
 	'tablet':(max-width: 1024px),
+	'tablet2':(max-width: 768px),
 	'max-mob2':(max-width: 736px),
 	'max-mob':(max-width: 428px),
 	'mob':(max-width: 360px),
