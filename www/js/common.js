@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
         window.pageYOffset > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
     });
     
-    // window.addEventListener('touchend', function (e){
-    //     e.preventDefault();
-    // });
+    window.addEventListener('touchend', function (e){
+        window.pageYOffset > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+    });
     
 });
 
