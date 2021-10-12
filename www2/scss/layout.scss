@@ -25,7 +25,6 @@
 .dim {
 	@include WH(100%,100%);
 	@include position($p:fixed,$t:0);
-	@include transition;
 	display: none;
 	z-index: 9;
 	overflow:hidden;
@@ -35,13 +34,79 @@
 		display: block;
 	}
 }
-.none { display: none; }
+.none { display: none !important; }
+.popup {
+	@include WH(100%,100%);
+	@include position($p:fixed,$t:0);
+	overflow:hidden;
+	-webkit-overflow-scrolling:touch;
+	padding: 0 $subP;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	background-color:rgba(0,0,0,.5);
+	figure {
+		@include WH(100%,80%);
+		position: relative;
+		background-color: $mainColor;
+		.img {
+			@include WH(100%,84%);
+			@include bgImg(contain);
+			background-color: #fff;
+		}
+		figcaption{
+			@include WH(100%,16%);
+			overflow:hidden;
+			color: #fff;
+			padding: 0 2.5vw;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			h4 { font-size: 2.5vmin; margin-bottom: 1vmin; }
+			p { display: none; }
+			> span {
+				@include transition;
+				cursor: pointer;
+				font-size: 2vmin;
+				font-weight: 300;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				&:hover {
+					color: rgba(255,255,255,.5);
+				}
+				> span { font-size: 1.7vmin; }
+			}
+		}
+		@include screen('max-mob') {
+			height: 60%;
+			.img { height: 70%; }
+			figcaption {
+				height: 30%;
+				h4 { font-size: 5.5vmin; margin-bottom: 1.5vmin; }
+				> span {
+					font-size: 4.5vmin;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					white-space: unset;
+					word-break: normal;
+					> span { font-size: 3.5vmin; }
+				}
+			}
+		}
+	}
+	
+}
 /////////// header:s ///////////
 header {
 	@include position($p:fixed,$t:0,$l:0);
 	@include WH(100%,$navH);
 	@include transition;
-	z-index: 999;
+	z-index: 998;
 	padding: 0 2vw;
 	overflow:hidden;
 	-webkit-overflow-scrolling:touch;
@@ -348,8 +413,9 @@ header {
 								flex-direction:column;
 								justify-content:center;
 								display: none;
-								h4 { font-size: 3vmin; margin-bottom: 1vmin; }
+								h4 { font-size: 2.7vmin; margin-bottom: 1vmin; }
 								p { font-size: 1.7vmin; }
+								span { display: none; }
 							}
 							@include screen('tablet') {
 								$galleryM:1vmin;
@@ -398,6 +464,7 @@ footer {
 	$navH:10vh;
 	$subNavH:65px;
 	$subP:5vw;
+	.popup {padding: 0 $subP;}
 	header {
 		height: $navH;
 		padding: 0 3vw;
