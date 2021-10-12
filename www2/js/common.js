@@ -4,14 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobBtn = document.querySelector('.mNav');
     const header = document.getElementsByTagName('header')[0];
     const dim = document.querySelector('.dim');
-
+    var container = document.querySelector('.container');
     let windowH
-
-    window.scrollTo(0,0);
 
     const fullPageH = () => {
         windowH = window.innerHeight;
-        document.getElementById("fullPage").style.height = windowH +'px';
+        document.getElementById("fullPage").style.height = `${windowH}px`;
+        container.style.height = `${windowH}px`;
     }
     fullPageH();
 
@@ -19,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
         windowH = window.innerHeight;
         if(e.deltaY > 0 && mainBottom == windowH){
-            window.scrollTo(0, mainBottom);
+            container.style.transform =`translateY(${windowH})`
             header.classList.add('subNav');
         } else if(e.deltaY < 0 && mainBottom > 5){
-            window.scrollTo(0,0);
+            container.style.transform =`translateY(0)`
             header.classList.remove('subNav');
         }
         if(mobBtn.classList.contains('on')){
@@ -33,14 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const navlink = e => {
         const scroll = e.target.dataset.scroll;
         const scrollY = window.pageYOffset + document.getElementById(scroll).getBoundingClientRect().top;
-        if(scrollY != 0){
-            header.classList.add('subNav');
-            window.scrollTo(0,scrollY);
-        } else {
-            window.scrollTo(0,0);
-            header.classList.remove('subNav');
-        }
-        removeClass();
+        console.log(scrollY,container)
+        container.style.transform =`translateY(-${scrollY}px)`
+        // if(scrollY != 0){
+        //     header.classList.add('subNav');
+        //     container.style.transform =`translateY(${scrollY})`
+        // } else {
+        //     container.style.transform =`translateY(0)`
+        //     header.classList.remove('subNav');
+        // }
+        //removeClass();
     }
     
     const removeClass = () => {
@@ -102,11 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
-window.addEventListener('load', () =>{
-    setTimeout(window.scrollTo(0,0),300)
-});
-window.addEventListener('beforeunload', (e) => { 
-    e.preventDefault(); 
-    //e.returnValue = '';
-    setTimeout(window.scrollTo(0,0),300)
-});
+// window.addEventListener('load', () =>{
+//     setTimeout(window.scrollTo(0,0),300)
+// });
+// window.addEventListener('beforeunload', (e) => { 
+//     e.preventDefault(); 
+//     //e.returnValue = '';
+//     setTimeout(window.scrollTo(0,0),300)
+// });

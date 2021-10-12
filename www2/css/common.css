@@ -268,7 +268,9 @@ header.subNav h1.logo {
 }
 
 .container {
+  transition: all 0.3s;
   text-align: center;
+  position: relative;
 }
 .container > article {
   width: 100%;

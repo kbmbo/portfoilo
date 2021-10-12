@@ -148,7 +148,9 @@ header {
 /////////// header:e ///////////
 /////////// section:s ///////////
 .container {
+	@include transition;
 	text-align: center;
+	position: relative;
 	> article {
 		width: 100%;
 		position: relative;

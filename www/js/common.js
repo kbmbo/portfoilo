@@ -7,11 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let windowH
 
-    window.scrollTo(0,0);
-
     const fullPageH = () => {
         windowH = window.innerHeight;
-        document.getElementById("fullPage").style.height = windowH +'px';
+        document.getElementById("fullPage").style.height = `${windowH}px`;
     }
     fullPageH();
 
@@ -87,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fullPageH();
     });
     
-    // window.addEventListener('touchstart', function () {
-    //     window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
-    // });
+    window.addEventListener('touchstart', () => {
+        //window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
+    });
     
     window.addEventListener('touchmove', e => {
         dim == e.touches[0].target ? removeClass() : null;
@@ -97,16 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     window.addEventListener('touchend', () => {
-        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+        //window.scrollY > 100 ? header.classList.add('subNav') : header.classList.remove('subNav');
     });
     
 });
 
 window.addEventListener('load', () =>{
-    setTimeout(window.scrollTo(0,0),300)
-});
-window.addEventListener('beforeunload', (e) => { 
-    e.preventDefault(); 
-    //e.returnValue = '';
-    setTimeout(window.scrollTo(0,0),300)
+    window.history.scrollRestoration = 'manual';
+    setTimeout(window.scrollTo(0,0),300);
 });
