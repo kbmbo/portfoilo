@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+    const fullPage = document.getElementById("fullPage");
     const menuList = document.querySelector('.menuList');
     const mobBtn = document.querySelector('.mNav');
     const header = document.getElementsByTagName('header')[0];
@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fullPageH = () => {
         windowH = window.innerHeight;
-        document.getElementById("fullPage").style.height = `${windowH}px`;
+        fullPage.style.height = `${windowH}px`;
     }
     fullPageH();
 
     const fullPageS = e => {
-        const mainBottom = document.getElementById("fullPage").getBoundingClientRect().bottom;
+        const mainBottom = fullPage.getBoundingClientRect().bottom;
         windowH = window.innerHeight;
         if(e.deltaY > 0 && mainBottom == windowH){
             window.scrollTo(0, mainBottom);
@@ -58,17 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
             window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
         }
     }
-    
-    const ani = e => {
-        windowH = window.innerHeight/2
-        const aniBox = document.querySelectorAll(".aniBox");
-        // for(let i = 0; i < aniBox.length; i++){
-        //     console.log((aniBox[i].getBoundingClientRect().top),windowH);
-        // }
-    }
+ 
     window.addEventListener('wheel', e => {
         fullPageS(e);
-        ani()
     });
     
     document.addEventListener("click", e => {
@@ -85,22 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
         fullPageH();
     });
     
-    window.addEventListener('touchstart', () => {
+    //window.addEventListener('touchstart', () => {
         //window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
-    });
+    //});
     
     window.addEventListener('touchmove', e => {
         dim == e.touches[0].target ? removeClass() : null;
         window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
     });
     
-    window.addEventListener('touchend', () => {
+    //window.addEventListener('touchend', () => {
         //window.scrollY > 100 ? header.classList.add('subNav') : header.classList.remove('subNav');
-    });
+    //});
     
 });
 
-window.addEventListener('load', () =>{
+window.addEventListener('load', () => {
     window.history.scrollRestoration = 'manual';
     setTimeout(window.scrollTo(0,0),300);
 });

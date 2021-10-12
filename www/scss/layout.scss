@@ -22,7 +22,6 @@
 	}
 }
 /////////// 커스텀 스크롤:e ///////////
-.t{transform:translate(0, -667px);@include transition;}
 .dim {
 	@include WH(100%,100%);
 	@include position($p:fixed,$t:0);
@@ -150,7 +149,6 @@ header {
 /////////// section:s ///////////
 .container {
 	text-align: center;
-	position: relative;
 	> article {
 		width: 100%;
 		position: relative;
@@ -333,6 +331,7 @@ header {
 							span {
 								font-size: 5vmin;
 								line-height: 0;
+								display: inline-block;
 							}
 							h3 {
 								font-size: 3vmin;
