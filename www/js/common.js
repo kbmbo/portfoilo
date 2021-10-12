@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.addEventListener('touchmove', e => {
         dim == e.touches[0].target ? removeClass() : null;
-        window.pageYOffset <= 0 ? header.classList.remove('subNav') : header.classList.add('subNav');
+        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
     });
     
     window.addEventListener('touchend', () => {
-        window.pageYOffset <= 0 ? header.classList.remove('subNav') : header.classList.add('subNav');
+        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
     });
     
 });
