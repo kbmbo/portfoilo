@@ -91,13 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //     window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
     // });
     
-    window.addEventListener('touchmove', e =>{
+    window.addEventListener('touchmove', e => {
         dim == e.touches[0].target ? removeClass() : null;
-        window.pageYOffset > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+        window.pageYOffset <= 0 ? header.classList.remove('subNav') : header.classList.add('subNav');
     });
     
-    window.addEventListener('touchend', function (e){
-        window.pageYOffset > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+    window.addEventListener('touchend', () => {
+        window.pageYOffset <= 0 ? header.classList.remove('subNav') : header.classList.add('subNav');
     });
     
 });
