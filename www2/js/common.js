@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let windowH
 
+    window.scrollTo(0,0);
+
     const fullPageH = () => {
         windowH = window.innerHeight;
         document.getElementById("fullPage").style.height = windowH +'px';
@@ -101,5 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener('load', () =>{
+    setTimeout(window.scrollTo(0,0),300)
+});
+window.addEventListener('beforeunload', (e) => { 
+    e.preventDefault(); 
+    //e.returnValue = '';
     setTimeout(window.scrollTo(0,0),300)
 });
