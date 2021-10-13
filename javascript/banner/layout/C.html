@@ -1,0 +1,141 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>brand cover quiz</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <style type="text/css">
+        #brandCover{font-family:'HGG','Nanum Gothic', 'sans-serif'; position: fixed; bottom: 0; width:100%;height:80px;background-color:#e8e9eb; font-size: 19px; font-weight: 300; padding-right:10px ;}
+        #brandCover .txtBox .tag,#brandCover .txtBox .txt,#brandCover button .bgimg p{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+
+        #brandCover button{position: absolute; right: calc(100% - 70px); bottom:-5px; background-color: #f1a116; color: #fff; width: 100%;height: 70px; border-radius: 0 8px 0 0; overflow: hidden;transition:all 0.2s ease-out;font-family: 'HGG', 'Nanum Gothic', 'sans-serif';box-shadow:3px 3px 4px rgb(0 0 0 / 25%);background-image:url('../img/2.png');background-position:center; background-size: cover;text-align: center; padding-top: 10px;}
+        .ani{
+            -webkit-animation-name:button;
+            animation-name: button;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            animation-direction:alternate;
+            -webkit-animation-fill-mode: ease-in;
+            animation-fill-mode: ease-in;
+        }
+        @-webkit-keyframes button {
+            0% {
+                right:calc(100% - 70px);
+                bottom:-5px;
+            }
+            100% {
+                right:calc(100% - 75px);
+                bottom:0;
+            }
+        }
+        @keyframes button {
+            0% {
+                right:calc(100% - 70px);
+                bottom:-5px;
+            }
+            100% {
+                right:calc(100% - 75px);
+                bottom:0;
+            }
+        }
+        #brandCover button .txtBtn,#brandCover .shopLogo{width: 70px;position: absolute; right: 0;}
+        #brandCover button .txtBtn{padding-right: 8px; bottom: 11px;}
+        #brandCover button.active .txtBtn{top:10px}
+        #brandCover button .txtBtn p{font-weight: 500;font-size: 11px; float: right;}
+        #brandCover button.active .txtBtn p{display: none;}
+        #brandCover button .txtBtn span{ width: 15px; height: 4px; border-bottom: 1px solid #fff;transform: rotate(-45deg);display: block;float: right; margin-top: 2px;}
+        #brandCover button .txtBtn span:before,#brandCover button .txtBtn span:after{content: ''; display: block; width: 8px; border-bottom: 1px solid #fff; float: right;}
+        #brandCover button .txtBtn span:before{transform: rotate(-130deg);margin-right: -1px;}
+        #brandCover button .txtBtn span:after{transform: rotate(-45deg);margin: 5px 0 0 5px;}
+        
+        #brandCover button .bgimg{width: calc(100% - 70px);float: left; margin-left: 10%; padding-left: 16%; font-size: 15px;}
+        #brandCover button .bgimg p{opacity: 0;transition:all 0.2s ease-out;}
+        #brandCover button.active .bgimg p{opacity: 1;}
+
+        #brandCover button .shopLogo{top:0;height:35px;background-image: url('../img/4.png');background-position:center; background-size: contain;background-repeat: no-repeat;padding-top:10px;}
+        #brandCover button.active .shopLogo{left:10%; height: 100%;}
+        #brandCover button .shopLogo .logo{width:30px;height:30px;border-radius: 50%; background-image: url('../img/814.png');background-position:center; background-size: contain;background-repeat: no-repeat; background-color: #fff; margin: 0 auto;}
+        #brandCover button.active .shopLogo .logo{width:50px;height:50px;}
+
+        #brandCover .con{width: calc(100% - 70px); height: 100%; margin-left: 70px; padding-left: 25px;display: flex; align-items: center;}
+        #brandCover .txtBox{width: 70%;}
+        #brandCover .txtBox span{color: #e76200;}
+        #brandCover .txtBox .tag {margin: 5px 0;font-size: 25px;}
+        #brandCover .txtBox .tag span{font-weight: 600; margin-right: 7px;}
+        #brandCover .txtBox .tag span:last-of-type{margin-right:0;}
+        #brandCover .txtBox .tag span:before{content: '#';}
+        #brandCover .txtBox .txt span{font-weight: 500; border-bottom: 1px solid #e76200;display: inline-block;}
+        #brandCover .imgBox{width:30%; height: 100%; background-image: url('../img/830.png');background-position:center; background-size: contain; background-repeat: no-repeat;}
+        
+	</style>
+	<script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const touchEven = ()=> {
+                const screenW = (window.screen.width/3)*2;
+                const btn = document.getElementsByTagName("button")[0];
+                const txtBtnW = document.querySelector(".txtBtn").offsetWidth;
+                const bgimgW = document.querySelector(".bgimg").offsetWidth;
+                
+                btn.addEventListener('touchstart', function (event){
+                    event.preventDefault();
+                    if((txtBtnW/2) < event.touches[0].pageX){
+                        btn.style.right=(bgimgW-event.touches[0].pageX)+(txtBtnW/2);
+                        btn.classList.remove('ani');
+                    }
+                    
+                });
+
+                btn.addEventListener('touchmove', function (event){
+                    event.preventDefault();
+                    if((window.screen.width-50) > event.touches[0].pageX && txtBtnW < event.touches[0].pageX){
+                        btn.style.right=(bgimgW-event.touches[0].pageX)+(txtBtnW/2);
+                        btn.style.bottom=0;
+                        
+                        if(window.screen.width/3 < event.touches[0].pageX){
+                            btn.classList.add('active');
+                        } else{
+                            btn.classList.remove('active');
+                        }
+                    }
+                });
+
+                btn.addEventListener('touchend', function (event){
+                    btn.style.right=bgimgW;
+                    btn.style.bottom=-5;
+                    btn.classList.remove('active');
+                    btn.classList.add('ani');
+                    if((screenW < event.changedTouches[0].pageX)){
+                        window.open('https://dabagirl.co.kr/');
+                    }
+                });
+            }
+            touchEven();
+            window.addEventListener('resize', () => {
+                touchEven();
+            });
+        });
+	</script>
+</head>
+<body>
+    <div id="brandCover">
+        <button class="ani">
+            <div class="shopLogo"><p class="logo"></p></div>
+            <div class="txtBtn">
+                <span></span><p>확인하기</p>
+            </div>
+            <div class="bgimg"><p>MAGJAY의 인기 제품 보러가기</p></div>
+        </button>
+        <div class="con">
+            <div class="txtBox">
+                <div class="tag"><span>청바지</span><span>20대</span></div>
+                <div class="txt">여성들 <span>인기 제품</span>은?</div>
+            </div>
+            <div class="imgBox"></div>
+        </div>
+    </div>
+</body>
+</html>

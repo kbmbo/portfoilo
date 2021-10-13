@@ -1,0 +1,117 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>brand cover quiz</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <style type="text/css">
+        #brandCover{font-family:'HGG','Nanum Gothic', 'sans-serif'; position: fixed; bottom: 0; width:100%;height:80px;background-color:#f2f3f5; font-size: 16px; display: flex; align-items: center; font-weight: 400;}
+        #brandCover button{position: absolute; right: calc(100% - 55px); background-color: #000; color: #fff; width: 100%;height: 88%; border-radius: 0 5px 5px 0; overflow: hidden;transition:all 0.2s ease-out;display: flex; align-items: center;font-family: 'HGG', 'Nanum Gothic', 'sans-serif';box-shadow:1px 2px 3px rgb(0, 0, 0,0.4);}
+        .ani{
+            -webkit-animation-name:button;
+            animation-name: button;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            animation-direction:alternate;
+            -webkit-animation-fill-mode: ease-in;
+            animation-fill-mode: ease-in;
+        }
+        @-webkit-keyframes button {
+            0% {
+                right: calc(100% - 62px);
+            }
+            100% {
+                right: calc(100% - 55px);
+            }
+        }
+        @keyframes button {
+            0% {
+                right: calc(100% - 62px);
+            }
+            100% {
+                right: calc(100% - 55px);
+            }
+        }
+        #brandCover button .bgimg{background-image:url('../img/2_3.png');background-position:center; background-size: cover; height: 100%; background-repeat: no-repeat; width: calc(100% - 55px);float: left; display: flex; align-items: center; text-align: center;}
+        #brandCover button .bgimg:before{content: ''; display: block;width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);position: absolute;top: 0;}
+        #brandCover button .bgimg p{ margin: 0 auto; z-index: 1;}
+        #brandCover button .bgimg p span{font-weight: 600;}
+        #brandCover button .txtBtn{width: 55px; float: right; line-height: 18px;font-weight: 500;}
+        #brandCover button .txtBtn span{ width: 18px; height: 4px; border-bottom: 1px solid #fff; display: block; margin: 8px auto 0;}
+        #brandCover button .txtBtn span:after{content: ''; display: block; width: 7px; border-bottom: 1px solid #fff; transform: rotate(45deg); float: right;}
+        #brandCover .con{width: calc(100% - 55px); height: 100%; margin-left: 55px; padding-left: 10px;display: flex; align-items: center;}
+        #brandCover .txtBox{width: 80%;}
+        #brandCover .txtBox .shopLogo{width:100%;height:15px;}
+        #brandCover .txtBox .shopLogo .pLogo,#brandCover .txtBox .shopLogo .logo{height:100%;background-position:center; background-size: contain;background-repeat: no-repeat;display: inline-block;}
+        #brandCover .txtBox .shopLogo .pLogo{width:15px;background-image: url('../img/1.png');}
+        #brandCover .txtBox .shopLogo .logo{width:50px;background-image: url('../img/814.png');}
+        #brandCover .txtBox span{color: #07008c;}
+        #brandCover .txtBox .tag,#brandCover .txtBox .txt{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+        #brandCover .txtBox .tag {margin: 4px 0 2px;}
+        #brandCover .txtBox .tag span{font-weight: 600; margin-right: 7px;}
+        #brandCover .txtBox .tag span:last-of-type{margin-right:0;}
+        #brandCover .txtBox .tag span:before{content: '#';}
+        #brandCover .txtBox .txt span{font-weight: 500;}
+        #brandCover .imgBox{width:20%; height: 100%; background-image: url('../img/831.png');background-position:center; background-size: contain;  background-repeat: no-repeat;}
+        
+	</style>
+	<script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const touchEven = ()=> {
+                const screenW = (window.screen.width/3)*2;
+                const btn = document.getElementsByTagName("button")[0];
+                const txtBtnW = document.querySelector(".txtBtn").offsetWidth;
+                const bgimgW = document.querySelector(".bgimg").offsetWidth;
+
+                btn.addEventListener('touchstart', function (event){
+                    event.preventDefault();
+                    if((txtBtnW/2) < event.touches[0].pageX){
+                        btn.style.right=(bgimgW-event.touches[0].pageX)+(txtBtnW/2);
+                        btn.classList.remove('ani');
+                    }
+                });
+
+                btn.addEventListener('touchmove', function (event){
+                    event.preventDefault();
+                    if((window.screen.width-30) > event.touches[0].pageX && txtBtnW < event.touches[0].pageX){
+                        btn.style.right=(bgimgW-event.touches[0].pageX)+(txtBtnW/2);
+                    } 
+                });
+
+                btn.addEventListener('touchend', function (event){
+                    btn.style.right=bgimgW;
+                    btn.classList.add('ani');
+                    if((screenW < event.changedTouches[0].pageX)){
+                        window.open('https://dabagirl.co.kr/');
+                    }
+                });
+            }
+            touchEven();
+            window.addEventListener('resize', () => {
+                touchEven();
+            });
+        });
+        
+	</script>
+</head>
+<body>
+    <div id="brandCover">
+        <button class="ani"><div class="bgimg"><p>MAGJAY의 <span>인기 제품</span>을 지금 바로 확인해보세요!</p></div><div class="txtBtn"><p>밀어서</p><p>확인하기</p><span></span></div></button>
+        <div class="con">
+            <div class="txtBox">
+                <div class="shopLogo">
+                    <span class="pLogo"></span>
+                    <span class="logo"></span>
+                </div>
+                <div class="tag"><span>청바지</span><span>20대</span></div>
+                <div class="txt">여성들 <span>인기 제품</span>이 더보고 싶다면?</div>
+            </div>
+            <div class="imgBox"></div>
+        </div>
+    </div>
+</body>
+</html>

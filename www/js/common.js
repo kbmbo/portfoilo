@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    const ani = (e) => {
+    const ani = e => {
         
         const aniEl = document.querySelectorAll('.ani');
         windowH = window.innerHeight;
         // for (const i in aniEl) {
         //     console.log(aniEl)
         // }
-        aniEl.forEach( a => {
+        Array.from(aniEl).forEach( a => {
             console.log(window.pageYOffset+a.getBoundingClientRect().top , a.getBoundingClientRect().top)
             
             if(windowH-100 > a.getBoundingClientRect().top){

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'HGG';
+  src: url('../font/HGGGothicssi20g.eot');
+  src: url('../font/HGGGothicssi20g.woff2') format('woff2'),
+  url('../font/HGGGothicssi20g.woff') format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'HGG';
+  src: url('../font/HGGGothicssi40g.eot');
+  src: url('../font/HGGGothicssi40g.woff2') format('woff2'),
+  url('../font/HGGGothicssi40g.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'HGG';
+  src: url('../font/HGGGothicssi60g.eot');
+  src: url('../font/HGGGothicssi60g.woff2') format('woff2'),
+  url('../font/HGGGothicssi60g.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'HGG';
+  src: url('../font/HGGGothicssi80g.eot');
+  src: url('../font/HGGGothicssi80g.woff2') format('woff2'),
+  url('../font/HGGGothicssi80g.woff') format('woff');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('../font/NanumSquareRoundR.eot');
+  src: url('../font/NanumSquareRoundR.woff2') format('woff2'),
+  url('../font/NanumSquareRoundR.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('../font/NanumSquareRoundEB.eot');
+  src: url('../font/NanumSquareRoundEB.woff2') format('woff2'),
+  url('../font/NanumSquareRoundEB.woff') format('woff');
+  font-weight: 600;
+}
+/* CSS 초기화 */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+html {font-family:'Nanum Gothic', 'sans-serif';}
+body {font-size: 14px; -webkit-overflow-scrolling: touch; overflow: hidden; }
+h1, h2, h3, h4, h5, h6 {font-size: 18px;}
+q:before, q:after {
+  display: none;
+  content: '';}
+li {list-style: none;}
+button {cursor: pointer;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+a {text-decoration: none;color: #000;}
+
+/*# sourceMappingURL=reset.css.map */

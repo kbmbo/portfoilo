@@ -1,0 +1,119 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>brand cover quiz</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <style type="text/css">
+        #brandCover{font-family:'NanumSquareRound','Nanum Gothic', 'sans-serif';position: fixed; bottom: 0; width:100%;height:80px;background-color:#fff; font-size: 16px; font-weight: 400;background-image: url('../img/D.jpg');background-position:center;background-size: cover;background-repeat: no-repeat;color: #fff;}
+        #brandCover:before{content: ''; display: block;width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);position: absolute;top: 0;}
+        
+        #brandCover .con{width: 100%; height: 100%; padding: 0 20px;display: flex; align-items: center;}
+        #brandCover .txtBox{width: calc(100% - 80px); margin-right: 20px; float: left;position: relative;}
+        #brandCover .txtBox .txt{text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-bottom:8px;}
+        #brandCover .txtBox .txt .tag{font-weight: 600; margin-right: 7px; color: #f56a98;}
+        #brandCover .txtBox .txt .tag:last-of-type{margin-right:0;color: #6690fa;}
+        #brandCover .txtBox .txt .tag:before{content: '#';}
+        #brandCover .txtBox .bar {width: 100%; height:32px;background-color:rgba(255,255,255,0.6); border-radius: 18px;float: right;position: relative;}
+        #brandCover .txtBox .bar button{background-color: #fff; border:2px solid #2e2d2d; width: 36px;height: 36px; border-radius: 50%; overflow: hidden;transition:all 0.2s ease-out;font-family: 'HGG', 'Nanum Gothic', 'sans-serif';position: absolute;top:-2px;}
+        #brandCover .txtBox .bar button:before{transform: rotate(45deg);top:53%; margin-top: -15%;}
+        #brandCover .txtBox .bar button:after{transform: rotate(315deg);bottom: 53%; margin-bottom: -15%;}
+        #brandCover .txtBox .bar button:after,#brandCover button:before{content: ''; display: block; width: 30%;height: 1px; background-color: #2e2d2d; position: absolute; right: 37%;}
+        #brandCover .txtBox .bar .txtCenter{width: 140px; line-height: 32px; margin: 0 auto;transition:all 0.2s ease-out;}
+        #brandCover .txtBox .bar .txtCenter .txtBtn,#brandCover .txtBox .bar .txtCenter .txtBtnBg{font-size: 16px;font-weight: 600;}
+        #brandCover .txtBox .bar .txtCenter .txtBtn{ color: transparent; text-align: center; font-weight: 600;background-image: url('../img/a.png');-webkit-background-clip: text;background-clip: text;background-position:-20px;background-size: contain;background-repeat: no-repeat;position: absolute; top: 0;
+            -webkit-animation-name:txtBg;
+            animation-name: txtBg;
+            -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-direction:normal;
+            animation-direction:normal;
+            -webkit-animation-fill-mode: ease-in-out;
+            animation-fill-mode: ease-in-out;
+        }
+        @-webkit-keyframes txtBg {
+            0% {
+                background-position:-20px;
+            }
+            100% {
+                background-position:150px;
+            }
+        }
+        @keyframes txtBg {
+            0% {
+                background-position:-20px;
+            }
+            100% {
+                background-position:150px;
+            }
+        }
+        #brandCover .txtBox .bar .txtCenter .txtBtnBg{color: #000;position: relative;}
+        #brandCover .imgBox{position: relative;box-shadow:0px 0px 7px 7px rgb(255, 255, 255); width:60px; height: 60px; border-radius: 50%; background-color:#fff; background-image: url('../img/D.jpg');background-position:center;background-size: cover;background-repeat: no-repeat;float: right;}
+        
+	</style>
+	<script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const touchEven = ()=> {
+                const btn = document.getElementsByTagName("button")[0];
+                const btnW = btn.offsetWidth;
+                const bar = document.querySelector(".bar");
+                const barW = bar.offsetWidth;
+                const barW3 = (barW/3)*2;
+                const txtCenter = document.querySelector(".txtCenter");
+
+                btn.addEventListener('touchstart', function (event){
+                    event.preventDefault();
+                    if(10 < event.touches[0].pageX){
+                        bar.style.width=barW-(event.touches[0].pageX-btnW);
+                    }
+                });
+
+                btn.addEventListener('touchmove', function (event){
+                    event.preventDefault();
+                    if(btnW < event.touches[0].pageX && barW > event.touches[0].pageX){
+                        bar.style.width=barW-(event.touches[0].pageX-btnW);
+                        if(barW/4 < event.touches[0].pageX){
+                            txtCenter.style.opacity=0;
+                        } else{
+                            txtCenter.style.opacity=1;
+                        }
+                    } 
+                });
+
+                btn.addEventListener('touchend', function (event){
+                    bar.style.width=barW;
+                    txtCenter.style.opacity=1;
+                    if((barW3 < event.changedTouches[0].pageX)){
+                        window.open('https://dabagirl.co.kr/');
+                    }
+                    
+                });
+            }
+            touchEven();
+            window.addEventListener('resize', () => {
+                touchEven();
+            });
+        });
+	</script>
+</head>
+<body>
+    <div id="brandCover">
+        <div class="con">
+            <div class="txtBox">
+                <div class="txt"><span class="tag">20대</span><span class="tag">필수인생템</span> 알고 계신가요?</div>
+                <div class="bar">
+                    <button></button>
+                    <div class="txtCenter">
+                        <p class="txtBtnBg">밀어서 확인하기 >>></p>
+                        <p class="txtBtn">밀어서 확인하기 >>></p>
+                    </div>
+                </div>
+            </div>
+            <div class="imgBox"></div>
+        </div>
+    </div>
+</body>
+</html>
