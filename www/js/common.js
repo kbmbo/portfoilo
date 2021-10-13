@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove('subNav');
         }
         removeClass();
+        //ani(e);
     }
     
     const removeClass = () => {
@@ -58,9 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
             window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
         }
     }
- 
+    
+    const ani = (e) => {
+        
+        const aniEl = document.querySelectorAll('.ani');
+        windowH = window.innerHeight;
+        // for (const i in aniEl) {
+        //     console.log(aniEl)
+        // }
+        aniEl.forEach( a => {
+            console.log(window.pageYOffset+a.getBoundingClientRect().top , a.getBoundingClientRect().top)
+            
+            if(windowH-100 > a.getBoundingClientRect().top){
+                a.classList.add(a.dataset.animated);
+            } else if(windowH-100 <= a.getBoundingClientRect().top){
+                a.classList.remove(a.dataset.animated);
+            }
+            // setTimeout(function(){
+            //     a.classList.add(a.dataset.animated);
+            // },500);
+        })
+    }
     window.addEventListener('wheel', e => {
         fullPageS(e);
+        //ani(e);
     });
     
     document.addEventListener("click", e => {

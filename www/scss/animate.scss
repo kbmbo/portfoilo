@@ -7,6 +7,7 @@
   animation-fill-mode: both;
 }
 
+///////나타나는 ani css////////
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -15,9 +16,7 @@
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+    @include ani;
   }
 }
   
@@ -30,10 +29,7 @@
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
+    @include ani;
   }
 }
   
@@ -50,9 +46,7 @@
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+    @include ani;
   }
 }
 
@@ -65,10 +59,7 @@
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
+    @include ani;
   }
 }
 
@@ -77,9 +68,40 @@
   animation-name: fadeInUp;
 }
 
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    @include ani;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -ms-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    @include ani;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+///////사라지는 ani css////////
 @-webkit-keyframes fadeOutDown {
   0% {
-    opacity: 1;
+    @include ani;
   }
 
   100% {
@@ -91,7 +113,7 @@
 
 @keyframes fadeOutDown {
   0% {
-    opacity: 1;
+    @include ani;
   }
 
   100% {
@@ -107,36 +129,7 @@
   animation-name: fadeOutDown;
 }
 
-@-webkit-keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    -ms-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
-}
-
+//////지속되는 ani css///////////////
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -149,7 +142,6 @@
     transform: rotate(360deg);
   }
 }
-
 @keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);

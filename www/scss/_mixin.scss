@@ -29,6 +29,12 @@
 @mixin transition{
 	transition: all 0.3s;
 }
+@mixin ani {
+	opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
 $breakpoints :(
 	'tablet':(max-width: 1024px),
 	'tablet2':(max-width: 768px),
