@@ -7,7 +7,7 @@
         <!-- <link rel="stylesheet" href="style.css"> -->
         <style>
             body{margin: 0; padding: 0;}
-            .veiw{overflow: hidden; width: 80%; height: 50vh; position: relative;}
+            .veiw{overflow: hidden; width: 80%; height: 50vh; position: relative; margin: 0 auto;}
             .slide{height: 100%; margin: 0; padding:0; transition: transform 1s;}
             .slide li{height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; list-style: none; float: left;}
         </style>
@@ -31,10 +31,6 @@
             let i=0;
             slide.style.width=`${(total*100)}%`;
             
-            // for(let i of imgUrl){
-            //     slide.innerHTML+=`<li style=width:${veiwW};background-image:url(${i.url});></li>`;
-            //     document.querySelector('.Paging').innerHTML+=`<li data-num='${i.num}'>${i.num}</li>`;
-            // }
             imgUrl.forEach( i => {
                 slide.insertAdjacentHTML('beforeend', `<li style=width:${veiwW};background-image:url(${i.url});></li>`);
                 document.querySelector('.Paging').insertAdjacentHTML('beforeend', `<li data-num='${i.num}'>${i.num}</li>`);
@@ -57,7 +53,6 @@
             let stX=null;
             const initTouch = e => {
                 stX=event.touches[0].pageX;
-                //e.preventDefault();
             }
             window.addEventListener('touchstart', initTouch);
             window.addEventListener('touchend',  e => {
@@ -75,10 +70,7 @@
             let lastChild = slide.lastElementChild;
             window.addEventListener('resize', () => {
                 veiwW = getComputedStyle(veiw).width;
-                const El = querySelectorAll('.slide li');
-                // for(let r=0; r < total; r++){                
-                //     document.querySelectorAll('.slide li')[r].style.width=veiwW;
-                // }
+                const El = document.querySelectorAll('.slide li');
                 Array.from(El).forEach( el => {
                     el.style.width=veiwW;
                 })
