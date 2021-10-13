@@ -73,8 +73,8 @@
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
-				&:hover {
-					color: rgba(255,255,255,.5);
+				@media (hover: hover) {
+					&:hover { color: rgba(255,255,255,.5); }
 				}
 				> span { font-size: 1.7vmin; }
 			}
@@ -173,9 +173,11 @@ header {
 					height: 8.2vmin;
 					text-transform: uppercase;
 					background-color: rgba(0,0,0,.2);
-					&:hover {
-						background-color: rgba(0,0,0,.6);
-						color: #fff;
+					@media (hover: hover) {
+						&:hover {
+							background-color: rgba(0,0,0,.6);
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -370,7 +372,13 @@ header {
 							cursor: pointer;
 							padding: 0 2vw;
 							text-transform: capitalize;
-							&:hover,&.active {
+							@media (hover: hover) {
+								&:hover {
+									background-color:$mainColor;
+									color: #fff;
+								}
+							}
+							&.active {
 								background-color:$mainColor;
 								color: #fff;
 							}
@@ -400,11 +408,13 @@ header {
 							float: left;
 							margin: $galleryM;
 							cursor: pointer;
-							&:hover figcaption { display: flex; }
+							@media (hover: hover) {
+								&:hover figcaption { display: flex; }
+							}
 							.img {
 								@include position($p:absolute,$t:0);
 								@include WH(100%,100%);
-								@include bgImg(cover);
+								@include bgImg(contain);
 							}
 							figcaption {
 								@include position($p:absolute,$t:0);

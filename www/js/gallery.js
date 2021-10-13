@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let filterList = ["all","javascript","react","vue","work"];
     let galleryList = [
         {filter:"javascript",url:"",img:"./img/portfolio/1.jpg",tit:"타이틀",txt:"개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와개졸려토나와"},
-        {filter:"javascript",url:"",img:"./img/portfolio/1.jpg",tit:"타이틀",txt:"개졸려토나와"},
+        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/banner/",img:"./img/portfolio/banner.png",tit:"banner",txt:"간단한 touch event가 작업된 배너입니다."},
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"work",url:"",img:"./img/portfolio/4.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"vue",url:"",img:"./img/portfolio/3.jpg",tit:"타이틀",txt:"개졸려토나와"},

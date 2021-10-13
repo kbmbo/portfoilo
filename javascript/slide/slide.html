@@ -26,16 +26,19 @@
             const slide=document.querySelector('.slide');
             const veiw = document.querySelector('.veiw');
             let veiwW= getComputedStyle(veiw).width;
-            let imgUrl=[{num:1,url:'./img/1.jpg'},{num:2,url:'./img/2.jpg'},{num:3,url:'./img/3.png'}];
+            let imgUrl=[{num:1,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{num:2,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{num:3,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
             let total= imgUrl.length;
             let i=0;
             slide.style.width=`${(total*100)}%`;
             
-            for(let i of imgUrl){
-                slide.innerHTML+=`<li style=width:${veiwW};background-image:url(${i.url});></li>`;
-                document.querySelector('.Paging').innerHTML+=`<li data-num='${i.num}'>${i.num}</li>`;
-            }
-            
+            // for(let i of imgUrl){
+            //     slide.innerHTML+=`<li style=width:${veiwW};background-image:url(${i.url});></li>`;
+            //     document.querySelector('.Paging').innerHTML+=`<li data-num='${i.num}'>${i.num}</li>`;
+            // }
+            imgUrl.forEach( i => {
+                slide.insertAdjacentHTML('beforeend', `<li style=width:${veiwW};background-image:url(${i.url});></li>`);
+                document.querySelector('.Paging').insertAdjacentHTML('beforeend', `<li data-num='${i.num}'>${i.num}</li>`);
+            })
             const pager = (type) => {
                 
                 if(type == 'next' && i > -((total-1)*100/total)){
@@ -72,9 +75,13 @@
             let lastChild = slide.lastElementChild;
             window.addEventListener('resize', () => {
                 veiwW = getComputedStyle(veiw).width;
-                for(let r=0; r < total; r++){                
-                    document.querySelectorAll('.slide li')[r].style.width=veiwW;
-                }
+                const El = querySelectorAll('.slide li');
+                // for(let r=0; r < total; r++){                
+                //     document.querySelectorAll('.slide li')[r].style.width=veiwW;
+                // }
+                Array.from(El).forEach( el => {
+                    el.style.width=veiwW;
+                })
             });
         </script>
     </body>
