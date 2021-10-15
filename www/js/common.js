@@ -64,12 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const aniEl = document.querySelectorAll('.ani');
         windowH = window.innerHeight;
-        // for (const i in aniEl) {
-        //     console.log(aniEl)
-        // }
         Array.from(aniEl).forEach( a => {
-            console.log(window.pageYOffset+a.getBoundingClientRect().top , a.getBoundingClientRect().top)
-            
             if(windowH-100 > a.getBoundingClientRect().top){
                 a.classList.add(a.dataset.animated);
             } else if(windowH-100 <= a.getBoundingClientRect().top){
@@ -98,32 +93,38 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', () => {
         fullPageH();
     });
-    
+
     let startX
     window.addEventListener('touchstart', (e) => {
-        //console.log(e.touches[0].pageY);
         startX = e.touches[0].pageY;
     });
     
     window.addEventListener('touchmove', e => {
         mainBottom = fullPage.getBoundingClientRect().bottom
         dim == e.touches[0].target ? removeClass() : null;
-        if(startX < e.changedTouches[0].pageY && mainBottom > ((windowH/4)*3)){ //위로
-            header.classList.remove('subNav');
-        } else{
-            header.classList.add('subNav')
-        }
+        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+        // if(startX < e.changedTouches[0].pageY && mainBottom > ((windowH/4)*3)){ //위로
+        //     header.classList.remove('subNav');
+        // } else{
+        //     header.classList.add('subNav')
+        // }
     });
     
-    // window.addEventListener('touchend', (e) => {
-    //     if(startX < e.changedTouches[0].pageY && bb > ((windowH/3)*2)){ //위로
-    //         header.classList.remove('subNav');
-    //         console.log(bb,((windowH/3)*2));
-    //     }
-    // });
+    window.addEventListener('touchend', (e) => {
+        if(startX < e.changedTouches[0].pageY && mainBottom > (windowH/3)){ //위로
+            header.classList.remove('subNav');
+            window.scrollTo(0,0)
+        }
+    });
 });
 
 window.addEventListener('load', () => {
-    window.history.scrollRestoration = 'manual';
-    setTimeout(window.scrollTo(0,0),300);
 });
+
+window.addEventListener('beforeunload', (e) => { 
+    e.preventDefault(); 
+    e.returnValue = '';
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0,0)
+});
+
