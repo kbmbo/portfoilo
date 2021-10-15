@@ -122,9 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener('load', () => {
 });
 
-window.addEventListener('beforeunload', (e) => { 
-    e.preventDefault(); 
-    e.returnValue = '';
+window.addEventListener('beforeunload', () => { 
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0,0)
 });
