@@ -103,19 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
         mainBottom = fullPage.getBoundingClientRect().bottom
         dim == e.touches[0].target ? removeClass() : null;
         window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
-        // if(startX < e.changedTouches[0].pageY && mainBottom > ((windowH/4)*3)){ //위로
-        //     header.classList.remove('subNav');
-        // } else{
-        //     header.classList.add('subNav')
-        // }
-    });
-    
-    window.addEventListener('touchend', (e) => {
         if(startX < e.changedTouches[0].pageY && mainBottom > (windowH/3)){ //위로
             header.classList.remove('subNav');
             window.scrollTo(0,0)
+        } else{
+            header.classList.add('subNav')
         }
     });
+    
+    // window.addEventListener('touchend', (e) => {
+    //     if(startX < e.changedTouches[0].pageY && mainBottom > (windowH/3)){ //위로
+    //         header.classList.remove('subNav');
+    //         window.scrollTo(0,0)
+    //     }
+    // });
 });
 
 window.addEventListener('load', () => {
