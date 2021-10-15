@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('touchmove', e => {
         mainBottom = fullPage.getBoundingClientRect().bottom
         dim == e.touches[0].target ? removeClass() : null;
-        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+        //window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
         if(startX < e.changedTouches[0].pageY && mainBottom > (windowH/3)){ //위로
             header.classList.remove('subNav');
             window.scrollTo(0,0)
-        } else{
+        } else if(window.scrollY > 0){
             header.classList.add('subNav')
         }
     });
