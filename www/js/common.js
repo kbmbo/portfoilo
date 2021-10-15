@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobBtn = document.querySelector('.mNav');
     const header = document.getElementsByTagName('header')[0];
     const dim = document.querySelector('.dim');
-
+    let mainBottom
     let windowH
 
     const fullPageH = () => {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fullPageH();
 
     const fullPageS = e => {
-        const mainBottom = fullPage.getBoundingClientRect().bottom;
+        mainBottom = fullPage.getBoundingClientRect().bottom;
         windowH = window.innerHeight;
         if(e.deltaY > 0 && mainBottom == windowH){
             window.scrollTo(0, mainBottom);
@@ -99,19 +99,28 @@ document.addEventListener("DOMContentLoaded", () => {
         fullPageH();
     });
     
-    //window.addEventListener('touchstart', () => {
-        //window.pageYOffset == 0 ? header.classList.remove('subNav') : null;
-    //});
-    
-    window.addEventListener('touchmove', e => {
-        dim == e.touches[0].target ? removeClass() : null;
-        window.scrollY > 0 ? header.classList.add('subNav') : header.classList.remove('subNav');
+    let startX
+    window.addEventListener('touchstart', (e) => {
+        //console.log(e.touches[0].pageY);
+        startX = e.touches[0].pageY;
     });
     
-    //window.addEventListener('touchend', () => {
-        //window.scrollY > 100 ? header.classList.add('subNav') : header.classList.remove('subNav');
-    //});
+    window.addEventListener('touchmove', e => {
+        mainBottom = fullPage.getBoundingClientRect().bottom
+        dim == e.touches[0].target ? removeClass() : null;
+        if(startX < e.changedTouches[0].pageY && mainBottom > ((windowH/4)*3)){ //위로
+            header.classList.remove('subNav');
+        } else{
+            header.classList.add('subNav')
+        }
+    });
     
+    // window.addEventListener('touchend', (e) => {
+    //     if(startX < e.changedTouches[0].pageY && bb > ((windowH/3)*2)){ //위로
+    //         header.classList.remove('subNav');
+    //         console.log(bb,((windowH/3)*2));
+    //     }
+    // });
 });
 
 window.addEventListener('load', () => {
