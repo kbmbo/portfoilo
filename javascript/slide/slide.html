@@ -3,79 +3,174 @@
     <head>
         <title>javascript 공부중 </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.5">
         <style>
-            body{margin: 0; padding: 0;}
-            .veiw{overflow: hidden; width: 80%; height: 50vh; position: relative; margin: 0 auto;}
-            .slide{height: 100%; margin: 0; padding:0; transition: transform 1s;}
-            .slide li{height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; list-style: none; float: left;}
+            * {
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                outline: 0;
+                vertical-align: baseline;
+                background: transparent;
+                font-weight: normal;
+            }
+            html { width: 100%; font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 10px; scroll-behavior: smooth; word-break:keep-all; }
+            body { width: 100%; background-color: #fff; font-size: 1.5rem; font-weight: 400; color: #222; scroll-behavior: smooth; }
+            li { list-style: none; }
+            button { background-color: transparent; cursor: pointer; font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif'; }
+            aside, details, figcaption, figure, footer, header, hgroup, menu, nav { display: block; }
+            a { text-decoration: none; color: #222; }
+            .slide-container{ width: 100%; position: relative; }
+            .veiw { width: 100%; position: relative; }
+            .img-box { position: relative; width: 80%; margin: 0 auto; overflow: hidden; }
+            .slide { margin: 0; padding:0; }
+            .slide li { position: relative; height: 0; padding-bottom: 10%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
+            .pager { position: absolute; top: 0; display: flex; justify-content: space-between; align-items:center; width: 100%; }
+            .pager button { position: relative; font-size: 0; width: 6%; height: 8vmin; display: flex; justify-content: space-around; align-items:center; }
+            .pager button.prev {}
+            .pager button.next {}
+            .pager button:before, .pager button:after { content: ''; display: block; width: 3px; height: 50%; background-color: #ccc; position: absolute; }
+            .pager button.prev:before, .pager button.next:before { transform: rotate(-45deg); }
+            .pager button.prev:after, .pager button.next:after { transform: rotate(45deg); }
+            .paging { display: flex; justify-content: center; margin-top: 10px; }
+            .paging li { margin: 0 5px; cursor: pointer; }
+            .paging li.active { font-weight: 600; }
         </style>
-    </head>
-    <body>
-        <div class="veiw">
-            <ul class="slide">
-            </ul>
-        </div>
-        <div class="pager">
-            <button onclick="pager('prev')">prev</button>
-            <button onclick="pager('next')">next</button>
-        </div>
-        <ul class="Paging"></ul>
-        <script>
-            const slide=document.querySelector('.slide');
-            const veiw = document.querySelector('.veiw');
-            let veiwW= getComputedStyle(veiw).width;
-            let imgUrl=[{num:1,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{num:2,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{num:3,url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
-            let total= imgUrl.length;
-            let i=0;
-            slide.style.width=`${(total*100)}%`;
-            
-            imgUrl.forEach( i => {
-                slide.insertAdjacentHTML('beforeend', `<li style=width:${veiwW};background-image:url(${i.url});></li>`);
-                document.querySelector('.Paging').insertAdjacentHTML('beforeend', `<li data-num='${i.num}'>${i.num}</li>`);
-            })
-            const pager = (type) => {
-                
-                if(type == 'next' && i > -((total-1)*100/total)){
-                    i = i - (100/total);
-                    
-                } else if(type == 'prev' && i < 0){
-                    i = i + (100/total);                        
-                }
-                slide.style.transform =`translateX(${i}%)`
-            }
-            document.querySelector('.Paging').addEventListener('click', e => {
-                let Pagingnum = e.target.dataset.num-1;
-                slide.style.transform =`translateX(-${Pagingnum*100/total}%)`;
-                //console.log(e.target)
-            });
-            let stX=null;
-            const initTouch = e => {
-                stX=event.touches[0].pageX;
-            }
-            window.addEventListener('touchstart', initTouch);
-            window.addEventListener('touchend',  e => {
-                let endX=e.changedTouches[0].pageX;
 
-                if((stX-endX) > 0  && i > -((total-1)*100/total)){
-                    i = i - (100/total);
-                    
-                }else if((stX-endX) < 0 && i < 0){
-                    i = i + (100/total);                        
-                }
-                slide.style.transform =`translateX(${i}%)`
-            });
-            let firstChild = slide.firstElementChild;
-            let lastChild = slide.lastElementChild;
-            window.addEventListener('resize', () => {
-                veiwW = getComputedStyle(veiw).width;
-                const El = document.querySelectorAll('.slide li');
-                Array.from(El).forEach( el => {
-                    el.style.width=veiwW;
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const imgBox = document.querySelector('.imgBox');
+                const slide=document.querySelector('.Slide');
+                const veiw = document.querySelector('.Veiw');
+                const pager = document.querySelector('.Pager');
+                const imgUrl = [{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
+                const total = imgUrl.length+2;
+                const slideSpeed = 1000;
+                const PagingChild = document.querySelector('.Paging').childNodes;
+                var tX = 100/total;
+                let i = -tX;
+                let imgBoxW;
+                let type;
+                let stX;
+                let PagingNum = 0;
+
+                slide.style.width=`${((total)*100)}%`;
+                slide.style.transition = "0ms";
+                slide.style.transform =`translateX(-${tX}%)`;
+                
+                imgUrl.forEach( (el,index) => {
+                    imgBoxW = getComputedStyle(imgBox).width;
+                    slide.insertAdjacentHTML('beforeend', `<li style=width:${imgBoxW};background-image:url(${el.url});></li>`);
+                    document.querySelector('.Paging').insertAdjacentHTML('beforeend', `<li data-num='${index+1}'>${index+1}</li>`);
                 })
+
+                window.addEventListener('load', () => {
+                    let firstChild = slide.firstElementChild;
+                    let lastChild = slide.lastElementChild;
+                    let clonedFirst = firstChild.cloneNode(true);
+                    let clonedLast = lastChild.cloneNode(true);
+
+                    slide.insertAdjacentHTML('afterbegin', `${clonedLast.outerHTML}`);
+                    slide.insertAdjacentHTML('beforeend', `${clonedFirst.outerHTML}`);
+
+                    document.querySelector('.Paging').firstElementChild.classList.add('active');
+                    pager.style.height = getComputedStyle(imgBox).height;
+                });
+
+                const PagingActive = PagingNum => {
+                    Array.from(PagingChild).forEach( el => {
+                        el.classList.remove('active');
+                    })
+                    PagingChild[PagingNum].classList.add('active');
+                }
+                const transform = type => {
+                    PagingNum
+                    i
+                    if(type == 'next' && i > -((total-1)*tX)){
+                        i = i - tX;
+                        if(-i==((total-1)*tX)){
+                            setTimeout(function() {
+                                slide.style.transition = "0ms";
+                                slide.style.transform =`translateX(-${tX}%)`;
+                                i = -tX;
+                            }, slideSpeed);
+                        }
+                        PagingNum < imgUrl.length ? ++PagingNum : null
+
+                    } else if(type == 'prev' && i < 0){
+                        i = i + tX;
+                        PagingNum >= 0 ? --PagingNum : null
+                        if(i==0){
+                            setTimeout(function() {
+                                slide.style.transition = "0ms";
+                                slide.style.transform =`translateX(-${tX*imgUrl.length}%)`;
+                                i = - tX*imgUrl.length;
+                            }, slideSpeed-100);
+                        }                      
+                    }
+                    slide.style.transition = `${slideSpeed}ms`;
+                    slide.style.transform =`translateX(${i}%)`
+                    if(PagingNum === imgUrl.length){
+                        PagingNum = 0
+                    } else if(PagingNum < 0){
+                        PagingNum = imgUrl.length-1
+                    }
+                    PagingActive(PagingNum);
+                    
+                }
+
+                window.addEventListener('resize', () => {
+                    imgBoxW = getComputedStyle(imgBox).width;
+                    pager.style.height = getComputedStyle(imgBox).height;
+                    const El = document.querySelectorAll('.slide li');
+                    Array.from(El).forEach( el => {
+                        el.style.width=imgBoxW;
+                    })
+                });
+
+                document.querySelector('.Pager').addEventListener('click', e => {
+                    type = e.target.dataset.pager;
+                    transform(type);
+                });
+
+                document.querySelector('.Paging').addEventListener('click', e => {
+                    PagingNum = e.target.dataset.num-1;
+                    i = - (PagingNum+1)*tX
+                    e.target.dataset.num !== undefined ? PagingActive(PagingNum) : null;
+                    
+                    slide.style.transition = `${slideSpeed}ms`;
+                    slide.style.transform =`translateX(-${(PagingNum+1)*tX}%)`;
+                });
+                
+                veiw.addEventListener('touchstart', e => {
+                    stX=event.touches[0].pageX;
+                });
+
+                veiw.addEventListener('touchend',  e => {
+                    let endX=e.changedTouches[0].pageX;
+                    type = (stX-endX) > 0 ? 'next' : 'prev';
+                    transform(type);
+                });
             });
         </script>
+        
+    </head>
+    <body>
+        <div class="slide-container">
+            <div class="Veiw veiw">
+                <div class="imgBox img-box">
+                    <ul class="Slide slide">
+                    </ul>
+                </div>
+                <div class="Pager pager">
+                    <button type="button" data-pager="prev" class="prev">prev</button>
+                    <button type="button" data-pager="next" class="next">next</button>
+                </div>
+            </div>
+            <ul class="Paging paging"></ul>
+        </div>
     </body>
 </html>
 

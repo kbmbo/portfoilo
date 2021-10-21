@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             e.target.classList.add('active');
             galleryCon.forEach( i => {
+                
                 if(filter === 'all'){
                     i.classList.add('zoomIn');
                     i.classList.remove('fadeOutDown','none');

@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if(window.scrollY > 0){
             header.classList.add('subNav')
         }
+        console.log(window.scrollY)
     });
     
     // window.addEventListener('touchend', (e) => {
