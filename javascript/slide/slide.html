@@ -26,7 +26,7 @@
             .veiw { width: 100%; position: relative; }
             .img-box { position: relative; width: 80%; margin: 0 auto; overflow: hidden; }
             .slide { margin: 0; padding:0; }
-            .slide li { position: relative; height: 0; padding-bottom: 10%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
+            .slide li { position: relative; height: 0; padding-bottom: 13%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
             .pager { position: absolute; top: 0; display: flex; justify-content: space-between; align-items:center; width: 100%; }
             .pager button { position: relative; font-size: 0; width: 6%; height: 8vmin; display: flex; justify-content: space-around; align-items:center; }
             .pager button.prev {}
@@ -41,20 +41,24 @@
 
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
+                const imgUrl = [{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
                 const imgBox = document.querySelector('.imgBox');
                 const slide=document.querySelector('.Slide');
                 const veiw = document.querySelector('.Veiw');
+                const paging = document.querySelector('.Paging');
                 const pager = document.querySelector('.Pager');
-                const imgUrl = [{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
                 const total = imgUrl.length+2;
                 const slideSpeed = 1000;
-                const PagingChild = document.querySelector('.Paging').childNodes;
-                var tX = 100/total;
+                const pagingChild = paging.children;
+                const slideChild = slide.children;
+                const pagerChild = pager.children;
+                const tX = 100/total;
+
                 let i = -tX;
                 let imgBoxW;
                 let type;
                 let stX;
-                let PagingNum = 0;
+                let pagingNum = 0;
 
                 slide.style.width=`${((total)*100)}%`;
                 slide.style.transition = "0ms";
@@ -63,7 +67,7 @@
                 imgUrl.forEach( (el,index) => {
                     imgBoxW = getComputedStyle(imgBox).width;
                     slide.insertAdjacentHTML('beforeend', `<li style=width:${imgBoxW};background-image:url(${el.url});></li>`);
-                    document.querySelector('.Paging').insertAdjacentHTML('beforeend', `<li data-num='${index+1}'>${index+1}</li>`);
+                    paging.insertAdjacentHTML('beforeend', `<li data-num='${index+1}'>${index+1}</li>`);
                 })
 
                 window.addEventListener('load', () => {
@@ -75,18 +79,19 @@
                     slide.insertAdjacentHTML('afterbegin', `${clonedLast.outerHTML}`);
                     slide.insertAdjacentHTML('beforeend', `${clonedFirst.outerHTML}`);
 
-                    document.querySelector('.Paging').firstElementChild.classList.add('active');
+                    paging.firstElementChild.classList.add('active');
                     pager.style.height = getComputedStyle(imgBox).height;
                 });
 
-                const PagingActive = PagingNum => {
-                    Array.from(PagingChild).forEach( el => {
+                const PagingActive = pagingNum => {
+                    Array.from(pagingChild).forEach( el => {
                         el.classList.remove('active');
                     })
-                    PagingChild[PagingNum].classList.add('active');
+                    pagingChild[pagingNum].classList.add('active');
                 }
+                
                 const transform = type => {
-                    PagingNum
+                    pagingNum
                     i
                     if(type == 'next' && i > -((total-1)*tX)){
                         i = i - tX;
@@ -97,11 +102,11 @@
                                 i = -tX;
                             }, slideSpeed);
                         }
-                        PagingNum < imgUrl.length ? ++PagingNum : null
+                        pagingNum < imgUrl.length ? ++pagingNum : null
 
                     } else if(type == 'prev' && i < 0){
                         i = i + tX;
-                        PagingNum >= 0 ? --PagingNum : null
+                        pagingNum >= 0 ? --pagingNum : null
                         if(i==0){
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
@@ -112,46 +117,44 @@
                     }
                     slide.style.transition = `${slideSpeed}ms`;
                     slide.style.transform =`translateX(${i}%)`
-                    if(PagingNum === imgUrl.length){
-                        PagingNum = 0
-                    } else if(PagingNum < 0){
-                        PagingNum = imgUrl.length-1
+                    if(pagingNum === imgUrl.length){
+                        pagingNum = 0
+                    } else if(pagingNum < 0){
+                        pagingNum = imgUrl.length-1
                     }
-                    PagingActive(PagingNum);
-                    
+                    PagingActive(pagingNum);
                 }
 
                 window.addEventListener('resize', () => {
                     imgBoxW = getComputedStyle(imgBox).width;
-                    pager.style.height = getComputedStyle(imgBox).height;
-                    const El = document.querySelectorAll('.slide li');
-                    Array.from(El).forEach( el => {
-                        el.style.width=imgBoxW;
+                    Array.from(slideChild).forEach( el => {
+                        el.style.width = imgBoxW;
+                        pager.style.height = getComputedStyle(imgBox).height;
                     })
                 });
 
-                document.querySelector('.Pager').addEventListener('click', e => {
+                Array.from(pagerChild).forEach( el => el.addEventListener('click', e => {
                     type = e.target.dataset.pager;
                     transform(type);
-                });
+                }));
 
-                document.querySelector('.Paging').addEventListener('click', e => {
-                    PagingNum = e.target.dataset.num-1;
-                    i = - (PagingNum+1)*tX
-                    e.target.dataset.num !== undefined ? PagingActive(PagingNum) : null;
+                paging.addEventListener('click', e => {
+                    pagingNum = e.target.dataset.num-1;
+                    i = - (pagingNum+1)*tX
+                    e.target.dataset.num !== undefined ? PagingActive(pagingNum) : null;
                     
                     slide.style.transition = `${slideSpeed}ms`;
-                    slide.style.transform =`translateX(-${(PagingNum+1)*tX}%)`;
+                    slide.style.transform =`translateX(-${(pagingNum+1)*tX}%)`;
                 });
                 
                 veiw.addEventListener('touchstart', e => {
+                    //e.preventDefault();
                     stX=event.touches[0].pageX;
                 });
 
                 veiw.addEventListener('touchend',  e => {
                     let endX=e.changedTouches[0].pageX;
-                    type = (stX-endX) > 0 ? 'next' : 'prev';
-                    transform(type);
+                    e.target.dataset.pager === undefined ? ( type = (stX-endX) > 0 ? 'next' : 'prev', transform(type) ) : null;
                 });
             });
         </script>
@@ -176,11 +179,11 @@
 
 <!-- index구하는 :s
 [].forEach.call(document.querySelectorAll('.Paging li'), function(el) {
-    let Pagingnum = getElementIndex(document.querySelectorAll('.Paging li'), el);
+    let pagingNum = getElementIndex(document.querySelectorAll('.Paging li'), el);
     
     el.addEventListener('click', function(){
-        slide.style.transform ='translateX(-'+Pagingnum*100/total+'%)'
-        console.log(Pagingnum)
+        slide.style.transform ='translateX(-'+pagingNum*100/total+'%)'
+        console.log(pagingNum)
     });
 });
 function getElementIndex(element,range){
