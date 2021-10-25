@@ -1,23 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let filterList = ["all","javascript","react","vue","work"];
-    let galleryList = [
+    
+    const filterList = ["all","javascript","react","vue","work"];
+    const galleryList = [
         {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/slide/slide.html",img:"./img/portfolio/slide.png",tit:"slide",txt:"무한루프 반응형 슬라이드 입니다."},
         {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/banner/",img:"./img/portfolio/banner.png",tit:"banner",txt:"간단한 touch event가 작업된 배너입니다."},
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"타이틀",txt:"개졸려토나와"},
-        {filter:"work",url:"",img:"./img/portfolio/4.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"vue",url:"",img:"./img/portfolio/3.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"work",url:"",img:"./img/portfolio/4.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"work",url:"",img:"./img/portfolio/4.jpg",tit:"타이틀",txt:"개졸려토나와"}
     ];
-
-    const galleryCont = document.querySelector('.gallery-container');
+    const galleryContainer = document.querySelector('.gallery-container');
+    const filterCon = galleryContainer.querySelector('.filterList');
+    const galleryCon = galleryContainer.querySelector('.galleryList');
 
     filterList.forEach( t => {
-        galleryCont.querySelector('.filterList').insertAdjacentHTML('beforeend', `<li type="button" data-filter="${t}">${t}</li>`);
+        filterCon.insertAdjacentHTML('beforeend', `<li type="button" data-filter="${t}">${t}</li>`);
     })
+
     galleryList.forEach( g => {
-        galleryCont.querySelector('.gallery-list').insertAdjacentHTML('beforeend', `<figure class="animated galleryCon all ${g.filter}">
+        galleryCon.insertAdjacentHTML('beforeend', `<figure class="animated all ${g.filter}">
             <div class="img" style="background-image:url('${g.img}')"></div>
             <figcaption>
                 <h4>${g.tit}</h4>
@@ -26,19 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
             </figcaption>
         </figure>`);
     })
+
     const gallery = () => {
-        const filterBtn = document.querySelectorAll('.filterList li');
-        const galleryCon = document.querySelectorAll('.galleryCon');
+        const filterBtn = filterCon.children;
+        const galleryConChild = galleryCon.children;
         const popup = document.querySelector('.popup');
         filterBtn[0].classList.add('active');
-        filterBtn.forEach( b => b.addEventListener('click', e => {
+        Array.from(filterBtn).forEach( b => b.addEventListener('click', e => {
             e.preventDefault();
             const filter = e.target.dataset.filter;
-            filterBtn.forEach( b => {
+            Array.from(filterBtn).forEach( b => {
                 b.classList.remove('active');
             })
             e.target.classList.add('active');
-            galleryCon.forEach( i => {
+            Array.from(galleryConChild).forEach( i => {
                 
                 if(filter === 'all'){
                     i.classList.add('zoomIn');
@@ -53,20 +56,25 @@ document.addEventListener("DOMContentLoaded", () => {
                         } 
                     },500);
                 }
+
             })
         }))
-        galleryCon.forEach( p => p.addEventListener('click', () => {
+
+        Array.from(galleryConChild).forEach( p => p.addEventListener('click', () => {
             if(popup.classList.contains('none')){
                 popup.classList.remove('none');
                 popup.insertAdjacentHTML('afterbegin', p.outerHTML);
             } 
         }))
+
         popup.addEventListener('click', e => {
             if(e.target === popup){
                 popup.classList.add('none');
                 popup.innerHTML='';
             }
         });
+
     }
     gallery();
+
 });
