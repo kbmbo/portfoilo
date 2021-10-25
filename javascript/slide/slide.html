@@ -24,19 +24,23 @@
             a { text-decoration: none; color: #222; }
             .slide-container{ width: 100%; position: relative; }
             .veiw { width: 100%; position: relative; }
-            .img-box { position: relative; width: 80%; margin: 0 auto; overflow: hidden; }
+            .img-box { position: relative; width: 84%; margin: 0 auto; overflow: hidden; }
             .slide { margin: 0; padding:0; }
             .slide li { position: relative; height: 0; padding-bottom: 13%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
             .pager { position: absolute; top: 0; display: flex; justify-content: space-between; align-items:center; width: 100%; }
-            .pager button { position: relative; font-size: 0; width: 6%; height: 8vmin; display: flex; justify-content: space-around; align-items:center; }
-            .pager button.prev {}
-            .pager button.next {}
-            .pager button:before, .pager button:after { content: ''; display: block; width: 3px; height: 50%; background-color: #ccc; position: absolute; }
-            .pager button.prev:before, .pager button.next:before { transform: rotate(-45deg); }
-            .pager button.prev:after, .pager button.next:after { transform: rotate(45deg); }
+            .pager button { position: relative; font-size: 0; width: 7vmin; height: 10vmin; display: flex; justify-content: space-around; align-items:center; }
+            
+            .pager button:before, .pager button:after { content: ''; display: block; width: 3px; height: 50%; background-color: #c3c3c3; position: absolute; }
+            .pager button.prev:before, .pager button.next:after { transform: rotate(-45deg); }
+            .pager button.prev:after, .pager button.next:before { transform: rotate(45deg); }
+            .pager button.prev:before, .pager button.next:before { bottom:0.8vmin }
+            .pager button.prev:after, .pager button.next:after { top:0.8vmin }
             .paging { display: flex; justify-content: center; margin-top: 10px; }
             .paging li { margin: 0 5px; cursor: pointer; }
             .paging li.active { font-weight: 600; }
+            @media (hover: hover) {
+                .pager button:hover { opacity: 0.6;}
+            }
         </style>
 
         <script type="text/javascript">
@@ -89,7 +93,7 @@
                     })
                     pagingChild[pagingNum].classList.add('active');
                 }
-                
+
                 const transform = type => {
                     pagingNum
                     i
