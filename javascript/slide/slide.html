@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>javascript 공부중 </title>
+        <title>loop slide</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.5">
         <style>
@@ -26,7 +26,7 @@
             .veiw { width: 100%; position: relative; }
             .img-box { position: relative; width: 84%; margin: 0 auto; overflow: hidden; }
             .slide { margin: 0; padding:0; }
-            .slide li { position: relative; height: 0; padding-bottom: 13%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
+            .slide li { position: relative; height: 0; padding-bottom: 10%; background-position: center; background-repeat: no-repeat; background-size: cover; float: left; }
             .pager { position: absolute; top: 0; display: flex; justify-content: space-between; align-items:center; width: 100%; }
             .pager button { position: relative; font-size: 0; width: 7vmin; height: 10vmin; display: flex; justify-content: space-around; align-items:center; }
             
@@ -45,7 +45,7 @@
 
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
-                const imgUrl = [{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower4.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower3.jpg'},{url:'https://kbmbo.github.io/portfoilo/www/img/bg/flower2.jpg'}];
+                const imgUrl = [{url:'./img/1.jpg'},{url:'./img/2.jpg'},{url:'./img/3.jpg'},{url:'./img/4.jpg'}];
                 const imgBox = document.querySelector('.imgBox');
                 const slide=document.querySelector('.Slide');
                 const veiw = document.querySelector('.Veiw');
@@ -70,11 +70,12 @@
                 
                 imgUrl.forEach( (el,index) => {
                     imgBoxW = getComputedStyle(imgBox).width;
-                    slide.insertAdjacentHTML('beforeend', `<li style=width:${imgBoxW};background-image:url(${el.url});></li>`);
-                    paging.insertAdjacentHTML('beforeend', `<li data-num='${index+1}'>${index+1}</li>`);
+                    slide.insertAdjacentHTML('beforeend', `<li style = 'width:${imgBoxW}; background-image:url(${el.url});'></li>`);
+                    paging.insertAdjacentHTML('beforeend', `<li data-num = '${index+1}'>${index+1}</li>`);
                 })
-
+                
                 window.addEventListener('load', () => {
+                    
                     let firstChild = slide.firstElementChild;
                     let lastChild = slide.lastElementChild;
                     let clonedFirst = firstChild.cloneNode(true);
