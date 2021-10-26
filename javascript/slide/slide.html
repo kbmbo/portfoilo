@@ -61,8 +61,8 @@
                 const pagingChild = paging.children;
                 const slideChild = slide.children;
                 const pagerChild = pager.children;
-                const tX = 100/total;
-
+                const tX = parseFloat(`${(100/total).toFixed(3)}`);
+                
                 let i = -tX;
                 let imgBoxW;
                 let type;
@@ -71,7 +71,7 @@
 
                 slide.style.width=`${((total)*100)}%`;
                 slide.style.transition = "0ms";
-                slide.style.transform =`translateX(-${tX}%)`;
+                slide.style.transform =`translateX(${i}%)`;
                 
                 imgUrl.forEach( (el,index) => {
                     imgBoxW = getComputedStyle(imgBox).width;
@@ -81,10 +81,10 @@
                 
                 window.addEventListener('load', () => {
                     
-                    let firstChild = slide.firstElementChild;
-                    let lastChild = slide.lastElementChild;
-                    let clonedFirst = firstChild.cloneNode(true);
-                    let clonedLast = lastChild.cloneNode(true);
+                    const firstChild = slide.firstElementChild;
+                    const lastChild = slide.lastElementChild;
+                    const clonedFirst = firstChild.cloneNode(true);
+                    const clonedLast = lastChild.cloneNode(true);
 
                     slide.insertAdjacentHTML('afterbegin', clonedLast.outerHTML);
                     slide.insertAdjacentHTML('beforeend', clonedFirst.outerHTML);
@@ -104,8 +104,10 @@
                 }
 
                 const transform = type => {
+                    let firstChild2 = slide.firstElementChild;
                     pagingNum
                     i
+                    
                     if(type == 'next' && i > -((total-1)*tX)){
                         i = i - tX;
                         if(-i==((total-1)*tX)){
@@ -119,14 +121,17 @@
 
                     } else if(type == 'prev' && i < 0){
                         i = i + tX;
-                        pagingNum >= 0 ? --pagingNum : null
-                        if(i==0){
+                        
+                        if(i == 0){
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
-                                slide.style.transform =`translateX(-${tX*imgUrl.length}%)`;
-                                i = - tX*imgUrl.length;
+                                slide.style.transform =`translateX(-${(tX*imgUrl.length)}%)`;
+                                i = -((tX*imgUrl.length));
+                                
                             }, slideSpeed-100);
-                        }                      
+                            
+                        } 
+                        pagingNum >= 0 ? --pagingNum : null                    
                     }
                     slide.style.transition = `${slideSpeed}ms`;
                     slide.style.transform =`translateX(${i}%)`
@@ -189,18 +194,3 @@
         </div>
     </body>
 </html>
-
-<!-- index구하는 :s
-[].forEach.call(document.querySelectorAll('.Paging li'), function(el) {
-    let pagingNum = getElementIndex(document.querySelectorAll('.Paging li'), el);
-    
-    el.addEventListener('click', function(){
-        slide.style.transform ='translateX(-'+pagingNum*100/total+'%)'
-        console.log(pagingNum)
-    });
-});
-function getElementIndex(element,range){
-    if (!!range) return [].indexOf.call(element, range);
-    return [].indexOf.call(element.parentNode.children, element);
-}
-index구하는 :e -->
