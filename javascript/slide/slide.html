@@ -74,8 +74,7 @@
                 slide.style.transform =`translateX(${i}%)`;
                 
                 imgUrl.forEach( (el,index) => {
-                    imgBoxW = getComputedStyle(imgBox).width;
-                    slide.insertAdjacentHTML('beforeend', `<li style = 'width:${imgBoxW}; background-image:url(${el.url});'></li>`);
+                    slide.insertAdjacentHTML('beforeend', `<li style = 'background-image:url(${el.url});'></li>`);
                     paging.insertAdjacentHTML('beforeend', `<li data-num = '${index+1}'>${index+1}</li>`);
                 })
                 
@@ -90,6 +89,8 @@
                     slide.insertAdjacentHTML('beforeend', clonedFirst.outerHTML);
 
                     paging.firstElementChild.classList.add('active');
+
+                    imgBoxW = getComputedStyle(imgBox).width;
                     Array.from(slideChild).forEach( el => {
                         el.style.width = imgBoxW;
                         pager.style.height = getComputedStyle(imgBox).height;
