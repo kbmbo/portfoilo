@@ -108,10 +108,10 @@
                     let firstChild2 = slide.firstElementChild;
                     pagingNum
                     i
-                    
-                    if(type == 'next'){ // 다음버튼
+
+                    if(type == 'next'){ // 다음 버튼
                         i = i - tX;
-                        if(-i==((total-1)*tX)){ // 시작 지점이 두번째 이므로 total-1 해주고 마지막 위치값과 비교
+                        if(-i == (total-1)*tX){ // 시작 지점이 두번째 이므로 total-1 해서 클론 퍼스트값 구하고 해당지점 됐을때 원본 퍼스트로 보내줌
                             console.log(-i,(total-1)*tX)
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
@@ -121,10 +121,9 @@
                         }
                         pagingNum < imgUrl.length ? ++pagingNum : null
 
-                    } else if(type == 'prev' && i < 0){
+                    } else if(type == 'prev'){ //이전 버튼
                         i = i + tX;
-                        
-                        if(i == 0){
+                        if(i == 0){ //맨앞에 있는 클론 라스트에 도달했을때 원본 라스트로 보내줌
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
                                 slide.style.transform =`translateX(-${(tX*imgUrl.length)}%)`;
