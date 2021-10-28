@@ -84,17 +84,15 @@
 			.img { height: 70%; }
 			figcaption {
 				height: 30%;
-				h4 { font-size: 5.5vmin; margin-bottom: 1.5vmin; }
+				h4 { font-size: 2rem; margin-bottom: 1.5vmin; }
 				> span {
-					font-size: 4.5vmin;
-					overflow: hidden;
-					text-overflow: ellipsis;
+					font-size: 1.4rem;
 					display: -webkit-box;
-					-webkit-line-clamp: 2;
+					-webkit-line-clamp: 3;
 					-webkit-box-orient: vertical;
 					white-space: unset;
 					word-break: normal;
-					> span { font-size: 3.5vmin; }
+					> span { font-size: 1.3rem; }
 				}
 			}
 		}

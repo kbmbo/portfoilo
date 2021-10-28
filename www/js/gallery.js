@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const filterList = ["all","javascript","react","vue","work"];
     const galleryList = [
-        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/slide/slide.html",img:"./img/portfolio/slide.png",tit:"slide",txt:"무한루프 반응형 슬라이드 입니다."},
-        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/banner/",img:"./img/portfolio/banner.png",tit:"banner",txt:"간단한 touch event가 작업된 배너입니다."},
+        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/slide/slide.html",img:"./img/portfolio/slide.png",tit:"loop slide",txt:"무한 루프 반응형 슬라이드 입니다. 모바일 touch 슬라이드도 가능합니다. (javascriptES6)"},
+        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/banner/",img:"./img/portfolio/banner.png",tit:"banner",txt:"간단한 touch event가 작업된 배너입니다. (javascriptES6)"},
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"vue",url:"",img:"./img/portfolio/3.jpg",tit:"타이틀",txt:"개졸려토나와"},
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"타이틀",txt:"개졸려토나와"},

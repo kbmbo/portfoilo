@@ -57,11 +57,11 @@
                 const paging = document.querySelector('.Paging');
                 const pager = document.querySelector('.Pager');
                 const total = imgUrl.length+2;
-                const slideSpeed = 1000;
+                const slideSpeed = 1000; 
                 const pagingChild = paging.children;
                 const slideChild = slide.children;
                 const pagerChild = pager.children;
-                const tX = parseFloat(`${(100/total).toFixed(3)}`);
+                const tX = parseFloat(`${(100/total).toFixed(3)}`); // 분할시 소수점으로 인한 계산 오류로 뒤 소수점 제거 필요
                 
                 let i = -tX;
                 let imgBoxW;
@@ -73,12 +73,12 @@
                 slide.style.transition = "0ms";
                 slide.style.transform =`translateX(${i}%)`;
                 
-                imgUrl.forEach( (el,index) => {
+                imgUrl.forEach( (el,index) => { // imgUrl 내용 만큼 슬라이드 생성
                     slide.insertAdjacentHTML('beforeend', `<li style = 'background-image:url(${el.url});'></li>`);
                     paging.insertAdjacentHTML('beforeend', `<li data-num = '${index+1}'>${index+1}</li>`);
                 })
                 
-                window.addEventListener('load', () => {
+                window.addEventListener('load', () => { // 슬라이드 엘리먼트 생성 후 슬라이드 맨앞 맨뒤 요소 복제해서 추가
                     
                     const firstChild = slide.firstElementChild;
                     const lastChild = slide.lastElementChild;
@@ -91,27 +91,28 @@
                     paging.firstElementChild.classList.add('active');
 
                     imgBoxW = getComputedStyle(imgBox).width;
-                    Array.from(slideChild).forEach( el => {
+                    Array.from(slideChild).forEach( el => { //화면보다 슬라이더 세로가 길어지는 경우 스크롤바로 인해 가로값과 높이값 오류생김 대응. 로드에서 한번더 반영 체크
                         el.style.width = imgBoxW;
                         pager.style.height = getComputedStyle(imgBox).height;
                     })
                 });
 
-                const PagingActive = pagingNum => {
+                const PagingActive = pagingNum => { // 슬라이드 위치 표시 css
                     Array.from(pagingChild).forEach( el => {
                         el.classList.remove('active');
                     })
                     pagingChild[pagingNum].classList.add('active');
                 }
 
-                const transform = type => {
+                const transform = type => { // 다음 이전 버튼 이벤트,터치 이벤트
                     let firstChild2 = slide.firstElementChild;
                     pagingNum
                     i
                     
-                    if(type == 'next' && i > -((total-1)*tX)){
+                    if(type == 'next'){ // 다음버튼
                         i = i - tX;
-                        if(-i==((total-1)*tX)){
+                        if(-i==((total-1)*tX)){ // 시작 지점이 두번째 이므로 total-1 해주고 마지막 위치값과 비교
+                            console.log(-i,(total-1)*tX)
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
                                 slide.style.transform =`translateX(-${tX}%)`;
@@ -144,7 +145,7 @@
                     PagingActive(pagingNum);
                 }
 
-                window.addEventListener('resize', () => {
+                window.addEventListener('resize', () => { // resize시 사이즈 반영 
                     imgBoxW = getComputedStyle(imgBox).width;
                     Array.from(slideChild).forEach( el => {
                         el.style.width = imgBoxW;
@@ -152,12 +153,12 @@
                     })
                 });
 
-                Array.from(pagerChild).forEach( el => el.addEventListener('click', e => {
+                Array.from(pagerChild).forEach( el => el.addEventListener('click', e => { // 다음 이전 버튼 클릭 이벤트 실행
                     type = e.target.dataset.pager;
                     transform(type);
                 }));
 
-                paging.addEventListener('click', e => {
+                paging.addEventListener('click', e => { // 슬라이드 위치 버튼 클릭시 슬라이드 이동
                     pagingNum = e.target.dataset.num-1;
                     i = - (pagingNum+1)*tX
                     e.target.dataset.num !== undefined ? PagingActive(pagingNum) : null;
@@ -166,15 +167,16 @@
                     slide.style.transform =`translateX(-${(pagingNum+1)*tX}%)`;
                 });
                 
-                veiw.addEventListener('touchstart', e => {
+                veiw.addEventListener('touchstart', e => { // 터치 스타트 지점 
                     //e.preventDefault();
                     stX=event.touches[0].pageX;
                 });
 
-                veiw.addEventListener('touchend',  e => {
+                veiw.addEventListener('touchend',  e => { // 터치 스타트에서 받아온 값과 비교해 오른쪽에서 왼쪽인지(다음) 반대인지(이전) 체크
                     let endX=e.changedTouches[0].pageX;
                     e.target.dataset.pager === undefined ? ( type = (stX-endX) > 0 ? 'next' : 'prev', transform(type) ) : null;
                 });
+
             });
         </script>
         
