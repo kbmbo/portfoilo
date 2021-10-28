@@ -105,42 +105,31 @@
                 }
 
                 const transform = type => { // 다음 이전 버튼 이벤트,터치 이벤트
-                    let firstChild2 = slide.firstElementChild;
                     pagingNum
                     i
-
-                    if(type == 'next'){ // 다음 버튼
+                    if(type == 'next' && -i < (total-1)*tX){ // 다음 버튼
                         i = i - tX;
-                        if(-i == (total-1)*tX){ // 시작 지점이 두번째 이므로 total-1 해서 클론 퍼스트값 구하고 해당지점 됐을때 원본 퍼스트로 보내줌
-                            console.log(-i,(total-1)*tX)
+                        if(-i === (total-1)*tX){ // 시작 지점이 두번째 이므로 total-1 해서 클론 퍼스트값 구하고 해당지점 됐을때 원본 퍼스트로 보내줌
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
                                 slide.style.transform =`translateX(-${tX}%)`;
                                 i = -tX;
-                            }, slideSpeed);
+                            }, slideSpeed+1);
                         }
-                        pagingNum < imgUrl.length ? ++pagingNum : null
-
-                    } else if(type == 'prev'){ //이전 버튼
+                        pagingNum === imgUrl.length-1 ? pagingNum = 0 : pagingNum++
+                    } else if(type == 'prev' && i < 0){ //이전 버튼
                         i = i + tX;
                         if(i == 0){ //맨앞에 있는 클론 라스트에 도달했을때 원본 라스트로 보내줌
                             setTimeout(function() {
                                 slide.style.transition = "0ms";
                                 slide.style.transform =`translateX(-${(tX*imgUrl.length)}%)`;
                                 i = -((tX*imgUrl.length));
-                                
-                            }, slideSpeed-100);
-                            
+                            }, slideSpeed);
                         } 
-                        pagingNum >= 0 ? --pagingNum : null                    
+                        pagingNum > 0 ? pagingNum-- : (pagingNum === 0 ? pagingNum = imgUrl.length-1 : null)                  
                     }
                     slide.style.transition = `${slideSpeed}ms`;
                     slide.style.transform =`translateX(${i}%)`
-                    if(pagingNum === imgUrl.length){
-                        pagingNum = 0
-                    } else if(pagingNum < 0){
-                        pagingNum = imgUrl.length-1
-                    }
                     PagingActive(pagingNum);
                 }
 
