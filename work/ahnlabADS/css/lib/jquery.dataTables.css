@@ -1,0 +1,30 @@
+/*
+ * Table styles
+ */
+ table.dataTable thead .sorting{cursor: pointer;}
+ table.dataTable thead .sorting:after{
+  content: '';
+  background-image: url('../../img/icon/icon_arrow_default.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 23px;
+  display: inline-block;
+  margin: -3px 0 0 6px;
+  vertical-align: middle;}
+table.dataTable thead .sorting.sorting_asc:after {background-image: url("../../img/icon/icon_arrow_up.png");}
+table.dataTable thead .sorting.sorting_desc:after {background-image: url("../../img/icon//icon_arrow_down.png");}
+div.dt-button-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  z-index: 1100;
+  opacity: .1;
+}
+.dt-button-collection{
+  z-index: 100000000;
+}
