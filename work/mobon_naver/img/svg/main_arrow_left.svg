@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6.594" height="13.853" viewBox="0 0 6.594 13.853">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g id="ic_arrow" transform="translate(-9.021 5.421)">
+    <g id="그룹_26" data-name="그룹 26" transform="translate(9.726 -4.717)">
+      <line id="선_15" data-name="선 15" class="cls-1" x1="5.185" y1="6.222" transform="translate(0)"/>
+      <line id="선_16" data-name="선 16" class="cls-1" x1="5.185" y2="6.222" transform="translate(0 6.222)"/>
+    </g>
+  </g>
+</svg>

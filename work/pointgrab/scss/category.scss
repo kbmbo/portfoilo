@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import "default.scss";
+
+header{
+    > .search-box{
+        @include lineH($H-height);
+        #search{
+            position: relative;
+            margin-left: 10%;
+        }
+        #searchXbtn{
+            @include position($p:absolute,$r:30px,$t:18px);
+            font-size: 1.6rem;
+            &:before{
+                color: #888;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.content{
+    > .con-top{
+        overflow: hidden;
+        box-sizing: border-box;
+        > ul.sub-tap{
+            margin-top: 10px;
+            > li{
+                @include sub-btn(#f3f3f3,#f7f7f7);
+                margin-bottom: 10px;
+                line-height: 26px;
+            }
+        }
+    }
+    > .con-box{
+        hr{border-top: 6px solid $s-color4;}
+    }
+}      
+///////////////////////search///////////////////////////////
+.search{
+    > .content{
+        h5{
+           @include conWidth; 
+           margin:20px 0 10px;
+        }
+        > .con-box{
+            .special-price{
+                > ul{
+                    > li{
+                        margin: 0 3.5% 3.5% 0;
+                        &:nth-child(3n){
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+///////////////////////search///////////////////////////////
+///////////////////////search-result////////////////////////
+$shopH:35px;
+.search-result{
+    > header{
+        input[type=search] {
+            background-color: #fff;
+            border-color: #d2d2d2;
+            overflow: hidden;
+        }
+        i{
+            display: block !important;
+        }
+    }
+    > .content{
+        > .con-top{
+            > .result{
+                font-size: 1.3rem;
+                font-weight: 600;
+                color:$s-color2;
+                line-height: $conTopH;
+                float: left;
+                padding-left: (100%-$Width)/2;
+                &:after{
+                    font-weight: 500;
+                    content: '검색결과';
+                    padding-left: 5px;
+                }
+            }
+        }
+        > .con-box{
+            h3{padding-left: (100%-$Width)/2;}
+            ul.shop-list{ 
+                > li{
+                    height: $shopH;
+                    @include conWidth;
+                    margin-bottom: 15px;
+                    > div:first-child{
+                        p{line-height: $shopH;}
+                    }
+                    input[type=checkbox] + label.starCheck { line-height: $shopH; }
+                }
+            } 
+            ul.coupon-list{
+                > li{
+                    margin:8px (100%-$Width)/2 25px;
+                }
+            }  
+        }
+    }
+}
+///////////////////////search-result////////////////////////

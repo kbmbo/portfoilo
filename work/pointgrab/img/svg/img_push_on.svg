@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="22" viewBox="0 0 41 22">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".123" x2=".922" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#5f66f1"/>
+            <stop offset="1" stop-color="#ad5ff1"/>
+        </linearGradient>
+    </defs>
+    <g id="prefix__img_push_on" transform="translate(-291 -78)">
+        <rect id="prefix__사각형_146" width="40" height="16" data-name="사각형 146" rx="8" transform="translate(291 81)" fill="url('#prefix__linear-gradient')"/>
+        <g id="prefix__타원_22" data-name="타원 22" transform="translate(310 78)" style="fill:#fff;stroke:#9461f1">
+            <circle cx="11" cy="11" r="11" style="stroke:none"/>
+            <circle cx="11" cy="11" r="10.5" style="fill:none"/>
+        </g>
+    </g>
+</svg>

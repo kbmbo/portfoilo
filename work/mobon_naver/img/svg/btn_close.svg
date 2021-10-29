@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46.859" height="46.858" viewBox="0 0 46.859 46.858">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #333;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g id="btn_close" transform="translate(-20.293 -22.293)">
+    <line id="선_8" data-name="선 8" class="cls-1" x2="64.267" transform="translate(21 23) rotate(45)"/>
+    <line id="선_9" data-name="선 9" class="cls-1" x2="64.267" transform="translate(66.444 23) rotate(135)"/>
+  </g>
+</svg>

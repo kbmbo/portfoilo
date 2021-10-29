@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="point grab" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="ENLIPLE" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>point grab 회원가입</title>
+        
+        <link rel="shortcut icon" href="/img/icon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/iphone.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/ipad.png" />
+        <link rel="stylesheet" href="/css/icon.css" />
+        <link rel="stylesheet" href="/css/mypage.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#Allagree").on('click',function(){
+                    if($("#Allagree").is(":checked")){
+                        $(".chk").prop("checked",true);
+                    } else{
+                        $(".chk").prop("checked",false);
+                    }
+                });
+                $(".chk").on('click',function(){
+                    if($("input[name='agree']:checked").length===3){
+                        $("#Allagree").prop("checked",true);
+                    } else{
+                        $("#Allagree").prop("checked",false);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="signup">
+            <header>
+                <button class="back icon-icon_arrow_l" onClick="history.back(); return false;"></button><h2></h2>
+            </header>
+            <div class="content">
+                <div class="con-box">
+                    <div class="signup-input">
+                        <h4 class="red-star">아이디</h4>
+                        <input type="text" name="id" placeholder="아이디는 영문, 숫자 포함 12자 이내" required="required" />
+                        <h4 class="red-star">비밀번호</h4>
+                        <input type="password" name="password" placeholder="비밀번호는 영문, 숫자, 특수기호 포함 8자 이상" required="required"/>
+                        <input type="password" name="password" placeholder="비밀번호 확인" required="required"/>
+                        <h4>휴대폰 번호</h4>
+                        <button>본인인증</button>
+                        <h4 class="red-star">이메일 주소</h4>
+                        <div class="mail-box">
+                            <input type="email" name="email" placeholder="이메일 입력시 @까지 정확하게 입력해주세요." required="required"/>
+                            <button>중복확인</button>
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <h4>약관동의</h4>
+                        <p>모두동의<input type="checkbox" class="chk" id="Allagree"><label for="Allagree"></label></p>
+                        <div class="agree">
+                            <p><span>[필수]</span>서비스 이용약관<input type="checkbox" name="agree" class="chk" id="agree1"><label for="agree1"></label></p>
+                            <div>
+                                <p>
+                                    서비스 이용약관 내용 text 서비스 이용약관 내용 text서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 
+                                </p>
+                            </div>
+                            <p><span>[필수]</span>개인정보 이용약관<input type="checkbox" name="agree" class="chk" id="agree2"><label for="agree2"></label></p>
+                            <div>
+                                <p>
+                                    서비스 이용약관 내용 text 서비스 이용약관 내용 text서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 
+                                </p>
+                            </div>
+                            <p><span>[선택]</span>마케팅 활용 동의<input type="checkbox" name="agree" class="chk" id="agree3"><label for="agree3"></label></p>
+                            <div>
+                                <p>
+                                    서비스 이용약관 내용 text 서비스 이용약관 내용 text서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 서비스 이용약관 내용 text 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button>확인</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

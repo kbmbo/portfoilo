@@ -1,0 +1,80 @@
+<script>
+    $(document).ready(function(){
+        var consulH = $('.consultation').height();
+        $('.consultation .btn-close-layer').on('click', function(){
+            $('#consultation').removeClass('off').fadeIn(300);
+            $('#wrap .dim').fadeOut(300);
+            $('.consultation').stop(true).animate({'bottom':-consulH},400,function(){
+                $(this).css({'display': 'none'});
+            });
+            if($('.agreeBtn').hasClass('active')){
+                $('.agreeBtn').removeClass('active');
+                $('.agreeTxt').slideUp()
+            }
+        });
+        //개인정보수집 내용
+        $(".agreeBtn").on('click',function(){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+                $('.agreeTxt').slideUp()
+            } else {
+                $(this).addClass('active');
+                $('.agreeTxt').slideDown();
+            }
+        });
+        
+        $("#chkAgree").on('click', function(){
+            if ($(this).is(":checked") == true) {
+                $(".agreeBtn").removeClass('active');
+                $('.agreeTxt').slideUp()
+            }
+        });
+
+    });
+</script>
+<span class="btn-close-layer">닫기</span>
+<div class="conL">
+    <h4>빠른 상담 문의</h4>
+    <p>문의를 남겨주시면 담당자가 1~2일 내로 연락을 드립니다.</p>
+    <button>문의하기</button>
+</div>
+<div class="conR">
+    <div>
+        <span>담당자 명</span>
+        <input type="text" placeholder="이름 입력" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = '이름 입력'" required="required"/>
+    </div>
+    <div>
+        <span>연락처</span>
+        <input type="text" placeholder="EX) 010-1234-5678" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'EX) 010-1234-5678'" required="required" />
+    </div>
+    <div>
+        <span>이메일</span>
+        <input type="email" placeholder="EX) mobon_ad@enliple.com" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'EX) mobon_ad@enliple.com'" />
+    </div>
+    <div>
+        <span>홈페이지</span>
+        <input type="text" placeholder="EX) www.mobon.net" onfocus="this.placeholder= ''" onblur="this.placeholder='EX) www.mobon.net'" />
+    </div>
+    <div>
+        <span class="txtH">문의내용</span>
+        <div class="agree">
+            <textarea placeholder="광고 목적, 월 예산 등을 적어주시면 원활한 상담에 도움이 됩니다." onfocus="this.placeholder= ''" onblur="this.placeholder='광고 목적, 월 예산 등을 적어주시면 원활한 상담에 도움이 됩니다.'"></textarea>
+            <div class="chk"><input type="checkbox" id="chkAgree"><label for="chkAgree"></label><p class="agreeBtn"><span>개인정보 수집</span>에 동의합니다.</p></div>
+            <div class="agreeTxt">
+                <div class="con">
+                    <strong>다음 수집 및 이용하는 개인 정보는 『개인정보보호법』에 따라 본인의 동의를 얻어야 하는 정보이며,<br>모비온에서는 아래와 같은 개인 정보를 수집하고 있습니다.</strong>
+                    <ol>
+                        <li><p>수집하는 개인 정보의 항목</p><span>필수 항목 : 이름, 연락처, 이메일<br>선택항목 : 없음</span>
+                        <li><p>개인 정보의 수집 및 이용 목적</p><span>요청하신 상담 시에만 해당 개인 정보를 이용합니다.</span></li>
+                        <li><p>개인 정보의 보유 및 이용 기간</p><span>이용 목적이 달성된 후 1년간 보유 이후 해당 정보를 파기합니다. - 문의 내역 관리를 위함<br>그 밖의 사항은 개인정보취급방침을 준수합니다.</span></li>
+                        <li><p>개인 정보 수집 동의 거부 권리</p><span>서비스 제공을 위하여 기본 정보를 수집하고 있습니다.<br>제공을 원하지 않을 경우 수집하지 않으며, 미동의 시 서비스 이용이 제한됩니다.</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <button>문의하기</button>
+    </div>
+</div>

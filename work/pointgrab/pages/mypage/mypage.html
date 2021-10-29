@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="point grab" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="ENLIPLE" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>my page</title>
+        
+        <link rel="shortcut icon" href="/img/icon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/iphone.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/ipad.png" />
+        <link rel="stylesheet" href="/css/icon.css" />
+        <link rel="stylesheet" href="/css/mypage.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+    </head>
+    <body>
+        <div class="mypage">
+            <header class="header2">
+                <button class="back icon-icon_arrow_l" onClick="history.back(); return false;"></button><h2></h2>
+            </header>
+            <div class="content">
+                <div class="con-box">
+                    <section class="profile">
+                        <div class="icon-img_mypage">
+                            <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span>
+                        </div>
+                        <h4>kspring</h4>
+                    </section>
+                    <ul class="mypage-list">
+                        <li onclick="location.href='/pages/mypage/myinfo.html'"><p class="icon-icon_setting_friends">내정보</p><i></i></li>
+                        <li onclick="location.href='/pages/mypage/mypoint.html'"><p class="icon-icon_setting_point">포인트 내역<span class="point">12,000</span></p><i></i></li>
+                        <li onclick="location.href='/pages/mypage/mypush.html'"><p class="icon-icon_setting_alarm">알림 설정</p><i></i></li>
+                        <li onclick="location.href='/pages/mypage/help.html'"><p class="icon-icon_setting_CS">고객센터</p><i></i></li>
+                        <li onclick="location.href='/pages/mypage/friends.html'"><p class="icon-icon_addFriend">친구 초대하기</p><i></i></li>
+                        <li><p class="icon-icon_setting_out">로그아웃</p><i></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

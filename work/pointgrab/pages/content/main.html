@@ -1,0 +1,254 @@
+<script> 
+    $(document).ready(function () { 
+        var swiper = new Swiper('.swiper-container', { 
+            loop: true,
+            autoplay: {
+                delay: 4000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        });
+        var swiper2 = new Swiper('.swiper-container2', {
+            slidesPerView: 'auto'
+        });
+        var swiper3 = new Swiper('.swiper-container3', {
+            slidesPerView: 'auto'
+        });
+    }); 
+</script>
+<script src="../js/swiper.js"></script>
+<div class="con-box">
+    <section>
+        <div class="banner swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide" style="background-image: url('/img/main_banner1.jpg');"></li>
+                <li class="swiper-slide" style="background-image: url('/img/main_banner2.jpg');"></li>
+                <li class="swiper-slide" style="background-image: url('/img/main_banner3.jpg');"></li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="advise-mall swiper-container2">
+            <h3 class="bar">추천 적립몰</h3>
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <p><input type="checkbox" id="star1"><label for="star1" class="starCheck"></label></p>
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                    <p class="shop-name">GS샵</p>
+                    <p class="max-p"><span class="pct">1.2</span></p>
+                </li>
+                <li class="swiper-slide">
+                    <p><input type="checkbox" id="star2"><label for="star2" class="starCheck"></label></p>
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                    <p class="shop-name">GS샵</p>
+                    <p class="max-p"><span class="pct">1.2</span></p>
+                </li>
+                <li class="swiper-slide">
+                    <p><input type="checkbox" id="star3"><label for="star3" class="starCheck"></label></p>
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo3.jpg');"></p>
+                    <p class="shop-name">GS샵</p>
+                    <p class="max-p"><span class="pct">1.2</span></p>
+                </li>
+                <li class="swiper-slide">
+                    <p><input type="checkbox" id="star4"><label for="star4" class="starCheck"></label></p>
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                    <p class="shop-name">GS샵</p>
+                    <p class="max-p"><span class="pct">1.2</span></p>
+                </li>
+                <li class="swiper-slide">
+                    <p><input type="checkbox" id="star5"><label for="star5" class="starCheck"></label></p>
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                    <p class="shop-name">GS샵</p>
+                    <p class="max-p"><span class="pct">1.2</span></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="special-price">
+        <div>
+            <i class="icon-img-clock"><span class="path1"></span><span class="path2"></span></i>
+            <h3><span class="time">10</span></h3>
+            <p>전체</p>
+        </div>
+        <ul>
+            <li>
+                <div class="img" style="background-image: url('/img/img.jpg');"></div>
+                <p><span class="item-name">유가네</span><span  class="item-des">반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기)</span></p>
+                <p class="price">325,000</p>
+            </li>
+            <li>
+                <div class="img" style="background-image: url('/img/img.jpg');"></div>
+                <p><span class="item-name">유가네</span><span  class="item-des">반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기)</span></p>
+                <p class="price">325,000</p>
+            </li>
+            <li>
+                <div class="img" style="background-image: url('/img/img.jpg');"></div>
+                <p><span class="item-name">유가네</span><span  class="item-des">반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기) 반반닭갈비(닭갈비+닭불고기)</span></p>
+                <p class="price">325,000</p>
+            </li>
+        </ul>
+    </section>
+    <section class="advise-coupon swiper-container3">
+        <h3 class="bar">추천 포인트 쿠폰</h3>
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo3.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+            <li class="swiper-slide">
+                <div class="dc-box">
+                    <p class="shop-logo" style="background-image:url('/img/shoplogo/logo3.jpg');"></p>
+                    <p class="dc-price">3,000</p>
+                    <p class="dc-des">3만원 이상 구입시</p>
+                </div>
+                <button>
+                    <i class="icon-icon_download"></i>
+                    <span></span>
+                </button>
+            </li>
+        </ul>
+    </section>
+    <section class="best">
+        <h3 class="bar">인기상품</h3>
+        <ul class="item-list">
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+        </ul>
+        <div class="banner2" style="background-image: url('/img/main_banner4.jpg');"></div>
+        <ul class="item-list">
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">[블루마운틴]블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈 블루마운틴 성유리 트위드 스니커즈</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo1.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+            <li class="item">
+                <div class="img" style="background-image: url('/img/img2.jpg');"></div>
+                <p class="shop-logo" style="background-image:url('/img/shoplogo/logo2.jpg');"></p>
+                <p class="item-des">블루마운틴 성유리 트위드</p>
+                <p class="price">53,000</p>
+                <p class="accrual-rate">10</p>
+            </li>
+        </ul>
+    </section>
+</div>

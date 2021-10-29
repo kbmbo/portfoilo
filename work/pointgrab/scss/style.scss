@@ -1,0 +1,456 @@
+@charset "UTF-8";
+@import "default.scss";
+///////////////////Header////////////////////////////
+header{
+    @include header;
+    .cat-menu{
+        @include icon-box(20px);
+        float: left;
+        padding: 5px;
+        margin:13px 0 0 8px;
+        p{
+            @include WH(100%,2px);
+            background-color: $s-color;
+            border-radius: 2px;
+            &:nth-child(2){
+                margin: 7px 0;
+                width: 15px;
+            }
+        }
+    }
+    .left-menu{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        z-index: 1001;
+        background-color: #fff;
+        transition: All 0.5s ease;
+        -webkit-transition: All 0.5s ease;
+        -moz-transition: All 0.5s ease;
+        -o-transition: All 0.5s ease;
+        &.open{
+            left: 0px; 
+        }
+        > .top{
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: $border;
+            @include lineH($H-height);
+            > button.back{
+                @include position($p:absolute,$t:0,$l:5%);
+                @include icon-box(2rem);
+                line-height:$H-height;
+            }
+            > h2{
+                &:after{
+                    content:"카테고리";
+                }
+            }
+        }
+        > ul.cat-list{
+            > li{
+                width: 50%;
+                @include lineH(40px);
+                font-size: 1.3rem;
+                padding-left: 5%;
+                box-sizing: border-box;
+                border-bottom: $border2;
+                &:nth-child(even){
+                    border-left:$border2;
+                }
+            }
+        }
+    }
+    .logo{
+        background-image: url('../img/svg/logo.svg');
+        @include bgImg(contain);
+        height: 100%;
+        @include m-auto(130px);
+        @media (max-width: 320px) {
+            &{width: 110px;}
+        }
+    } 
+    .icon{
+        @include position($p:absolute,$t:0,$r:0);
+        margin: 13px 10px 0 0;            
+        @media (max-width: 320px) {
+            &{margin-right: 6px;}
+        }
+        > i{
+            @include icon-box(20px);
+            padding: 5px;
+            float: left;
+            color: $s-color;
+            &:first-child{
+                display: none;
+                margin-right: 8px;
+                @media (max-width: 320px) {
+                    &{margin-right: 5px;}
+                }
+            }
+        }
+    }
+    
+}
+///////////////////Header////////////////////////////
+////////////////////bottom-menu//////////////////////
+nav.bottom-menu{
+    @include position($p:fixed,$b:0,$r:0,$l:0);
+    @include WH(100%,60px);
+    box-sizing: border-box;
+    border-top: $border2;
+    display:flex;
+    justify-content:space-around;
+    background-color: #fff;
+    text-align: center;
+    z-index:999;
+    dl{
+        display: block;
+        padding: 10px 5px 0;
+        dt{
+            @include icon-box2(100%, auto, 2.4rem);
+        }
+        dd{
+            padding-top: 3px;
+            letter-spacing: -1px;
+        }
+        &.active{
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            color: $m-color;
+        } 
+    }
+}
+////////////////////bottom-menu//////////////////////
+////////////////////content///////////////////////////
+$shopListH:50px;
+$selListH:28px;
+.content {
+    > div{
+        display: none;
+        height: 100%;
+        position: relative;
+        &.active{
+            display: block;
+        }
+        .con-top{
+            height: $conTopH;
+            > .select{
+                @include WH(70%,100%);
+                float: left;
+                font-size: 1.3rem;
+                > button{
+                    @include WH(70px,100%);
+                    background-color: #fff;
+                    line-height: 100%;
+                    margin-left: 5%;
+                    text-align: left;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    > span{
+                        width:60px;
+                        line-height: $conTopH;
+                        float: left;
+                        letter-spacing: -1px;
+                    }
+                    &:after{
+                        @include icon-arrow(10px,100%,0);
+                    }
+                }
+                >ul.list{
+                    display: none;
+                    width:70px;
+                    @include position($p:absolute,$t:2px,$l:2%);
+                    border: 1px solid #6c6c6c;
+                    border-radius: 10px;
+                    padding: 3px 5px;
+                    background-color: #fff;
+                    li{
+                        width:100%;
+                        height: $selListH;
+                        line-height: $selListH;
+                        display: block;
+                        float: left;
+                        color: $s-color;
+                        &:first-child{
+                            > span{
+                                width:60px;
+                                line-height:$selListH;
+                                float: left;
+                            }
+                            &:after{
+                                @include icon-arrow(10px,100%,180deg);
+                            }
+                        }
+                        &.active{
+                            color: $color;
+                        }
+                    }
+                }           
+            }
+        }
+        
+    }
+    ul.shop-list{ /*보관함이랑공통*/
+        position: absolute;
+        > li{
+            height: $shopListH;
+            padding: 0 3%;
+            box-sizing: border-box;
+            border-bottom: $border2;
+            > div:first-child{
+                p{line-height: $shopListH;}
+            }
+            input[type=checkbox] + label.starCheck { line-height: $shopListH; }
+        }
+    }
+    ul.coupon-list{/*보관함이랑공통*/
+        > li{
+            margin:5% (100%-$Width)/2 0;
+            &:last-child{
+                margin-bottom: 5%;
+            }
+            > div{
+                &.mask{
+                    background-color: rgba(255, 255, 255, 0.88);
+                    position: absolute;
+                    color: $m-color;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    text-align: center;
+                    line-height: 103px;
+                    display: none;
+                }
+            }
+        }
+    }
+}
+////////////////////content///////////////////////////
+////////////////////content > Main////////////////////////////
+$mb:25px;
+.content {
+    > div.main{
+        .con-box{
+            > section{
+                > div.banner{
+                    > ul{
+                        > li{
+                            @include bgImg(cover);
+                            width:100%;
+                            padding-bottom: 33.3%;
+                        }
+                    }
+                    .swiper-pagination-bullet-active{
+                        width: 12px;
+                        border-radius: 40px;
+                        opacity: 1;
+                    }
+                }
+                > .advise-mall{
+                    @include conWidth;
+                    margin-bottom: $mb;
+                    ul{
+                        > li{
+                            @include WH(30%,100px);
+                            border: $border2;
+                            box-sizing: border-box;
+                            margin-right: 4%;
+                            overflow: hidden;
+                            &:last-child{margin-right: 0;}
+                            > p{
+                                width: 100%;
+                                text-align: center;
+                                &:first-child{
+                                    height: 16px;
+                                    padding: 4px 0;
+                                    input[type=checkbox] + label.starCheck {
+                                        @include WH(16px,100%);
+                                        float: right;
+                                        margin-right: 4px;
+                                    }
+                                }
+                                &.shop-logo{height: 16px;} 
+                                &.shop-name{padding:10px 0 4px;}
+                            }
+                        }
+                    }
+                }
+                &.special-price{
+                    > div{
+                        @include conWidth;
+                        height: 45px;
+                        color:#fff;
+                        background: -moz-linear-gradient(left,  #858af4 0%, #c085f4 100%);
+                        background: -webkit-linear-gradient(left,  #858af4 0%,#c085f4 100%);
+                        background: linear-gradient(to right,  #858af4 0%,#c085f4 100%);
+                        > i{
+                            @include WH(22px,22px);
+                            line-height: 45px;
+                            > span{
+                                font-size: 2.2rem;
+                                float: left;
+                                line-height: 45px;
+                            }
+                        }
+                        > h3{
+                            margin-left: 5px;
+                            float: left;
+                            line-height: 45px;
+                            &:after{
+                                content: "시 특가상품";
+                            }
+                            > span.time{
+                                font-size: 1.5rem;
+                            }
+                        }
+                        > p{
+                            float: right;
+                            line-height: 45px;
+                            opacity: .6;
+                            &:after{
+                                @include white-arrow(10px,10px,-90deg);
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                    > ul{
+                        margin:15px 0 $mb;
+                        display:flex;
+                        justify-content:space-between;
+                        > li{
+                            > p{
+                                &.price{
+                                    color: $m-color;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.advise-coupon{
+                    @include conWidth;
+                    > ul{
+                        margin-bottom: $mb;
+                        > li{
+                            @include WH(43%,70px);
+                            border: $border2;
+                            border-right: 0;
+                            border-radius:5px;
+                            box-sizing: border-box;
+                            margin-right: 4%;
+                            overflow: hidden;
+                            &:last-child{margin-right: 0;}
+                            > .dc-box{
+                                @include WH(66%,100%);
+                                padding: 0 3% 0 6%;
+                                float: left;
+                                > .shop-logo{
+                                    @include WH(100%,10px);
+                                    margin-top: 10px;
+                                    background-position: left;
+                                }
+                                > .dc-price{
+                                    font-size: 2rem;
+                                    color: $m-color;
+                                    height: 27px;
+                                    &:after{
+                                        color: $color;
+                                        font-size: 1.1rem;
+                                    }
+                                }
+                                > .dc-des{
+                                    font-size: 0.8rem;
+                                    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+                                }
+                            }
+                            
+                            > button {
+                                @include WH(25%,100%);
+                                background-color: $m-color;
+                                > i.icon-icon_download:before{
+                                    font-size: 1.6rem;
+                                    display: inline-block;
+                                    margin-top: 46px;
+                                }
+                                
+                                > span{
+                                    @include WH(10px,20px);
+                                    background-color: #fff;
+                                    border: 1px solid #fff;
+                                    border-radius: 20px 0 0 20px;
+                                    display: inline-block;
+                                    @include position($p:absolute,$t:33%,$r:0);
+                                }
+                            }
+                        }
+                    }
+                }
+                &.best{
+                    > h3{padding-left: (100%-$Width)/2;}
+                    .banner2{
+                        @include bgImg(cover);
+                        width: 100%;
+                        padding-bottom: 44.4%;
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+}
+////////////////////content > Main////////////////////////////
+////////////////////content > coupon////////////////////////////
+.content {
+    > div.coupon{
+        ul.coupon-list{
+            > li{
+                div{
+                    &.mask{
+                        &:after{
+                            content: "SOLD OUT";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+////////////////////content > coupon////////////////////////////
+////////////////////content > locker////////////////////////////
+.content {
+    > div.locker{
+        .con-top{
+            height: 48px;
+            ul.tap{
+                li{
+                    @include lineH(47px);
+                }
+            }
+        }
+        .con-box{
+            ul.con-tab{
+                &.coupon-list{
+                    > li{
+                        div{
+                            &.mask{
+                                &:after{
+                                    content: "기간만료";
+                                }
+                            }
+                            &.coupon-box{
+                                > button{
+                                    > i.icon-icon_download:before{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+////////////////////content > locker////////////////////////////

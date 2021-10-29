@@ -1,0 +1,849 @@
+@charset "UTF-8";
+@import "default.scss";
+///////////////////content////////////////////////////
+.content{
+    .con-top{
+        ul.tap{
+            > li{
+                @include lineH(38px);
+            }
+        }
+        .sub-tap{
+            padding-left:5px;
+            width: 100%;
+            @include lineH(50px);
+            > button{
+                @include sub-btn(#e6e6e6,#fff);
+            }
+        }
+    }
+    .con-box{
+        p.NA{
+            text-align: center;
+            @include WH100;
+            font-size: 1.3rem;
+            color:$s-color;
+        }
+        > section{
+            @include conWidth;
+            &.signup-input{
+                > h4 {
+                    width: 100%;
+                    margin:3% 0 3%;
+                    float: left;
+                    &:first-child{
+                        margin-top: 6%;
+                    }
+                    &.red-star:after{
+                        content: "*";
+                        color:#ff0000
+                    }
+                }
+                input{
+                    @include lineH(40px);
+                    margin-bottom: 3%;
+                }
+                button{
+                    width: 100%;
+                    margin-bottom: 3%;
+                    @include main-btn(40px,1.2rem,5px);
+                }
+                .mail-box{
+                    > input{
+                        width: 77%;
+                        margin-right: 1%;
+                    }
+                    > button{
+                        width: 22%;
+                        float: right;
+                    }
+                }
+            }
+            &.terms{
+                margin-top: 10px;
+                input[type=checkbox] + label { 
+                    @include icon-box(20px);
+                    @include btn-off;
+                    float: right;
+                }
+                input[type=checkbox]:checked + label {
+                    @include btn-on;
+                }
+                > h4{
+                    @include lineH(48px);
+                    border-bottom: $border2;
+                }
+                > p{
+                    @include lineH(20px);
+                    margin: 4% auto 6%;
+                }
+                div.agree{
+                    > p{
+                        @include lineH(20px);
+                        margin-bottom: 3%;
+                        color: #444;
+                        > span{
+                            color:$m-color;
+                            padding-right: 5px;
+                        }
+                    }
+                    > div{
+                        border: $border;
+                        border-radius: 5px;
+                        padding:5px 2px 2px 5px;
+                        margin-bottom: 7%;
+                        height: 100px;
+                        > p{
+                            @include WH(98%,100%);
+                            overflow-y: scroll;
+                            padding-right: 5px;
+                            &::-webkit-scrollbar { display: block; width: 5px;}
+                            &::-webkit-scrollbar-thumb {
+                                background-color:$s-color;
+                                border-radius: 5px;
+                            }
+                            &::-webkit-scrollbar-track  {
+                                background-color:#ececec;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        ul{
+            > li{
+                width: 100%;
+                @include lineH($H-height);
+                padding: 0 4%;
+                border-bottom:$border2;
+                box-sizing: border-box;
+                p{
+                    font-size: 1.4rem;
+                    display: inline-block;
+                }
+                > i{
+                    float: right;
+                }
+            }
+        }
+        ul.toggle-list{
+            > li{
+                height: auto;
+                padding: 0;
+                position: relative;
+                > div.tit-box{
+                    @include conWidth;
+                    height: $H-height;
+                    > p{
+                        @include WH($Width,100%);
+                        margin-right: (100%-$Width)/2;
+                        font-size: 1.3rem;
+                        float: left;
+                        > span{
+                            float: left;
+                            width:100%;
+                            &.tit{
+                                font-size: 1.3rem;
+                                padding: 10px 0 2px;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                            }
+                            &.date{
+                                font-size: 1.1rem;
+                                color:$s-color;
+                            }
+                        }
+                        &.tit{
+                            line-height: $H-height;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+                    }
+                    > i{
+                        @include icon-arrow(10px,100%,0deg);
+                        -webkit-transition: all 0.3s ease-in;
+                        transition: all 0.3s ease-in;
+                        &.active{
+                            @include icon-arrow-t(12px,100%,180deg);
+                        }
+                    }
+                }
+                > div.txt{ 
+                    display: none;
+                    background-color: $s-color4;
+                    > p {
+                        padding:(100%-$Width)/2;
+                        font-size: 1.2rem;
+                        color: $s-color3;
+                        line-height: 1.8rem;
+                    }
+                }
+            }
+        }
+        > button{
+            width: 100%;
+            @include main-btn(60px,1.6rem,0);
+        }
+    }
+}
+///////////////////content////////////////////////////
+//////////////////signup/////////////////////////////
+div.signup{
+    header{
+        > h2{
+            &:after{
+                content:"회원가입";
+            }
+        }
+    }
+    .content{
+        .con-box{
+            > .signup-input{
+                .mail-box{
+                    margin-bottom: 7%;
+                    > input{
+                        @media (max-width: 360px){
+                            letter-spacing: -1px;
+                        }
+                        @media (max-width: 320px){
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+            > .terms{
+                border-bottom:0;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+//////////////////signup/////////////////////////////
+//////////////////mypage/////////////////////////////
+div.mypage{
+    header{
+        > h2{
+            &:after{
+                content:"MY PAGE";
+            }
+        }
+    }
+    .content{
+        .con-box{
+            .profile{
+                text-align: center;
+                > div{
+                    @include mtb-auto(6.8rem,8%,3%);
+                    height: 6.8rem;
+                    font-size: 6.8rem;
+                    color:$m-color;
+                    > span{
+                        &:before{
+                            font-size: 6.8rem;
+                        }
+                    }
+                }
+                > h4{
+                    margin-bottom: 8%;
+                }
+            }
+            ul.mypage-list{
+                > li{
+                    > p{
+                        &:before{
+                            padding-right: 15px;
+                            font-size: 1.8rem;
+                            vertical-align:sub;
+                        }
+                        &.icon-icon_setting_point{
+                            width:92%;
+                        }
+                        > span.point{
+                            color:$m-color;
+                            font-weight: 600;
+                            float: right;
+                            &:after{
+                                padding-left: 1px;
+                            }
+                        }
+                    }
+                    > i{
+                        @include icon-arrow(10px,100%,-90deg);
+                    }
+                }
+            }
+        }
+    }    
+}
+//////////////////mypage/////////////////////////////
+//////////////////myinfo/////////////////////////////
+div.myinfo{
+    header{
+        > h2{
+            &:after{
+                content:"내정보";
+            }
+        }
+    }
+    .content{
+        .con-box{
+            > .signup-input{
+                padding-bottom: 5%;
+            }
+            > .delete{
+                font-size: 1.4rem;
+                @include lineH(60px);
+                border-bottom: 0;
+                &:after{
+                    @include icon-arrow(10px,10px,-90deg);
+                    margin-left: 5px;
+                }
+            }
+        }
+    }    
+}
+//////////////////myinfo/////////////////////////////
+//////////////////mypoint////////////////////////////
+div.mypoint{
+    header{
+        > h2{
+            &:after{
+                content:"포인트 내역";
+            }
+        }
+    }
+    .content{
+        > .con-top{
+            float: left;
+            .point-box{
+                @include mtb-auto($Width,5%,4%);
+                @include lineH(60px);
+                border: $border;
+                border-radius: 8px;
+                box-sizing: border-box;
+                box-shadow: 0 3px 5px 1px rgba(222, 222, 222, 0.5);
+                padding:0 4%;
+                > p{
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    
+                    > i.icon-img_point{
+                        padding-right:3px;
+                        span{
+                            &.p{
+                                left: 9px;
+                            }
+                        }
+                    }
+                }
+                > span{
+                    line-height: 58px;
+                    float: right;
+                    &.point{
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        &:after{
+                            padding-left:2px;
+                        }
+                    }
+                }
+            }
+        }
+        > .con-box{
+            clear: both;
+            > ul{
+                > li{
+                    > p {
+                        display: inline-block;
+                        text-align: center;
+                        width: 42%;
+                        @media (max-width: 320px){
+                            width: 38%;
+                        }
+                        &.date{
+                            width: 25%;
+                            font-size: 1.2rem;
+                        }
+                        &:last-child{
+                            text-align: right;
+                            width: 31%;
+                            float: right;
+                            font-size: 1.4rem;
+                            line-height: $H-height;
+                            @media (max-width: 320px){
+                                width: 35%;
+                            }
+                        }
+                        > span.shop-name{ color:$s-color}
+                        > span.shop-price{
+                            font-size: 1.3rem;
+                            &:after{
+                                content: "원 ";
+                            }
+                        }
+                    }
+                    &.saving-p{
+                        > p:last-child{
+                            color: $red;
+                            &:before{
+                            content: "+";
+                            }
+                            &:after{
+                                content: "P";
+                            }
+                        }
+                    }
+                    &.use-p{
+                        > p:last-child{
+                            color: $blue;
+                            &:before{
+                                padding-right: 2px;
+                                content: "-";
+                            }
+                            &:after{
+                                content: "P";
+                            }
+                        }
+                    }
+                    &.beTo{
+                        > p:last-child{
+                            > span{
+                                width: 100%;
+                                float: left;
+                                &.beTo-date{
+                                    color:$s-color;
+                                    font-size: 1.1rem;
+                                    padding: 9px 0 2px;
+                                    &:before{
+                                        content: "적립예정 ";
+                                    }
+                                }
+                                &.beTo-p{
+                                    font-size: 1.4rem;
+                                    &:before{
+                                        content: "+";
+                                    }
+                                    &:after{
+                                        content: "P";
+                                    }
+                                }
+                            }
+                        }                                
+                    }
+                }
+            }
+        }
+    }
+}
+//////////////////mypoint/////////////////////////////////////////
+//////////////////mypush////////////////////////////
+div.mypush{
+    header{
+        > h2{
+            &:after{
+                content:"알림 설정";
+            }
+        }
+    }
+    .content{
+        > .con-box{
+            > div{
+                @include conWidth;
+                @include lineH(60px);
+                h3{
+                    display: inline-block;
+                }
+                button.push{
+                    @include WH(40px,100%);
+                    float: right;
+                    @include bgImg(contain);
+                    background-image: url('../img/svg/img_push_off.svg');
+                    &.active{
+                        background-image: url('../img/svg/img_push_on.svg');
+                    }
+                }
+            }
+            > p{@include conWidth; line-height:18px;color:$s-color3;}
+        }
+    }
+}
+//////////////////mypush////////////////////////////
+//////////////////help///////////////////////////////
+div.help{
+    header{
+        > h2{
+            &:after{
+                content:"고객센터";
+            }
+        }
+    }
+    .content{
+        > .con-box{
+            > ul{
+                > li{
+                    > i{
+                        @include icon-arrow(10px,100%,-90deg);
+                    }
+                }
+            }
+        }
+    }
+}
+//////////////////help///////////////////////////////
+//////////////////notice///////////////////////////////
+div.notice{
+    header{
+        > h2{
+            &:after{
+                content:"공지사항";
+            }
+        }
+    }
+}
+//////////////////notice///////////////////////////////
+//////////////////FQA///////////////////////////////
+div.FQA{
+    header{
+        > h2{
+            &:after{
+                content:"FQA";
+            }
+        }
+    }
+    .content{
+        > .con-box{
+            > ul.FQA-list{
+                > li{
+                    > div.tit-box{
+                        > span{
+                            &.tit{
+                                line-height: $H-height;
+                                padding: 0 5% 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//////////////////FQA///////////////////////////////
+//////////////////inquire///////////////////////////////
+div.inquire{
+    header{
+        > h2{
+            &:after{
+                content:"1:1 문의하기";
+            }
+        }
+    }
+    .content{
+        > .con-top{
+            border-bottom: 0;
+            ul.tap{border-bottom:$border2;}
+            .sub-tap{display: none;}
+        }
+        > .con-box{
+            > div{
+                &.write{
+                    @include conWidth;
+                    > h4{
+                        @include lineH(40px);
+                        padding-top: 10px;
+                        > p{
+                            color: $s-color;
+                            display: inline-block;
+                            padding-left: 8px;
+                        }
+                    }
+                    > input {@include lineH(40px);}
+                    > div{
+                        @include txtA;
+                        > textarea{
+                            height: 200px;
+                        }
+                    }
+                    > button{
+                        width: 100%;
+                        @include main-btn(60px,1.6rem,0);
+                        @include position($p:absolute,$b:0,$l:0);
+                    }
+                }
+                &.inquire-list{
+                    > ul{
+                        border-bottom:$border2;
+                        > li{
+                            > div.tit-box{
+                                > p{
+                                    width: 95%;
+                                    margin-right: 0%;
+                                    > span{
+                                        width: 77%;
+                                        padding-right: 3%;
+                                    }
+                                    &:after{
+                                        line-height: $H-height;
+                                    }
+                                }
+                                
+                            }
+                            > .txt{
+                                > div{
+                                    padding: 3% (100%-$Width)/2 4%;
+                                    > p{font-size: 1.2rem;color: $s-color3;}
+                                    &.write-txt{
+                                        background-color: #fff;
+                                    }
+                                    &.re {
+                                        > p {
+                                            display: block;
+                                            &.tit{
+                                                font-size: 1.4rem;
+                                                &:before{
+                                                    content: "";
+                                                    background-image: url('../img/svg/icon-answer.svg');
+                                                    @include bgImg(contain);
+                                                    @include WH(11px,10px);
+                                                    display: inline-block;
+                                                    margin-right: 4px;
+                                                }
+                                            }
+                                            &.date{
+                                                font-size: 1.1rem;
+                                                color:$s-color;
+                                                padding: 4px 0 12px 15px;
+                                            }
+                                            &.re-txt{
+                                                padding-left: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.wait{
+                                > div.tit-box{
+                                    > p:after{
+                                        content: "답변대기";
+                                        color:$s-color;
+                                    }
+                                }
+                            }
+                            &.complete{
+                                > div.tit-box{
+                                    > p:after{
+                                        content: "답변완료";
+                                        color:$blue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}
+//////////////////inquire///////////////////////////////
+//////////////////friends//////////////////////////////
+div.friends{
+    header{
+        > h2{
+            &:after{
+                content:"친구 초대하기";
+            }
+        }
+    }
+    .content{
+        .con-box{
+            > dl.bg{
+                @include WH100;
+                > dt{
+                    height: 35%;
+                    padding: 10% 0 0 5%;
+                    background-color: $m-color;
+                    color: #fff;
+                    > div{
+                        background-image: url('../img/friend.png');
+                        background-position: right;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        @include WH(100%,48%);
+                        display: inline-block;
+                        > p{
+                            &:first-child{
+                                font-size: 2.8rem;
+                                line-height: 3.4rem;
+                            }
+                            &:last-child{
+                                font-size: 1.4rem;
+                                padding-top: 5%;
+                            }
+                        }
+                    }
+                }
+                > dd{
+                    height: 60%;
+                    background-color: $s-color4;
+                    @include conWidth;
+                    > p{
+                        &:first-child{
+                            padding-top: 75%;
+                        }
+                        &:last-child{
+                            line-height: 1.8rem;
+                            padding-top: 1%;
+                        }
+                    }
+                }
+            }
+            > .invite{
+                width: $Width;
+                height: 48%;
+                margin: 0 (100%-$Width)/2;
+                background-color: #fff;
+                border-radius: 2%;
+                @include position($p:absolute,$b:22%);
+                box-shadow: 1px 2px 2px 1px rgba(222, 222, 222, 0.5);
+                > p{
+                    border: $border2;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    @include mtb-auto(82%,7%,8%);
+                    @include lineH(50px);
+                    padding: 0 4%;
+                    &:before{
+                        content: '추천인 코드';
+                        color: $s-color2;
+                        font-size: 1.4rem;
+                    }
+                    > span{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        display: inline-block;
+                        padding-left: 6%;
+                        width: 60%;
+                        text-align: right;
+                        vertical-align: text-bottom;
+                        overflow: hidden;
+                    }
+                }
+                > button{
+                    @include mtb-auto(80%,0,3%);
+                    @include lineH(42px);
+                    border-radius: 23px;
+                    padding: 0 8%;
+                    display: block;
+                    &:after{
+                        @include lineH(42px);
+                        font-size: 1.4rem;
+                        padding-right: 6%;
+                    }
+                    &:before{
+                        float: left;
+                        width: 30px;
+                    }
+                    &.kakao{
+                        background-color: #fce000;
+                        &:after{
+                            content:"카카오톡으로 공유하기";
+                        }
+                        &:before{font-size: 2.4rem;}
+                    }
+                    &.sms{
+                        background-color: #d4ddeb;
+                        &:after{
+                            content:"문자로 공유하기";
+                        }
+                        &:before{font-size: 1.8rem;}
+                    }
+                    &.url{
+                        background-color: #eff2f6;
+                        &:after{
+                            content:"URL로 공유하기";
+                        }
+                        &:before{font-size: 2.2rem;}
+                    }
+                }
+            }
+        }
+    }
+}
+//////////////////friends//////////////////////////////
+////////////////////marsk-pop > deletePop//////////////////////////
+.deletePop {
+    > .b-marsk {  
+        > .pop-box{
+            @include position($p:fixed,$t:50%,$l:50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            @include WH(83%,65%);
+            border-radius: 5px;
+            > h2{
+                text-align: center;
+                box-sizing: border-box;
+                border-bottom: $border;
+                @include lineH(5rem);
+                display: block;
+            }
+            > .con{
+                @include conWidth;
+                > p{
+                    margin: 6% 0 5%;
+                    @media (max-width: 320px){
+                        margin-bottom: 0;
+                    }}
+                > .reason{
+                    > p{
+                        @include lineH(40px);
+                        > span{
+                            color: $s-color;
+                        }
+                    }
+                    > div{
+                        @include txtA;
+                        textarea{
+                            height: 140px;
+                            @media (max-width: 360px){
+                                height: 100px;
+                            }
+                            @media (max-width: 320px){
+                                height: 75px;
+                            }
+                        }
+                    } 
+                }
+                > ul{
+                    @include flex;
+                    position: absolute;
+                    width: $Width;
+                    bottom:20px;
+                    > li{
+                        width:98%;
+                        @include lineH(40px);
+                        font-size: 1.4rem;
+                        text-align: center;
+                        border-radius: 20px;
+                        &:first-child{
+                            color:#fff;
+                            background-color: $m-color;
+                            margin-right: 2%;
+                        }
+                        &:last-child{
+                            border: $border;
+                            box-sizing: border-box;
+                            margin-left: 2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+////////////////////marsk-pop > deletePop//////////////////////////
