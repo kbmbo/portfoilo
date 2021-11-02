@@ -48,6 +48,7 @@ h3{font-size: 1.6rem; margin:5% auto 2%; clear: both;}
 button{background-color: transparent;font-family:'notokr', sans-serif;}
 input,textarea{font-family:'notokr', sans-serif;}
 input[type=checkbox],input[type=radio] {display:none;}
+::-webkit-scrollbar { display: none; }
 $conW :94%;
 $conP :(100%-$conW)/2;
 @mixin bgImg($size) {
