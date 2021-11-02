@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/highcharts.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script type="text/javascript" src="/js/highcharts.js"></script>
+        <script type="text/javascript" src="/js/modules/series-label.js"></script>
+        <script type="text/javascript" src="/js/modules/exporting.js"></script>
+        <script type="text/javascript" src="/js/modules/export-data.js"></script>
+        <script type="text/javascript" src="/js/modules/accessibility.js"></script>
+        
+      
+    </head>
+    <body>
+        <nav class="tap-menu">
+            <ul>
+                <li onclick="location.href='/index.html'" class="active"><span>홈</span></li>
+                <li onclick="location.href='/pages/enrollment.html'"><span>광고등록</span></li>
+                <li onclick="location.href='/pages/report-1.html'"><span>리포트</span></li>
+                <li onclick="location.href='/pages/proceeds.html'"><span>수익금관리</span></li>
+            </ul>
+        </nav>
+        <div class="no-data">
+            <div class="content main">
+                <div class="img"></div>
+                <p>연동된 광고 내역이 없습니다.<br>광고를 등록해보세요.</p>
+            </div>
+            <button onclick="location.href='/pages/enrollment-1.html'" class="m-btn">광고 등록하기</button>
+        </div>
+        <div class="in-data">
+            <div class="content main">
+                <h3>이 달의 수익</h3>
+                <div class="revenue"><p>현재 날짜 기준 이 달의 수익</p><span>253,000</span></div>
+                <div class="chart">
+                    <div id="container"></div>
+                </div>
+                <h3>광고 타입별 현황</h3>
+                <ul class="feed-type-state">
+                    <li>
+                        <div class="img">
+                            <div style="background-image: url('/images/ad_type_1.png');"></div>
+                            <p>캠프 둘러보기 피드</p>
+                        </div>
+                        <div class="txt-box">
+                            <p class="t-click"><span>2,500</span></p>
+                            <p class="epcm"><span>125,000</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <div style="background-image: url('/images/ad_type_2.png');"></div>
+                            <p>단일 이미지 (캠프홈)</p>
+                        </div>
+                        <div class="txt-box">
+                            <p class="camp-name"><span>스타패션Q스타패션Q스타패션Q</span></p>
+                            <p class="t-click"><span>2,500</span></p>
+                            <p class="epcm"><span>125,000</span></p>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <div class="img">
+                            <div style="background-image: url('/images/ad_type_3.png');"></div>
+                            <p>히든 피드+ (캠프홈)</p>
+                        </div>
+                        <div class="txt-box">
+                            <p class="camp-name"><span>스타패션Q스타패션Q스타패션Q</span></p>
+                            <p class="t-click"><span>2,500</span></p>
+                            <p class="epcm"><span>125,000</span></p>
+                        </div>
+                    </li> -->
+                </ul>
+                <div class="txt2">
+                    <span>*</span>
+                    <p>상기 수익은 실시간으로 불러오는  수익이 아니므로, 실제 정산 금액과 다소 차이가 있을 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var categoriesData = ['3/27', '3/28', '3/29', '3/30', '3/31','4/01', '4/02', '4/03', '4/04', '4/05']
+            var epcmData = [12000, 55000, 80000, 130000, 90000, 100000, 120000, 130000, 100000, 200000]
+            Highcharts.chart('container', {
+                xAxis: {
+                    categories: categoriesData,
+                    labels: {
+                        overflow: 'scroll'
+                    }
+                },
+                yAxis: {
+                    tickInterval: 50000,
+                    labels: {
+                        formatter: function () {
+                            return this.value;
+                        }
+                    },
+                    min: 0,
+                    max: 250000
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    enabled: false,
+                    //x:100+'%',
+                    itemStyle: {
+                        fontWeight: '500'
+                    }
+                },
+                chart: {
+                    height: 180,
+                    scrollablePlotArea: {
+                        minWidth: 500,
+                        scrollPositionX: 0
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        pointStart: 0,
+                        marker: {
+                            symbol: 'circle',
+                            radius: 4
+                        }
+                    }
+                    
+                },
+                series: [
+                {
+                    name: '수익금',
+                    data: epcmData,
+                    color: '#673ab7',
+                    stroke:'none'
+                }],
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom'
+                            }
+                        }
+                    }]
+                }
+            });
+        </script>
+    </body>
+</html>

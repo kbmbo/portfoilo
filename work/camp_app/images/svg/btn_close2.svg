@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__btn_talk_close" width="63" height="63" viewBox="0 0 63 63">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-width:6px}
+        </style>
+    </defs>
+    <g id="prefix__Rectangle_802" data-name="Rectangle 802" style="fill:#fff;stroke:#707070;opacity:0">
+        <path d="M0 0H63V63H0z" style="stroke:none"/>
+        <path d="M0.5 0.5H62.5V62.5H0.5z" style="fill:none"/>
+    </g>
+    <path id="prefix__Line_93" d="M0 0L60.495 0" class="prefix__cls-2" data-name="Line 93" transform="rotate(45 -7.071 17.071)"/>
+    <path id="prefix__Line_94" d="M0 0L60.495 0" class="prefix__cls-2" data-name="Line 94" transform="rotate(135 24.317 15.93)"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="btn_chk_box_active" width="72" height="72" viewBox="0 0 72 72">
+    <defs>
+        <style>
+            .cls-1{fill:#673ab7;stroke:#673ab7;stroke-width:3px}.cls-2,.cls-4{fill:none}.cls-2{stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:6px}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="Ellipse_246" class="cls-1" data-name="Ellipse 246">
+        <circle cx="36" cy="36" r="36" class="cls-3"/>
+        <circle cx="36" cy="36" r="34.5" class="cls-4"/>
+    </g>
+    <path id="Path_1247" d="M2188 1007.769l10.884 8.723 14.917-17.629" class="cls-2" data-name="Path 1247" transform="translate(-2165.5 -972.222)"/>
+</svg>

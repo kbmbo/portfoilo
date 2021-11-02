@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/button.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+    </head>
+    <body>
+        <header>
+            <button class="icon-btn_back" onClick="history.back(); return false;">
+                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+            </button>
+            <h2>계좌 등록</h2>
+            <button class="close" onclick="location.href='/pages/proceeds.html'"></button>
+        </header>
+        <div class="content account">
+            <h3>계좌 등록</h3>
+            <p class="name-box"><span class="name">이유경</span> 님, 환영합니다.</p>
+            <p class="txt">운영중인 캠프의 광고를 통해 수익금을 관리해보세요.</p>
+            <div class="step mb-20">
+                <div class="circle">
+                    <div>1</div>
+                    <p>약관 동의</p>
+                </div>
+                <span></span>
+                <div class="circle">
+                    <div>2</div>
+                    <p>계좌 등록</p>
+                </div>
+                <span></span>
+                <div class="circle">
+                    <div class="on">3</div>
+                    <p>등록 완료</p>
+                </div>
+            </div>
+            <p class="txt mb-0">등록한 계좌 정보</p>
+            <div class="account-info">
+                <p class="bank">신한은행</p>
+                <p class="account-number">110-1234-56789</p>
+                <p>이유경</p>
+            </div>
+            <p class="txt2">
+                * 위의 등록한 계좌 정보로 광고 수익금이 입금 됩니다.<br />
+                광고 수익금 월 1회 인출 가능 금액은 OOOO원 이상입니다.
+            </p>
+        </div>
+        <button class="bottom" onclick="location.href='/pages/proceeds.html'">완료</button>
+    </body>

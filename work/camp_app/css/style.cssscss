@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-regular.eot");
+  src: url("../font/notokr-regular.woff2") format("woff2"), url("../font/notokr-regular.woff") format("woff");
+  font-weight: 500; }
+@font-face {
+  font-family: 'notokr';
+  src: url("../font/notokr-medium.eot");
+  src: url("../font/notokr-medium.woff2") format("woff2"), url("../font/notokr-medium.woff") format("woff");
+  font-weight: 600; }
+@font-face {
+  font-family: 'icomoon';
+  src: url("../font/icomoon.eot?kyh2ip");
+  src: url("../font/icomoon.eot?kyh2ip#iefix") format("embedded-opentype"), url("../font/icomoon.ttf?kyh2ip") format("truetype"), url("../font/icomoon.woff?kyh2ip") format("woff"), url("../font/icomoon.svg?kyh2ip#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 1.3rem; }
+
+html {
+  width: 100%;
+  height: 100%;
+  -ms-overflow-style: none;
+  font-size: 63%;
+  color: #333;
+  background-color: #fff;
+  font-family: 'notokr', sans-serif; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+element::-webkit-scrollbar {
+  display: none; }
+
+a, a:hover, a:focus {
+  outline: 0;
+  display: inline-block; }
+
+li {
+  float: left;
+  list-style: none; }
+
+h2 {
+  font-size: 1.7rem;
+  display: inline-block; }
+
+h3 {
+  font-size: 1.6rem; }
+
+button {
+  background-color: transparent; }
+
+input[type=checkbox] {
+  display: none; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-btn_topright:before {
+  content: "\e906";
+  color: #6f45bb; }
+
+.icon-btn_back .path1:before {
+  content: "\e900";
+  color: #45495f; }
+
+.icon-btn_back .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: #45495f; }
+
+.icon-btn_back .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: #45495f; }
+
+.icon-btn_back .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: #333333; }
+
+.icon-bnolist_2:before {
+  content: "\e904";
+  color: #c3c3c3; }
+
+.icon-btncalendar:before {
+  content: "\e905";
+  color: #673ab7; }
+
+.icon-warn:before {
+  content: "\e907";
+  color: #673ab7; }
+
+header {
+  height: 55px;
+  line-height: 55px;
+  box-shadow: 0 4px 4px 0px rgba(222, 222, 222, 0.6);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  header > button {
+    position: absolute;
+    left: 3%;
+    height: 100%; }
+    header > button > span {
+      font-size: 2rem; }
+
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: 0 4px 4px 0px rgba(222, 222, 222, 0.6); }
+  nav > ul > li {
+    width: 100%;
+    text-align: center;
+    cursor: pointer; }
+    nav > ul > li > span {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #a7a7a7;
+      display: inline-block; }
+    nav > ul > li.active > span {
+      color: #333; }
+      nav > ul > li.active > span:after {
+        content: '';
+        width: 130%;
+        border-bottom: 2px solid #673ab7;
+        margin: -2px -15% 0;
+        display: block;
+        box-sizing: border-box; }
+
+.content {
+  width: 94%;
+  height: auto;
+  padding: 5% 3% 0; }
+  .content > h3 {
+    margin-bottom: 5px; }
+  .content .txt {
+    color: #777; }
+  .content.enrollment .step {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 12px;
+    background-color: #f5f5f5; }
+    .content.enrollment .step > .circle {
+      width: 30%;
+      height: 100%;
+      float: left;
+      text-align: center; }
+      .content.enrollment .step > .circle > div {
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        box-sizing: border-box;
+        border: 1px solid #c9c9c9;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #777;
+        margin: 18px auto 6px;
+        background-color: #fff; }
+        .content.enrollment .step > .circle > div.on {
+          border: 2px solid #673ab7;
+          color: #333;
+          line-height: 37px; }
+    .content.enrollment .step > span {
+      content: "";
+      background: url("../images/svg/icon_arrow.svg") center no-repeat;
+      background-size: contain;
+      height: 72%;
+      width: 5%;
+      display: inline-block;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      margin: 2.5% 0;
+      float: left; }
+  .content.enrollment .agree-box {
+    width: 100%;
+    height: 145px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 30px 0 10px; }
+    .content.enrollment .agree-box input[type=checkbox] + label {
+      width: 24px;
+      height: 100%;
+      background: url("../images/svg/btn_chk_box.svg") center no-repeat;
+      background-size: contain;
+      float: left;
+      margin-right: 8px; }
+      .content.enrollment .agree-box input[type=checkbox] + label:before {
+        font-size: 24px; }
+    .content.enrollment .agree-box input[type=checkbox]:checked + label {
+      background: url("../images/svg/btn_chk_box_active.svg") center no-repeat;
+      background-size: contain; }
+    .content.enrollment .agree-box > p {
+      padding: 0 4%;
+      width: 92%;
+      float: left;
+      height: 35px;
+      line-height: 35px; }
+      .content.enrollment .agree-box > p.All {
+        height: 45px;
+        line-height: 45px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #c9c9c9;
+        font-size: 1.5rem;
+        font-weight: 600; }
+      .content.enrollment .agree-box > p > span {
+        color: #673ab7; }
+  .content.enrollment .txt2 {
+    color: #777;
+    font-size: 1.2rem; }
+    .content.enrollment .txt2 > span {
+      height: 50px;
+      display: block;
+      float: left;
+      padding-right: 3px; }
+
+button.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: #673ab7;
+  color: #fff;
+  font-size: 1.7rem;
+  width: 100%;
+  height: 55px;
+  line-height: 55px; }
+
+/*# sourceMappingURL=style.cssscss.map */

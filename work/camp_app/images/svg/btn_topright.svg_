@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__btn_topright" width="40" height="41" viewBox="0 0 40 41">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#6f45bb}
+        </style>
+    </defs>
+    <g id="prefix__Rectangle_1014" data-name="Rectangle 1014" style="fill:#fff;stroke:#707070;opacity:0">
+        <path d="M0 0H38.047V36.541H0z" style="stroke:none" transform="translate(0 4.459)"/>
+        <path d="M0.5 0.5H37.547V36.041H0.5z" style="fill:none" transform="translate(0 4.459)"/>
+    </g>
+    <path id="prefix__Rounded_Rectangle_1" d="M1.657 0h31.489A1.657 1.657 0 0 1 34.8 1.657a1.657 1.657 0 0 1-1.657 1.657H1.657A1.657 1.657 0 0 1 0 1.657 1.657 1.657 0 0 1 1.657 0z" class="prefix__cls-2" data-name="Rounded Rectangle 1" transform="rotate(135 12.526 12.556)"/>
+    <path id="prefix__Rounded_Rectangle_1_copy_4" d="M.247 14.259L14.259.247a1.411 1.411 0 0 1 1.961 1.962L2.209 16.222A1.411 1.411 0 0 1 .248 14.26z" class="prefix__cls-2" data-name="Rounded Rectangle 1 copy 4" transform="rotate(135 15.537 19.06)"/>
+    <path id="prefix__Rounded_Rectangle_1_copy_6" d="M2.21.247l14.012 14.012a1.411 1.411 0 0 1-1.962 1.962L.248 2.209A1.411 1.411 0 0 1 2.209.248z" class="prefix__cls-2" data-name="Rounded Rectangle 1 copy 6" transform="rotate(135 12.494 11.997)"/>
+</svg>

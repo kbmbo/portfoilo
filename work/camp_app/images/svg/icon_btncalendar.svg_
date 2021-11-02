@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__icon_btncalendar" width="57" height="57" viewBox="0 0 57 57">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#673ab7}
+        </style>
+    </defs>
+    <path id="prefix__Rectangle_910" d="M0 0H57V57H0z" data-name="Rectangle 910" style="fill:none"/>
+    <g id="prefix__Group_1388" data-name="Group 1388" transform="translate(7.38 3.018)">
+        <rect id="prefix__Rectangle_911" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 911" rx="1.383" transform="translate(26.438 33.491)"/>
+        <rect id="prefix__Rectangle_912" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 912" rx="1.383" transform="translate(26.438 24.357)"/>
+        <path id="prefix__Path_2231" d="M-83.692 1.25h-4.568v-5.078A1.158 1.158 0 0 0-89.4-5h-.761A1.158 1.158 0 0 0-91.3-3.828V1.25h-18.268v-5.078A1.158 1.158 0 0 0-110.713-5h-.761a1.159 1.159 0 0 0-1.142 1.172V1.25h-4.567a4.633 4.633 0 0 0-4.567 4.687v34.376A4.633 4.633 0 0 0-117.183 45h33.491a4.633 4.633 0 0 0 4.567-4.687V5.937a4.633 4.633 0 0 0-4.567-4.687zm-35.014 12.5h36.536v26.563a1.545 1.545 0 0 1-1.522 1.563h-33.491a1.546 1.546 0 0 1-1.523-1.563zm1.523-9.375h33.491a1.544 1.544 0 0 1 1.522 1.562v4.688h-36.536V5.937a1.545 1.545 0 0 1 1.523-1.562z" class="prefix__cls-2" data-name="Path 2231" transform="translate(121.75 5)"/>
+        <rect id="prefix__Rectangle_913" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 913" rx="1.383" transform="translate(17.625 24.357)"/>
+        <rect id="prefix__Rectangle_914" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 914" rx="1.383" transform="translate(8.813 33.491)"/>
+        <rect id="prefix__Rectangle_915" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 915" rx="1.383" transform="translate(8.813 24.357)"/>
+        <rect id="prefix__Rectangle_916" width="7.375" height="7.375" class="prefix__cls-2" data-name="Rectangle 916" rx="1.383" transform="translate(17.625 33.491)"/>
+    </g>
+</svg>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script type="text/javascript" src="/js/button.js"></script>
+        <script type="text/javascript" src="/js/popup.js"></script>
+    </head>
+    <body>
+        <nav class="tap-menu">
+            <ul>
+                <li onclick="location.href='/index.html'"><span>홈</span></li>
+                <li onclick="location.href='/pages/enrollment.html'"><span>광고등록</span></li>
+                <li onclick="location.href='/pages/report-1.html'"><span>리포트</span></li>
+                <li onclick="location.href='/pages/proceeds.html'" class="active"><span>수익금관리</span></li>
+            </ul>
+        </nav>
+        <div class="no-data">
+            <div class="content proceeds">
+                <div class="img"></div>
+                <p>광고 수익금 연동 내역이 없습니다.<br />지금 바로 수익금을 연동하세요.</p>
+            </div>
+            <button class="m-btn" onclick="location.href='/pages/account-1.html'">연동하기</button>
+        </div>
+        <div class="in-data">
+            <div class="content proceeds">
+                <section>
+                    <dl class="profile">
+                        <dt style="background-image: url('/images/ex_img.jpg');"></dt>
+                        <dd>
+                            <span class="name">김유경</span>님, 환영합니다.<br />
+                            현재 광고 수익금 현황입니다.
+                        </dd>
+                        <dd><button onclick="location.href='/pages/account-edit-1.html'"><span>계좌번호 변경</span></button></dd>
+                    </dl>
+                    <!-- <p class="txt2">캠프별 조회</p>
+                    <div class="on-off-btn">
+                        <p>캠프홈 피드 광고 수익 연동하기<button></button></p>
+                        <p>주제방 공개여부<button></button></p>
+                    </div> -->
+                </section>
+                <section>
+                    <ul class="withdraw">
+                        <li>
+                            <span>누적 출금액</span>
+                            <p>225,678</p>
+                        </li>
+                        <li>
+                            <span>전월 출금액</span>
+                            <p>115,678</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul class="revenue-list">
+                        <li><p>총 합계</p><span>125,000</span><i style="display:block;"></i></li><!-- i 태그 인출가능 아이콘 기본값 display: none -->
+                        <li><p>캠프홈 피드 광고 수익</p><span>50,000</span></li>
+                        <li><p>캠프 둘러보기 광고 수익</p><span>50,000</span></li>
+                    </ul>
+                    <p class="txt2">* 광고 수익금 월 1회 인출 가능 금액은 OOOO원 이상입니다.</p>
+                </section>
+                <div class="des">
+                    <p>최근 인출하신 내역을 확인해 보세요.</p>
+                    <span class="btn" onclick="location.href='/pages/withdrawal-result.html'">처리결과 확인</span>
+                </div>
+                <div class="plus-menu">
+                    <div class="marsk"></div>
+                    <button class="plus-btn"></button>
+                    <dl class="menu-btn" onclick="location.href='/pages/withdrawal.html'">
+                        <dt>인출하기</dt>
+                        <dd></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

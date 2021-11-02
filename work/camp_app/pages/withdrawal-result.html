@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/button.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script type="text/javascript" src="/js/popup.js"></script>
+    </head>
+    <body>
+        <header>
+            <button class="icon-btn_back" onClick="history.back(); return false;">
+                <!--span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span-->
+            </button>
+            <h2>처리 결과 확인</h2>
+            <button class="close" onClick="history.back(); return false;"></button>
+        </header>
+        <div class="no-data">
+            <div class="content proceeds-fail">
+                <div class="icon-bnolist_2"></div>
+                <p>3 개월 내 인출하신 내역이 없습니다.</p>
+            </div>
+        </div>
+        <div class="in-data">
+            <div class="content proceeds">
+                <section class="p0 w100">
+                    <h3>인출 내역</h3>
+                    <p class="txt mb-20">* 3개월 내 인출하신 내역만 노출 됩니다.</p>
+                </section>
+                <section>
+                    <ul class="withdraw">
+                        <li>
+                            <span>누적 출금액</span>
+                            <p>225,678</p>
+                        </li>
+                        <li>
+                            <span>전월 출금액</span>
+                            <p>115,678</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul class="withdrawal-result">
+                        <li>
+                            <div>
+                                <p class="date">2020.04.08 13:04</p>
+                                <p class="bank">새마을금고중앙회</p>
+                                <p class="account-number">2123020*****2623252</p>
+                            </div>
+                            <p class="deposit waiting"></p>
+                            <p>999,999,999</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="date">2020.04.08 13:04</p>
+                                <p class="bank">새마을금고중앙회</p>
+                                <p class="account-number">2123020*****2623252</p>
+                            </div>
+                            <p class="deposit complete"></p>
+                            <p>125,000</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="date">2020.04.08 13:04</p>
+                                <p class="bank">새마을금고중앙회</p>
+                                <p class="account-number">2123020*****2623252</p>
+                            </div>
+                            <p class="deposit cancel"></p>
+                            <p>125,000</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="date">2020.04.08 13:04</p>
+                                <p class="bank">새마을금고중앙회</p>
+                                <p class="account-number">2123020*****2623252</p>
+                            </div>
+                            <p class="deposit hold"></p>
+                            <p>125,000</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="date">2020.04.08 13:04</p>
+                                <p class="bank">새마을금고중앙회</p>
+                                <p class="account-number">2123020*****2623252</p>
+                            </div>
+                            <p class="deposit request"></p>
+                            <p>125,000</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </body>

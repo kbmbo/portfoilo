@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/swiper.min.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/button.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+        <script type="text/javascript" src="/js/swiper.js"></script>
+        <script type="text/javascript" src="/js/popup.js"></script>
+        <script> 
+            $(document).ready(function () { 
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 'auto'
+                });
+            }); 
+        </script>
+    </head>
+    <body>
+        <nav class="tap-menu">
+            <ul>
+                <li onclick="location.href='/index.html'"><span>홈</span></li>
+                <li onclick="location.href='/pages/enrollment.html'" class="active"><span>광고등록</span></li>
+                <li onclick="location.href='/pages/report-1.html'"><span>리포트</span></li>
+                <li onclick="location.href='/pages/proceeds.html'"><span>수익금관리</span></li>
+            </ul>
+        </nav>
+        <div class="content enrollment">
+            <h3 class="mb-3">광고 타입 내역</h3>
+            <div class="feed-type-list swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <i class="q marsk-pop-btn" data-name="feed-guide">?</i>
+                        <div class="img" style="background-image: url('/images/ad_type_1.png');"></div>
+                        <div class="txt">
+                            <p>캠프 둘러보기 피드</p>
+                            <span>캠프 둘러보기 연관 캠프에 노출 되는 광고 입니다.</span>
+                        </div>
+                        <button class="on"></button>
+                        <div class="warning"><p><i class="icon-warn"></i>현재 권한으로 사용이 불가합니다.</p></div>
+                    </li>
+                    <li class="swiper-slide">
+                        <i class="q marsk-pop-btn" data-name="feed-guide">?</i>
+                        <div class="img" style="background-image: url('/images/ad_type_2.png');"></div>
+                        <div class="txt">
+                            <p>단일 이미지 (캠프홈)</p>
+                            <span>캠프 둘러보기 연관 캠프에 노출 되는 광고 입니다.</span>
+                        </div>
+                        <button class="on"></button>
+                        <div class="warning" style="display: block;"><p><i class="icon-warn"></i>현재 권한으로 사용이 불가합니다.</p></div>
+                    </li>
+                    <!-- <li class="swiper-slide">
+                        <i class="q marsk-pop-btn" data-name="feed-guide">?</i>
+                        <div class="img" style="background-image: url('/images/ad_type_3.png');"></div>
+                        <div class="txt">
+                            <p>히든 피드+ (캠프홈)</p>
+                            <span>캠프 둘러보기 연관 캠프에 노출 되는 광고 입니다.</span>
+                        </div>
+                        <button class="off"></button>
+                        <div class="warning"><p><i class="icon-warn"></i>현재 권한으로 사용이 불가합니다.</p></div>
+                    </li> -->
+                </ul>
+            </div>
+            <h3 class="mb-3">광고 등록 내역</h3>
+            <ul class="enrollment-list toggle-list">
+                <li class="toggle">
+                    <div class="tit-box">
+                        <p>단일 이미지 (캠프홈)</p>
+                        <p>포르쉐, 람보르기니, 페라리 [캠프명]</p>
+                        <i></i>
+                    </div>
+                    <div class="txt-box">
+                        <p class="ctg">
+                            <span>1차 카테고리</span>
+                            <span>2차 카테고리</span>
+                            <span>3차 카테고리</span>
+                        </p>
+                        <p class="tag">
+                            <span>자동차</span>
+                            <span>슈퍼카</span>
+                            <span>람보르기니</span>
+                        </p>
+                        <span class="date">2020-05-31</span>
+                        <button>
+                            <span></span><span></span><span></span>
+                            <ul>
+                                <li class="edit">수정</li>
+                                <li class="del">삭제</li>
+                            </ul>
+                        </button>
+                    </div>
+                </li>
+                <li class="toggle">
+                    <div class="tit-box">
+                        <p>히든 피드+ (캠프홈)</p>
+                        <p>포르쉐, 람보르기니, 페라리 [캠프명]</p>
+                        <i></i>
+                    </div>
+                    <div class="txt-box">
+                        <p class="ctg">
+                            <span>1차 카테고리</span>
+                            <span>2차 카테고리</span>
+                            <span>3차 카테고리</span>
+                        </p>
+                        <p class="tag">
+                            <span>자동차</span>
+                            <span>슈퍼카</span>
+                            <span>람보르기니</span>
+                        </p>
+                        <span class="date">2020-05-31</span>
+                        <button>
+                            <span></span><span></span><span></span>
+                            <ul>
+                                <li class="edit">수정</li>
+                                <li class="del">삭제</li>
+                            </ul>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <div class="plus-menu">
+                <div class="marsk"></div>
+                <button class="plus-btn"></button>
+                <dl class="menu-btn" onclick="location.href='/pages/enrollment-1.html'">
+                    <dt>광고등록</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+            <div class="marsk-pop feed-guide"></div>
+        </div>
+    </body>
+</html>

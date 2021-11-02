@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+        <meta name="Description" content="CAMP AD" />
+        <meta name="Keywords" content="" />
+        <meta name="author" content="" />
+        <meta name="generator" content="visual studio code" />
+
+        <title>CAMP AD</title>
+        
+        <link rel="stylesheet" href="/css/style.css" />
+        <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="/js/button.js"></script>
+        <script type="text/javascript" src="/js/menu.js"></script>
+    </head>
+    <body>
+        <header>
+            <button class="icon-btn_back" onClick="history.back(); return false;">
+                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+            </button>
+            <h2>계좌 등록</h2>
+            <button class="close" onclick="location.href='/pages/proceeds.html'"></button>
+        </header>
+        <div class="content account-fail">
+            <div class="icon-bnolist_2"></div>
+            <p class="tit">등록 실패</p>
+            <p>
+                <span class="name">이유경</span> 님, 계좌 등록에 실패했습니다.<br />
+                계좌번호와 은행을 다시 확인 후 등록해주세요
+            </p>
+        </div>
+    </body>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+    <g id="prefix__btn_tit_open" transform="translate(-504 -2603)">
+        <g id="prefix__Ellipse_213" data-name="Ellipse 213" transform="translate(504 2603)" style="stroke-width:3px;fill:#fff;stroke:#c9c9c9">
+            <circle cx="31.5" cy="31.5" r="31.5" style="stroke:none"/>
+            <circle cx="31.5" cy="31.5" r="30" style="fill:none"/>
+        </g>
+        <path id="prefix__icon_go" d="M.5.5l8.939 8.939L.5 18.379" transform="rotate(90 -1042.56 1587.44)" style="stroke:#673ab7;stroke-linecap:round;stroke-miterlimit:10;fill:none;stroke-width:3px"/>
+    </g>
+</svg>

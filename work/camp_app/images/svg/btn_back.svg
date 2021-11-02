@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="btn_back" width="63" height="63" viewBox="0 0 63 63">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#707070;opacity:0}.cls-2{fill:#45495f}.cls-3{fill:#333}.cls-4{stroke:none}.cls-5{fill:none}
+        </style>
+    </defs>
+    <g id="_-e-btn_back-2" data-name="-e-btn back-2" transform="translate(-889.702 -400.087)">
+        <g id="_63" class="cls-1" data-name="63">
+            <path d="M0 0h63v63H0z" class="cls-4" transform="translate(889.702 400.087)"/>
+            <path d="M.5.5h62v62H.5z" class="cls-5" transform="translate(889.702 400.087)"/>
+        </g>
+        <path id="Rounded_Rectangle_1" d="M892.7 429h57a3 3 0 0 1 3 3 3 3 0 0 1-3 3h-57a3 3 0 0 1-3-3 3 3 0 0 1 3-3z" class="cls-2" data-name="Rounded Rectangle 1"/>
+        <path id="Rounded_Rectangle_1_copy_4" d="M890.25 429.9l25.364-25.365a2.554 2.554 0 0 1 3.55 3.551L893.8 433.452a2.554 2.554 0 0 1-3.551-3.551z" class="cls-2" data-name="Rounded Rectangle 1 copy 4"/>
+        <path id="Rounded_Rectangle_1_copy_6" d="M893.8 430.548l25.364 25.365a2.554 2.554 0 0 1-3.551 3.551L890.249 434.1a2.554 2.554 0 0 1 3.551-3.551z" class="cls-2" data-name="Rounded Rectangle 1 copy 6"/>
+    </g>
+    <path id="Color_Overlay" d="M915.613 459.464L890.249 434.1a1.937 1.937 0 0 1-.513-1.646 3.016 3.016 0 0 1 0-.91 1.938 1.938 0 0 1 .514-1.641l25.364-25.365a2.554 2.554 0 0 1 3.551 3.55L898.253 429H949.7a3 3 0 0 1 0 6h-51.45l20.913 20.913a2.327 2.327 0 0 1-.3 3.25 2.73 2.73 0 0 1-1.9.833 1.877 1.877 0 0 1-1.35-.532z" class="cls-3" data-name="Color Overlay" transform="translate(-889.702 -400.087)"/>
+</svg>
