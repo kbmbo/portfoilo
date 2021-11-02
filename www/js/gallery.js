@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"준비중",txt:"갤러리 필터 테스트용 입니다."},
         {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/ahnlabADS/",img:"./img/portfolio/ahnlabADS.jpg",tit:"안랩 광고주페이지",txt:"회사에 보유한 템플릿을 기반으로 작업한 안랩 광고주페이지 입니다. (jquery)"},
         {filter:"work",url:"https://mobtrend.net/",img:"./img/portfolio/mobtaend.jpg",tit:"기사통합 포털사이트",txt:"매체사별 인기기사와 카테고리별, 키워드별로 기사순위를 보여주는 사이트입니다. (jquery)"},
-        {filter:"work",url:"https://mobtrend.net/",img:"./img/portfolio/pointgrab.png",tit:"포인트몰 모바일 웹",txt:"포인트 적립과 할인쿠폰 이벤트를 통해 구매 적립 할수있는 모바일웹입니다. (jquery)"}
+        {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/pointgrab/",img:"./img/portfolio/pointgrab.png",tit:"포인트몰 모바일 웹",txt:"포인트 적립과 할인쿠폰 이벤트를 통해 구매 적립 할수있는 모바일웹입니다. (jquery)"}
     ];
     const galleryContainer = document.querySelector('.gallery-container');
     const filterCon = galleryContainer.querySelector('.filterList');
