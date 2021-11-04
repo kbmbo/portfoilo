@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/ahnlabADS/",img:"./img/portfolio/ahnlabADS.jpg",tit:"안랩 광고주페이지",txt:"템플릿을 기반으로 클라이언트의 요청에 맞춰 마크업과 jquery를 작업한 안랩 광고주페이지 입니다. (jquery)"},
         {filter:"work",url:"https://mobtrend.net/",img:"./img/portfolio/mobtaend.jpg",tit:"기사통합 포털사이트",txt:"매체사별 인기기사와 카테고리별, 키워드별로 기사순위를 보여주는 사이트입니다. (jquery)"},
         {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/pointgrab/",img:"./img/portfolio/pointgrab.png",tit:"포인트몰 모바일 웹",txt:"포인트적립과 할인쿠폰 이벤트를 통해 구매 적립 할수있는 모바일웹입니다. (jquery)"},
-        {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/camp_app/",img:"./img/portfolio/camp_app.png",tit:"캠프광고주 모바일웹",txt:"광고주가 캠프(채팅&커뮤니티앱)앱에 올라가는 광고를 관리하는 모바일웹 페이지입니다. (jquery)"}
+        {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/camp_app/",img:"./img/portfolio/camp_app.png",tit:"캠프광고주 모바일웹",txt:"광고주가 캠프(채팅&커뮤니티앱)앱에 올라가는 광고를 관리하는 모바일웹 페이지입니다. (jquery)"},
+        {filter:"work",url:"https://store.camptok.com/event/index",img:"./img/portfolio/camp_store.jpg",tit:"캠프스토어 소개",txt:"캠프 스토어(이모티콘 등록 판매)를 소개하는 페이지입니다. (jquery)"}
     ];
     const galleryContainer = document.querySelector('.gallery-container');
     const filterCon = galleryContainer.querySelector('.filterList');
