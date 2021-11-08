@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dim = document.querySelector('.dim');
     let mainBottom
     let windowH
-
+    
     const fullPageH = () => {
         windowH = window.innerHeight;
         fullPage.style.height = `${windowH}px`;
@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fullPageS = e => {
         mainBottom = fullPage.getBoundingClientRect().bottom;
-        windowH = window.innerHeight;
-        if(e.deltaY > 0 && mainBottom == windowH){
+        if(e.deltaY > 0 && window.pageYOffset < 2){
             window.scrollTo(0, mainBottom);
             header.classList.add('subNav');
         } else if(e.deltaY < 0 && mainBottom > 5){
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navlink = e => {
         const scroll = e.target.dataset.scroll;
         const scrollY = window.pageYOffset + document.getElementById(scroll).getBoundingClientRect().top;
-        if(scrollY != 0){
+        if(scrollY !== 0){
             header.classList.add('subNav');
             window.scrollTo(0,scrollY);
         } else {
@@ -109,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if(window.scrollY > 0){
             header.classList.add('subNav')
         }
-        console.log(window.scrollY)
     });
     
     // window.addEventListener('touchend', (e) => {
