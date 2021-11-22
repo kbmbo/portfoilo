@@ -16,7 +16,7 @@
                 background: transparent;
                 font-weight: normal;
             }
-            html { width: 100%; font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif';font-size: 10px; scroll-behavior: smooth; word-break:keep-all; }
+            html { width: 100%; font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif'; font-size: 10px; scroll-behavior: smooth; word-break:keep-all; }
             body { width: 100%; background-color: #fff; font-size: 1.5rem; font-weight: 400; color: #222; scroll-behavior: smooth; }
             li { list-style: none; }
             button { background-color: transparent; cursor: pointer; font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",'sans-serif'; }
@@ -33,18 +33,20 @@
             .pager button:before, .pager button:after { content: ''; display: block; width: 3px; height: 50%; background-color: #c3c3c3; position: absolute; }
             .pager button.prev:before, .pager button.next:after { transform: rotate(-45deg); }
             .pager button.prev:after, .pager button.next:before { transform: rotate(45deg); }
-            .pager button.prev:before, .pager button.next:before { bottom:0.8vmin }
-            .pager button.prev:after, .pager button.next:after { top:0.8vmin }
+            .pager button.prev:before, .pager button.next:before { bottom: 0.8vmin }
+            .pager button.prev:after, .pager button.next:after { top: 0.8vmin }
             .paging { display: flex; justify-content: center; margin-top: 10px; }
             .paging li { margin: 0 5px; cursor: pointer; }
             .paging li.active { font-weight: 600; }
+
+            .onerror p{ width: 100%; text-align: center; position: absolute; top: 48%; }
             @media (hover: hover) {
-                .pager button:hover { opacity: 0.6;}
+                .pager button:hover { opacity: 0.6; }
             }
             @media screen and (max-width:428px) {
-                .img-box { position: relative; width: 100%;}
-                .pager button {background-color: rgba(0,0,0,.4);width: 5vmin;}
-                .pager button:before, .pager button:after {width: 1px;}
+                .img-box { position: relative; width: 100%; }
+                .pager button { background-color: rgba(0,0,0,.4);width: 5vmin; }
+                .pager button:before, .pager button:after { width: 1px; }
             }
         </style>
 
@@ -74,8 +76,16 @@
                 slide.style.transform =`translateX(${i}%)`;
                 
                 imgUrl.forEach( (el,index) => { // imgUrl 내용 만큼 슬라이드 생성
-                    slide.insertAdjacentHTML('beforeend', `<li style = 'background-image:url(${el.url});'></li>`);
+                    const http = new XMLHttpRequest();
+                    http.open('GET', el.url, false);
+                    http.send(null);
+                    if( el.url === null || el.url === undefined || el.url === '' || http.status === 404){
+                        slide.insertAdjacentHTML('beforeend', `<li class="onerror"><p>이미지 준비중입니다.</p></li>`);
+                    } else {
+                        slide.insertAdjacentHTML('beforeend', `<li style = 'background-image:url(${el.url});'></li>`);
+                    }
                     paging.insertAdjacentHTML('beforeend', `<li data-num = '${index+1}'>${index+1}</li>`);
+
                 })
                 
                 window.addEventListener('load', () => { // 슬라이드 엘리먼트 생성 후 슬라이드 맨앞 맨뒤 요소 복제해서 추가
