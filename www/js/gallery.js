@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const filterList = ["all","javascript","react","work"];
     const galleryList = [
+        {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/www",img:"./img/portfolio/kspring.jpg",tit:"kspring",txt:"현재 보고 계신 반응형 랜딩 페이지입니다. 갤러리 기능과 간단한 네비 기능이 있습니다. 플랫폼 사용없이 직접 작업하였습니다. (javascriptES6)"},
         {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/slide/slide.html",img:"./img/portfolio/slide.png",tit:"loop slide",txt:"무한 루프 반응형 슬라이드 입니다. 모바일 touch 슬라이드도 가능합니다. (javascriptES6)"},
         {filter:"javascript",url:"https://kbmbo.github.io/portfoilo/javascript/banner/",img:"./img/portfolio/banner.png",tit:"banner",txt:"간단한 touch event가 작업된 배너입니다. (javascriptES6)"},
-        {filter:"react",url:"",img:"",tit:"준비중",txt:"갤러리 필터 테스트용 입니다."},
-        {filter:"react",url:"",img:"./img/portfolio/2.jpg",tit:"준비중",txt:"갤러리 필터 테스트용 입니다."},
+        {filter:"react",url:"https://eatout-kspring.web.app/",img:"./img/portfolio/eatOut.jpg",tit:"eatOut",txt:"카카오지도 오픈 API를 이용하여 React로 진행중인 포트폴리오 입니다."},
         {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/ahnlabADS/",img:"./img/portfolio/ahnlabADS.jpg",tit:"안랩 광고주페이지",txt:"템플릿을 기반으로 클라이언트의 요청에 맞춰 마크업과 jquery를 작업한 안랩 광고주페이지 입니다. (jquery)"},
         {filter:"work",url:"https://mobtrend.net/",img:"./img/portfolio/mobtaend.jpg",tit:"기사통합 포털사이트",txt:"매체사별 인기기사와 카테고리별, 키워드별로 기사순위를 보여주는 사이트입니다. (jquery)"},
         {filter:"work",url:"https://kbmbo.github.io/portfoilo/work/pointgrab/",img:"./img/portfolio/pointgrab.png",tit:"포인트몰 모바일 웹",txt:"포인트적립과 할인쿠폰 이벤트를 통해 구매 적립 할수있는 모바일웹입니다. (jquery)"},
